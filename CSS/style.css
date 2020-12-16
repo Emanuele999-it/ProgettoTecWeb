@@ -1,0 +1,237 @@
+
+html{
+    background-image: url("wallpaper2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;    }
+    
+body{
+    margin:0;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:0.9em;
+    max-width: 1024px;
+    margin:auto;
+    background-color: white;
+}
+
+h1,h2,h3 { font-variant: small-caps; }
+
+a:visited{ color: white;}
+
+
+#header {
+    background-color: black;
+}
+
+#logo{
+    float: left;
+    padding: 2em;
+}
+
+#hamburger{
+    display: none;
+}
+
+#menu-mobile{
+    display: none;
+}
+
+#intestazione {
+    color:white;
+    margin-left: 40%;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#menu{
+    /*/background-color: black;
+    color:white;*/   
+    padding: 0.5em;
+    text-align: center;
+}
+
+#articolodellasettimana{
+
+}
+
+#img-articolo-settimana{
+    width:600px;
+    height:300px;
+}
+
+.elementomenu{
+    text-align: center;
+    display: inline-block;
+    margin: 0.5em;
+    font-size: 1.3em;
+    font-weight: bolder;
+    color: white;
+}
+
+#breadcrumb {
+    background-color: black;
+    color:white;
+    padding: 0.1em 1em 0.1em 2em;
+}
+
+#contentHomePage{
+    text-align: center;
+}
+
+.articolo-home {
+    padding-left: 2em;
+    padding-right: 2em;
+    display: inline-block;
+}
+
+.articolo-page{
+    padding: 1em 1em 1em 1em ;
+    margin: 2em;
+    display: flow-root;
+}
+
+.tipo-articolo{
+    text-align: left;
+}
+
+.nome-gioco{
+    text-align: left;
+}
+
+.anteprima-articolo{
+    text-align: left;
+}
+
+.miniatura-home{
+    height: 200px;
+    width:  200px;
+}
+
+.miniatura-lista-articoli{
+    height: 200px;
+    width:  200px;
+    float: left;
+    margin: 1em;
+}
+
+.boxgenere{
+    /*padding: 1em;*/
+    height: 100px;
+    width: 200px;
+    /*border: 1px solid black;*/
+    display: inline-block;
+    margin: 2em;
+    /*border-radius: 2em;*/
+    color: black;
+}
+
+.link-box-genere{
+    
+}
+
+a.link-box-genere:visited{ 
+    color: black;
+}
+
+.immagine-box-genere{
+    height: 100%;
+    width: 100%;
+    border-radius: 4em;
+
+}
+
+.top10-articolo{
+    
+}
+
+
+
+#rightSidebar{
+    display: none;
+}
+
+.torna-su{
+    padding: 3em;
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.torna-su-link{
+    padding: 1em;
+    background-color:black;
+    color:white;
+    border-radius:1em; 
+}
+
+#footer{
+    background-color: black;
+    color:white;
+    clear:both;
+    text-align: center;
+    padding: 0.1em;
+}
+
+
+/*mobile*/
+@media screen and (max-width: 768px){
+
+    #logo{
+        float: none;
+        text-align: center;
+    }
+
+    #intestazione{
+        text-align: center;
+        margin-left: auto;
+    }
+
+
+}
+
+@media screen and (max-width: 524px) {
+
+#logo{
+    text-align: unset;
+    display: inline-block;
+    padding: unset;
+    padding-top: 2em;
+    padding-left: 1em;
+
+}
+
+#hamgurger-menu{
+    display: inline-block;
+    margin-right: 2em;
+    margin-top: 1.5em;
+    float: right;
+
+}
+
+#menu-mobile{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+    
+#menu{   
+    display: none;
+}
+
+#img-articolo-settimana{
+    width: 320px;
+    height: 150px;
+}
+
+}
+
+@media screen and (max-height: 450px) {
+
+}
+
+
+/*fine mobile*/

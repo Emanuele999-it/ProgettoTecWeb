@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+
+    <title>Titolo sito</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Titolo sito2" />
+    <meta name="description" content="Descrizione sito" />
+    <meta name="keywords" content="videogiochi, videogames, recensioni" />
+    <meta name="author" content="Ema, Davide, Damiano, Filippo" />
+    <meta name="language" content="italian it" />
+
+    <link rel="stylesheet" type="text/css" href="CSS/style.css" media="screen"/>
+    <!--altri link css, per ora staccati-->
+    <link rel="stylesheet" type="text/css" href="" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)" />
+    <link rel="stylesheet" type="text/css" href="" media="print"/>
+    <!-- SERVE PER FORZA PER IL MOBILE ?-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="logo-spaziogames.png" alt="Logo sito"                     />
+        </div>
+        <div id="hamgurger-menu">
+            <img src="hamburger.png"        alt="tasto menu" id="menu-mobile"   />
+        </div>
+        <div id="intestazione">
+        <!--   <h1>Titolo visibile sito</h1>        -->
+        <!--    <h2>Sottotitolo visibile sito</h2>  -->
+        </div>
+        <div id="menu" >
+            <ul>
+                <li xml:lang="en" class="elementomenu"><a href="home.html">Home</a></li>
+                <li class="elementomenu"><a href="articoli.html">Articoli</a></li>
+                <li class="elementomenu"><a href="genere.html">Genere</a></li>
+                <li class="elementomenu"><a href="top10.html">Top 10</a></li>
+                <li class="elementomenu">Nuove Uscite</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="breadcrumb">
+        <p>Il tuo percorso: <span xml:lang="it">Nuove uscite</span></p>
+    </div>
+
+    <div id="contentHomePage" class="contenutoGenerale" >
+        <h1> PROSSIME USCITE</h1>
+        <div class="articolo-page">
+            <img src="fifa.jpg" class="miniatura-lista-articoli" />
+            <div class="nome-gioco"><h2>FIFA 21</h2></div>
+            <div class="data-di-uscita"><h1>22 marzo 2021</h1></div>
+        </div>
+        <div class="articolo-page">
+            <img src="doom.jpg" class="miniatura-lista-articoli" />
+            <div class="nome-gioco"><h2>DOOM</h2></div>
+            <div class="data-di-uscita"><h1>14 FEBBRAIO 2021</h1></div>
+        </div>
+        <div class="articolo-page">
+            <img src="nba.jpg" class="miniatura-lista-articoli" />
+            <div class="nome-gioco"><h2>NBA</h2></div>
+            <div class="data-di-uscita"><h1>28 MAGGIO 2021</h1></div>
+        </div>
+        <!--SCRIPT per recapitare gli ultimi 3 articoli-->
+        <div class="torna-su" >
+            <a class="torna-su-link" href="#">Torna su</a>
+        </div>
+    </div>
+    <div id="footer">
+        <img id="imgValidCode" src="images/valid-xhtml10.png" alt="" style="float:left;" />
+        <img id="imgValidCss" src="images/vcss-blue.gif" alt="" style="float:left;" />
+        <p>Testo visibile del footer.</p>
+    </div>
+</body>
+</html>
