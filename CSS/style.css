@@ -15,7 +15,8 @@ body{
     background-color: white;
 }
 
-h1,h2,h3 { font-variant: small-caps; }
+/*TOLTO PER PROVA*/
+/*h1,h2,h3 { font-variant: small-caps; }*/
 
 #header {
     background-color: black;
@@ -23,7 +24,7 @@ h1,h2,h3 { font-variant: small-caps; }
 
 #logo{
     float: left;
-    padding: 2em;
+    padding: 1.4em;
 }
 
 #hamburger{
@@ -45,18 +46,21 @@ ul{
 }
 
 #menu{
-    padding: 0.5em;
+    padding: 0.1em;
     text-align: center;
 }
 
 #menu a:link{
-  color: #FFF;
+    color: #FFF;
+
 }
 
 #menu a:visited{
-  color: #BBBBBB;
+    color: #BBBBBB;
 }
 
+
+/*?????*/
 #articolodellasettimana{
 
 }
@@ -73,12 +77,13 @@ ul{
     font-size: 1.3em;
     font-weight: bolder;
     color: white;
+    
 }
 
 #breadcrumb {
     background-color: black;
     color:white;
-    padding: 0.4em 1em 0.4em 2em;
+    padding: 0.1em 1em 0.3em 2em;
 }
 
 #breadcrumb p{
