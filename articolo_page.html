@@ -11,6 +11,7 @@
     <meta name="keywords" content="videogiochi, videogames, recensioni" />
     <meta name="author" content="Ema, Davide, Damiano, Filippo" />
     <meta name="language" content="italian it" />
+
     <link rel="stylesheet" type="text/css" href="CSS/style.css" media="screen"/>
     <!--altri link css, per ora staccati-->
     <link rel="stylesheet" type="text/css" href="" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)" />
@@ -19,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
+
 
 <body>
     <div id="header">
@@ -30,8 +32,8 @@
         </div>
         <div id="menu" >
             <ul>
-                <li xml:lang="en" id="currentLink" class="elementomenu">Home</li>
-                <li class="elementomenu"><a href="articoli.html">Articoli</a></li>
+                <li xml:lang="en" class="elementomenu"><a href="index.html">Home</a></li>
+                <li class="elementomenu" id="currentLink">Articoli</li>
                 <li class="elementomenu"><a href="genere.html">Genere</a></li>
                 <li class="elementomenu"><a href="top10.html">Top 10</a></li>
                 <li class="elementomenu"><a href="nuoveuscite.html">Nuove Uscite</a></li>
@@ -40,36 +42,25 @@
     </div>
 
     <div id="breadcrumb">
-        <p>Il tuo percorso: <span xml:lang="en">Home</span></p>
+        <p>Il tuo percorso: <span xml:lang="it">Articoli</span></p>
     </div>
 
-    <div id="contentHomePage" class="contenutoGenerale" >
-        <h1> Benvenuto su Spaziogames</h1>
-        <!-- <p>Descrizione breve del sito</p> -->
-        <div id="articolodellasettimana">
-          <a href="articolo_page.html"><h2> E' arrivato Cyberpunk !</h2></a>
-          <img id="img-articolo-settimana" src="keanu.jpg" alt="Immagine con Keanu Reeves"/>
+    <div id="contentArticolo" class="contenutoGenerale" >
+        <h2>Cyberpunk 2077 recensione</h2>
+        <img src=keanu.jpg alt="" style="width:100%; height:100%"/>
+        <p>Cyberpunk 2077 è stato, senza alcuna sorpresa, uno dei giochi più attesi del 2020. Nei giorni scorsi abbiamo avuto modo di recensire la versione PC che, forte di hardware di ultima generazione, si è mostrata con una veste tecnica / visiva di grande impatto. Purtroppo la stessa cosa non si può dire per quella console che, come vedremo nella recensione di Cyberpunk 2077 in versione PS4, si è presentata ai cancelletti di partenza in maniera disastrosa. Non ci sono davvero altre parole per descrivere un'esperienza al limite dell'ingiocabile sulle console base e parecchio al di sotto delle promesse per quanto riguarda le mid gen (abbiamo testato il gioco sia su PS4 sia su PS4 Pro).</p>
+        <div id="sezione commenti">
+            <h2>commenti</h2>
+            <p>per visualizzare <a href="">accedi</a> o <a href="">registrati</a></p>
         </div>
-        <h2>Altri articoli che potrebbero interessarti:</h2>
-        <div class="articolo-home">
-            <img src="fifa.jpg" class="miniatura-home"/>
-            <h3>FIFA 21</h3>
-            <p>Voto 7</p>
-        </div>
-        <div class="articolo-home">
-            <img src="doom.jpg" class="miniatura-home"/>
-            <h3>Doom</h3>
-            <p>Voto 7</p>
-        </div>
-        <div class="articolo-home">
-            <img src="nba.jpg " class="miniatura-home"/>
-            <h3>NBA 2K21</h3>
-            <p>Voto 7</p>
-        </div>
-
-        <!--SCRIPT per recapitare gli ultimi 3 articoli-->
-        <div class="torna-su" >
-            <a class="torna-su-link" href="#">Torna su</a>
+        <div id="inserimento commento">
+            <h3>inserisci nuovo commento</h3>
+            <form id="inserisciCommento" method="post">
+              <fieldset>
+                <label for="scrivo-commento">Scrivi tuo commento</label>
+                <textarea name="scrivi-commento" type="submit" value="Commenta" rows="8" cols="80"></textarea>
+              </fieldset>
+            </form>
         </div>
     </div>
 
