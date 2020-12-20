@@ -33,53 +33,53 @@
         <div id="menu" >
             <ul>
                 <li xml:lang="en" class="elementomenu"><a href="index.html">Home</a></li>
-                <li class="elementomenu" id="currentLink">Articoli</li>
+                <li class="elementomenu"><a href="articoli.html">Articoli</a></li>
                 <li class="elementomenu"><a href="genere.html">Genere</a></li>
                 <li class="elementomenu"><a href="top10.html">Top 10</a></li>
                 <li class="elementomenu"><a href="nuoveuscite.html">Nuove Uscite</a></li>
-                <li class="elementomenu"><a href="accesso.html">Accedi</a></li>
+                <li class="elementomenu">Accedi</a></li>
             </ul>
         </div>
     </div>
 
     <div id="breadcrumb">
-        <p>Il tuo percorso: <span xml:lang="it">Articoli</span></p>
+        <p>Il tuo percorso: <span xml:lang="it">Accedi</span></p>
     </div>
 
-    <div  id="contenutoArticoli" class="contenutoGenerale" >
-        <div class="articolo-page">
-            <img src="fifa2.jpg" class="miniatura-lista-articoli" />
-            <div class="tipo-articolo"><h3>RECENSIONE</h3></div>
-            <div class="nome-gioco"><h4 >FIFA 21</h4></div>
-            <div class="anteprima-articolo"><p>bla bla bla blabla bla bla blabla bla bla blabla bla bla bla<br/>
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla<br/>
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla<br/></p>
-            </div>
-        </div>
-        <div class="articolo-page">
-            <img src="doom2.jpg" class="miniatura-lista-articoli" />
-            <div class="tipo-articolo"><h3>NEWS</h3></div>
-            <div class="nome-gioco"><h4 >FIFA 21</h4></div>
-            <div class="anteprima-articolo"><p>bla bla bla blabla bla bla blabla bla bla blabla bla bla bla<br/>
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla<br/>
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla<br/></p>
-            </div>
-        </div>
-        <div class="articolo-page">
-            <img src="nba2.jpg" class="miniatura-lista-articoli" />
-            <div class="tipo-articolo"><h3>ANTEPRIMA</h3></div>
-            <div class="nome-gioco"><h4 >FIFA 21</h4></div>
-            <div class="anteprima-articolo"><p>bla bla bla blabla bla bla blabla bla bla blabla bla bla bla<br/>
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla<br/>
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla<br/></p>
-            </div>
-        </div>
-        <!--SCRIPT per recapitare gli ultimi 3 articoli-->
-        <div class="torna-su" >
-            <a class="torna-su-link" href="#">Torna su</a>
-        </div>
-    </div>
+    <!--Attenzione ai vari tag quando si fa la conversiona al php-->
 
+    <div id="contenutoAccesso">
+        <h1>Accedi</h1>
+        <!--<form action="...">-->
+            <fieldset class="form-fieldset">
+                <legend class="legend">Inserisci le tue credenziali</legend>
+                <ul class="form-container form-centered">
+                    <li class="form-element">
+                        <label class="form-label"
+                               for="login-nickname"><span xml:lang="en" lang="en">Nickname</span>:</label>
+                        <input class="inputNick" />
+                    </li>
+                    <li class="form-element">
+                        <label class="form-label"
+                               for="login-password"><span xml:lang="en" lang="en">Password</span>:</label>
+                        <input class="inputPW"/>
+                    </li>
+                    <li class="form-element">
+                        <input class="submit"
+                               type="submit"
+                               value="Accedi"/>
+                    </li>
+                </ul>
+            </fieldset>
+        <p id="registrazione">Non sei ancora registrato? <a
+               href="registrazione.html">Registrati</a>
+        </p>
+        <!--<form/>-->
+        <div class="torna-su">
+        <a class="torna-su-link" href="#">Torna su</a>
+    </div>
+        
+    </div>
     <div id="footer">
         <img id="imgValidCode" src="images/valid-xhtml10.png" alt="" style="float:left;" />
         <img id="imgValidCss" src="images/vcss-blue.gif" alt="" style="float:left;" />

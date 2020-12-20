@@ -208,6 +208,30 @@ a.link-box-genere:visited{
 }
 
 
+/*pagina accedi/registrati*/
+.form-fieldset{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: none;
+}
+
+#contenutoAccesso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contenutoAccesso ul{
+    list-style-type:none;
+}
+
+#termini-di-servizio{
+    padding: 0em;
+    margin: 0em;
+}
+
+
+
 /*mobile*/
 @media screen and (max-width: 768px){
 
