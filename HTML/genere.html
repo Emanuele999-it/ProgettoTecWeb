@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+
+    <title>Titolo sito</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Titolo sito2" />
+    <meta name="description" content="Descrizione sito" />
+    <meta name="keywords" content="videogiochi, videogames, recensioni" />
+    <meta name="author" content="Emanuele, Davide, Damiano, Filippo" />
+    <meta name="language" content="italian it" />
+
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+    <!--altri link css, per ora staccati-->
+    <link rel="stylesheet" type="text/css" href="" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)" />
+    <link rel="stylesheet" type="text/css" href="" media="print"/>
+    <!-- SERVE PER FORZA PER IL MOBILE ?-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="../img/logo-spaziogames.png" alt="Logo sito"/>
+        </div>
+        <div id="hamgurger-menu">
+            <img src="../img/hamburger.png" alt="tasto menu" id="menu-mobile"/>
+        </div>
+        <div id="menu" >
+            <ul>
+                <li xml:lang="en"  class="elementomenu"><a href="index.html">Home</a></li>
+                <li class="elementomenu"><a href="articoli.html">Articoli</a></li>
+                <li class="elementomenu" id="currentLink">Genere</li>
+                <li class="elementomenu"><a href="top10.html">Top 10</a></li>
+                <li class="elementomenu"><a href="nuoveuscite.html">Nuove Uscite</a></li>
+                <li class="elementomenu"><a href="accesso.html">Accedi</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="breadcrumb">
+        <p>Il tuo percorso: <span xml:lang="it">Genere</span></p>
+    </div>
+
+    <div  class="contenutoGenerale" >
+        <h3>Seleziona il genere di gioco che preferisci<br/>per avere le ultime notizie</h3>
+        <div class="boxgenere"><a href="lista_articoli_genere.html" class="link-box-genere">
+            <h4>Giochi di ruolo</h4></a> <img class="immagine-box-genere"
+            src="../img/rpg.jpg" alt=""/></div>
+        <div class="boxgenere"><a href="lista_articoli_genere.html" class="link-box-genere">
+            <h4>Sportivi</h4></a><img class="immagine-box-genere"
+            src="../img/sport.jpg" alt=""/></div>
+        <div class="boxgenere"><a href="lista_articoli_genere.html" class="link-box-genere">
+            <h4>Sparatutto</h4></a><img class="immagine-box-genere"
+            src="../img/fps.jpg" alt=""/></div>
+        <div class="boxgenere"><a href="lista_articoli_genere.html" class="link-box-genere">
+            <h4>Avventura</h4></a><img class="immagine-box-genere"
+            src="../img/avventura.jpg" alt=""/></div>
+        <div class="boxgenere"><a href="lista_articoli_genere.html" class="link-box-genere">
+            <h4>Azione</h4></a><img class="immagine-box-genere"
+            src="../img/azione.jpg" alt=""/></div>
+        <div class="boxgenere"><a href="lista_articoli_genere.html" class="link-box-genere">
+            <h4>Gestionale</h4></a><img class="immagine-box-genere"
+            src="../img/gestionale.jpg" alt=""/></div>
+        <div class="torna-su" >
+            <a class="torna-su-link" href="#">Torna su</a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <img id="imgValidCode" src="../img/valid-xhtml10.png" alt="" style="float:left;" />
+        <img id="imgValidCss" src="../img/vcss-blue.gif" alt="" style="float:left;" />
+        <p>Testo visibile del footer.</p>
+    </div>
+</body>
+</html>

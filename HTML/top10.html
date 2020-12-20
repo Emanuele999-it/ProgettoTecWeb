@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+
+    <title>Titolo sito</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Titolo sito2" />
+    <meta name="description" content="Descrizione sito" />
+    <meta name="keywords" content="videogiochi, videogames, recensioni" />
+    <meta name="author" content="Emanuele, Davide, Damiano, Filippo" />
+    <meta name="language" content="italian it" />
+
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+    <!--altri link css, per ora staccati-->
+    <link rel="stylesheet" type="text/css" href="" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)" />
+    <link rel="stylesheet" type="text/css" href="" media="print"/>
+    <!-- SERVE PER FORZA PER IL MOBILE ?-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="../img/logo-spaziogames.png" alt="Logo sito"/>
+        </div>
+        <div id="hamgurger-menu">
+            <img src="../img/hamburger.png" alt="tasto menu" id="menu-mobile"/>
+        </div>
+        <div id="menu" >
+            <ul>
+                <li xml:lang="en"  class="elementomenu"><a href="index.html">Home</a></li>
+                <li class="elementomenu"><a href="articoli.html">Articoli</a></li>
+                <li class="elementomenu"><a href="genere.html">Genere</a></li>
+                <li class="elementomenu" id="currentLink">Top 10</li>
+                <li class="elementomenu"><a href="nuoveuscite.html">Nuove Uscite</a></li>
+                <li class="elementomenu"><a href="accesso.html">Accedi</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="breadcrumb">
+        <p>Il tuo percorso: <span xml:lang="it">Top 10</span></p>
+    </div>
+
+    <div class="contenutoGenerale" id="contenutoArticoli" >
+        <h1> CLASSIFICA TOP10 VIDEOGAMES DELL'ANNO</h1>
+        <div class="articolo-page">
+            <img src="../img/fifa2.jpg" class="miniatura-lista-articoli" />
+            <div class="nome-gioco"><h2>FIFA 21</h2></div>
+            <div class="voto"><h1>VOTO 7</h1></div>
+        </div>
+        <div class="articolo-page">
+            <img src="../img/doom2.jpg" class="miniatura-lista-articoli" />
+            <div class="nome-gioco"><h2>DOOM</h2></div>
+            <div class="voto"><h1>VOTO 9</h1></div>
+        </div>
+        <div class="articolo-page">
+            <img src="../img/nba2.jpg" class="miniatura-lista-articoli" />
+            <div class="nome-gioco"><h2>NBA</h2></div>
+            <div class="voto"><h1>VOTO 8</h1></div>
+        </div>
+
+        <!--SCRIPT per recapitare gli ultimi 3 articoli-->
+        <div class="torna-su" >
+            <a class="torna-su-link" href="#">Torna su</a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <img id="imgValidCode" src="../img/valid-xhtml10.png" alt="" style="float:left;" />
+        <img id="imgValidCss" src="../img/vcss-blue.gif" alt="" style="float:left;" />
+        <p>Testo visibile del footer.</p>
+    </div>
+</body>
+</html>
