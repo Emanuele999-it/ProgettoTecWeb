@@ -63,6 +63,34 @@ ul{
     color: #BBBBBB;
 }
 
+/*Sezione cerca*/
+#barra-di-ricerca{
+    background-color: rgb(194, 194, 194);
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+#fieldSet{
+    border: none;
+}
+
+#risultati-ricerca{
+    height: 1.5em;
+    overflow: hidden;
+}
+
+#immagine-lente{
+    background-color: rgb(223, 221, 221);
+    width: 1.5em;
+    height: 1.5em;
+    border-style: solid;
+    border-color: gray;
+    border-width: 0.01em;
+    padding: 0.5em 1em 0.5em 1em;
+    margin-bottom: -0.9em;
+}
+
 
 /*?????*/
 #articolodellasettimana{
