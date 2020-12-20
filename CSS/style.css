@@ -209,11 +209,11 @@ a.link-box-genere:visited{
 
 
 /*pagina accedi/registrati*/
-/*.form-fieldset{
+.form-fieldset{
     margin-top: 1em;
     margin-bottom: 1em;
     border: none;
-}*/
+}
 
 #contenutoAccesso{
     display: flex;
