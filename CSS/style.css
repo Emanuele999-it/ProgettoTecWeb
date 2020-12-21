@@ -1,12 +1,20 @@
+/* ANDREBBE MESSO DI DEFAULT ma fotte un po il layout, andrebbe adattato
+{
+	padding: 0em;
+	margin: 0em;
+}
+*/
+
 html{
     background-image: url("wallpaper2.jpg");
+    background-color: #000;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment:fixed;    }
+    background-attachment:fixed;
+}
 
 body{
-    margin:0;
     font-family: Verdana, Helvetica, sans-serif;
     font-size:0.9em;
     max-width: 1024px;
@@ -19,8 +27,6 @@ body{
 }
 
 
-/*TOLTO PER PROVA*/
-/*h1,h2,h3 { font-variant: small-caps; }*/
 
 #header {
     background-color: black;
@@ -128,6 +134,10 @@ ul{
     text-align: center;
 }
 
+#contentHomePage h1{
+    font-size: 3em;
+}
+
 
 #contenutoArticoli{
   margin-left: 5em;
@@ -211,9 +221,6 @@ a.link-box-genere:visited{
 
 }
 
-#rightSidebar{
-    display: none;
-}
 
 .torna-su{
     padding: 3em;
@@ -280,41 +287,45 @@ a.link-box-genere:visited{
 
 @media screen and (max-width: 768px) { /*TABLET dritti e SMARTPHONES in landscape*/
 
-#barra-di-ricerca{
-    display: none;
-}
+    #barra-di-ricerca{
+        display: none;
+    }
 
-#logo{
-    text-align: unset;
-    display: inline-block;
-    padding: unset;
-    padding-top: 2em;
-    padding-left: 1em;
+    #logo{
+        text-align: unset;
+        display: inline-block;
+        padding: unset;
+        padding-top: 2em;
+        padding-left: 1em;
 
-}
+    }
 
-#hamgurger-menu{
-    display: inline-block;
-    margin-right: 2em;
-    margin-top: 1.5em;
-    float: right;
+    #hamgurger-menu{
+        display: inline-block;
+        margin-right: 2em;
+        margin-top: 1.5em;
+        float: right;
 
-}
+    }
 
-#menu-mobile{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-}
+    #menu-mobile{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+    }
 
-#menu{
-    display: none;
-}
+    #menu{
+        display: none;
+    }
 
-#img-articolo-settimana{
-    width: 320px;
-    height: 150px;
-}
+    #img-articolo-settimana{
+        width: 320px;
+        height: 150px;
+    }
+
+    #contentHomePage h1{
+        font-size: 1.7em
+    }
 
 }
 
