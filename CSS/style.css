@@ -1,12 +1,20 @@
+/* ANDREBBE MESSO DI DEFAULT ma fotte un po il layout, andrebbe adattato
+{
+	padding: 0em;
+	margin: 0em;
+}
+*/
+
 html{
     background-image: url("wallpaper2.jpg");
+    background-color: #000;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment:fixed;    }
+    background-attachment:fixed;
+}
 
 body{
-    margin:0;
     font-family: Verdana, Helvetica, sans-serif;
     font-size:0.9em;
     max-width: 1024px;
@@ -19,8 +27,6 @@ body{
 }
 
 
-/*TOLTO PER PROVA*/
-/*h1,h2,h3 { font-variant: small-caps; }*/
 
 #header {
     background-color: black;
@@ -47,10 +53,11 @@ body{
 
 ul{
     list-style-type: none;
+    margin-block-end: 0em;
 }
 
 #menu{
-    padding: 0.1em;
+    padding: 0.1em 0.1em 0em 0.1em;
     text-align: center;
 }
 
@@ -65,10 +72,11 @@ ul{
 
 /*Sezione cerca*/
 #barra-di-ricerca{
-    background-color: rgb(194, 194, 194);
-    display: flex;
+    background-color: black;
+    color: white;
     justify-content: center;
-    padding: 1em;
+    /*align-items: center;*/
+    text-align: right;
 }
 
 #fieldSet{
@@ -82,13 +90,13 @@ ul{
 
 #immagine-lente{
     background-color: rgb(223, 221, 221);
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.1em;
+    height: 1.1em;
     border-style: solid;
     border-color: gray;
     border-width: 0.01em;
-    padding: 0.5em 1em 0.5em 1em;
-    margin-bottom: -0.9em;
+    padding: 0.4em 1em 0.4em 1em;
+    margin-bottom: -0.6em;
 }
 
 
@@ -124,6 +132,10 @@ ul{
 
 #contentHomePage{
     text-align: center;
+}
+
+#contentHomePage h1{
+    font-size: 3em;
 }
 
 
@@ -209,9 +221,6 @@ a.link-box-genere:visited{
 
 }
 
-#rightSidebar{
-    display: none;
-}
 
 .torna-su{
     padding: 3em;
@@ -261,7 +270,7 @@ a.link-box-genere:visited{
 
 
 /*mobile*/
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){ /*TABLET in LANDSCAPE*/
 
     #logo{
         float: none;
@@ -276,43 +285,51 @@ a.link-box-genere:visited{
 
 }
 
-@media screen and (max-width: 524px) {
+@media screen and (max-width: 768px) { /*TABLET dritti e SMARTPHONES in landscape*/
 
-#logo{
-    text-align: unset;
-    display: inline-block;
-    padding: unset;
-    padding-top: 2em;
-    padding-left: 1em;
+    #barra-di-ricerca{
+        display: none;
+    }
+
+    #logo{
+        text-align: unset;
+        display: inline-block;
+        padding: unset;
+        padding-top: 2em;
+        padding-left: 1em;
+
+    }
+
+    #hamgurger-menu{
+        display: inline-block;
+        margin-right: 2em;
+        margin-top: 1.5em;
+        float: right;
+
+    }
+
+    #menu-mobile{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+    }
+
+    #menu{
+        display: none;
+    }
+
+    #img-articolo-settimana{
+        width: 320px;
+        height: 150px;
+    }
+
+    #contentHomePage h1{
+        font-size: 1.7em
+    }
 
 }
 
-#hamgurger-menu{
-    display: inline-block;
-    margin-right: 2em;
-    margin-top: 1.5em;
-    float: right;
-
-}
-
-#menu-mobile{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-}
-
-#menu{
-    display: none;
-}
-
-#img-articolo-settimana{
-    width: 320px;
-    height: 150px;
-}
-
-}
-
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 480px) { /*SMARTPHONES*/
 
 }
 
