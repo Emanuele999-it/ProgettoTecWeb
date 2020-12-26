@@ -23,7 +23,7 @@ body{
 }
 
 .contenutoGenerale{
-  text-align: center;
+    text-align: center;
 }
 
 
@@ -141,7 +141,8 @@ ul{
 
 #contenutoArticoli{
   margin-left: 5em;
-  margin-top: 1em;
+  margin-right: 5em;
+  margin-top: 2em;
 }
 
 .articolo-home {
@@ -149,6 +150,37 @@ ul{
     padding-right: 2em;
     display: inline-block;
 }
+
+/*!!!!!!!!    NUOVA SCHEDA ARTICOLO    !!!!!!!!!!*/
+
+.articoloScheda{
+    display: flow-root;
+}
+
+.articoloScheda img{
+    height: 120px;
+    width:  210px;
+    float: left;
+    border-radius: 0.2em;
+    margin-right: 1.5em;
+}
+
+.articoloScheda h3{
+    display: none; /*Mettiamo solo il titolo dell'articolo???*/
+}
+
+.articoloScheda h4{
+    margin: 0em;
+    text-align: left;
+    font-size: 2em;
+}
+
+.articoloScheda p{
+    text-align: left;
+}
+
+
+/*!!!!!!!!     FINE NUOVA SCHEDA ARTICOLO     !!!!!!!!!*/
 
 .articolo-page{
     display: flow-root;
