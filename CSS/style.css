@@ -70,6 +70,7 @@ ul{
     color: #BBBBBB;
 }
 
+
 /*Sezione cerca*/
 #barra-di-ricerca{
     background-color: black;
@@ -155,6 +156,9 @@ ul{
 
 .articoloScheda{
     display: flow-root;
+    margin-bottom: 2%;
+    padding: 0.4em;
+    background-color: #cecece;
 }
 
 .articoloScheda img{
@@ -176,15 +180,12 @@ ul{
 }
 
 .articoloScheda p{
+    margin: 0.3%;
     text-align: left;
 }
 
 
 /*!!!!!!!!     FINE NUOVA SCHEDA ARTICOLO     !!!!!!!!!*/
-
-.articolo-page{
-    display: flow-root;
-}
 
 .top10-page{
     margin: 2em;
@@ -192,28 +193,9 @@ ul{
     display: flow-root;
 }
 
-.tipo-articolo{
-    text-align: left;
-}
-
-.nome-gioco{
-    text-align: left;
-}
-
-.anteprima-articolo{
-    text-align: left;
-}
-
 .miniatura-home{
     height: 200px;
     width:  200px;
-}
-
-.miniatura-lista-articoli{
-    height: 130px;
-    width:  210px;
-    float: left;
-    margin: 1em;
 }
 
 .miniatura-lista-top10{
