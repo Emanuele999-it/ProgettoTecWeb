@@ -5,6 +5,12 @@
 }
 */
 
+.aiuti-screenreader {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+}
+
 html{
     background-image: url("wallpaper2.jpg");
     background-color: #000;
