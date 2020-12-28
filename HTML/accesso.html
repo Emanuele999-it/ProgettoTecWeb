@@ -24,12 +24,11 @@
 
 <body>
     <div id="header">
-        <div id="logo">
-            <img src="../img/logo-spaziogames.png" alt="Logo sito"/>
-        </div>
-        <div id="img/hamgurger-menu">
-            <img src="../img/hamburger.png"  alt="tasto menu" id="menu-mobile"   />
-        </div>
+        <img  id="logo" src="../img/logo-spaziogames.png" alt="Logo sito spaziogames"/>
+        <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>
+        <span id="hamgurger-menu">
+            <img src="../img/hamburger.png" alt="tasto menu" id="menu-mobile"/>
+        </span>
         <div id="menu" >
             <ul>
                 <li xml:lang="en" class="elementomenu"><a href="../index.html">Home</a></li>
@@ -40,55 +39,55 @@
                 <li class="elementomenu">Accedi</a></li>
             </ul>
         </div>
+        <div id="barra-di-ricerca"> 
+            <form>
+                <fieldset id="fieldSet">
+                    <label for="risultati-ricerca">Cerca:</label>
+                    <input type="text" id="risultati-ricerca" name="termine-ricerca">
+                    <input type="image" id="immagine-lente" src="../img/lente.png" alt="cerca">
+                </fieldset>
+            </form>
+        </div>
+        <div id="breadcrumb">
+            <p tabindex="0"> Il tuo percorso: Accedi </p>  
+        </div>  
+        <a class="aiuti-screenreader" href="#menu">Vai ai menu</a>
+        <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>   
+    </div>
+    
+    <div id="content">        
+        <div id="contenutoAccesso">
+            <h1>Accedi</h1>
+            <!--<form action="...">-->
+                <fieldset class="form-fieldset">
+                    <legend class="legend">Inserisci le tue credenziali</legend>
+                    <ul class="form-container form-centered">
+                        <li class="form-element">
+                            <label class="form-label"
+                                for="login-nickname"><span xml:lang="en" lang="en">Nickname</span>:</label>
+                            <input class="inputNick" />
+                        </li>
+                        <li class="form-element">
+                            <label class="form-label"
+                                for="login-password"><span xml:lang="en" lang="en">Password</span>:</label>
+                            <input class="inputPW"/>
+                        </li>
+                        <li class="form-element">
+                            <input class="submit"
+                                type="submit"
+                                value="Accedi"/>
+                        </li>
+                    </ul>
+                </fieldset>
+            <p id="registrazione">Non sei ancora registrato? <a
+                href="registrazione.html">Registrati</a>
+            </p>
+            <!--<form/>-->
+            <div class="torna-su">
+                <a class="torna-su-link" href="#header">Torna su</a>
+        </div>        
     </div>
 
-    <form id="barra-di-ricerca">
-        <fieldset id="fieldSet">
-            <label for="risultati-ricerca">Cerca:</label>
-            <input type="text" id="risultati-ricerca" name="termine-ricerca">
-            <input type="image" id="immagine-lente" src="../img/lente.png" alt="cerca">
-        </fieldset>
-    </form>
-
-
-    <div id="breadcrumb">
-        <p>Il tuo percorso: <span xml:lang="it">Accedi</span></p>
-    </div>
-
-    <!--Attenzione ai vari tag quando si fa la conversiona al php-->
-
-    <div id="contenutoAccesso">
-        <h1>Accedi</h1>
-        <!--<form action="...">-->
-            <fieldset class="form-fieldset">
-                <legend class="legend">Inserisci le tue credenziali</legend>
-                <ul class="form-container form-centered">
-                    <li class="form-element">
-                        <label class="form-label"
-                               for="login-nickname"><span xml:lang="en" lang="en">Nickname</span>:</label>
-                        <input class="inputNick" />
-                    </li>
-                    <li class="form-element">
-                        <label class="form-label"
-                               for="login-password"><span xml:lang="en" lang="en">Password</span>:</label>
-                        <input class="inputPW"/>
-                    </li>
-                    <li class="form-element">
-                        <input class="submit"
-                               type="submit"
-                               value="Accedi"/>
-                    </li>
-                </ul>
-            </fieldset>
-        <p id="registrazione">Non sei ancora registrato? <a
-               href="registrazione.html">Registrati</a>
-        </p>
-        <!--<form/>-->
-        <div class="torna-su">
-        <a class="torna-su-link" href="#">Torna su</a>
-    </div>
-        
-    </div>
     <div id="footer">
         <img id="imgValidCode" src="../img/valid-xhtml10.png" alt="" style="float:left;" />
         <img id="imgValidCss" src="../img/vcss-blue.gif" alt="" style="float:left;" />

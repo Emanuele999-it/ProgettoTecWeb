@@ -23,106 +23,108 @@
 
 
 <body>
-    <div id="header">
-        <div id="logo">
-            <img src="../img/logo-spaziogames.png" alt="Logo sito" />
-        </div>
-        <div id="hamgurger-menu">
-            <img src="../img/hamburger.png" alt="tasto menu" id="menu-mobile" />
-        </div>
-        <div id="menu" >
-            <ul>
-                <li xml:lang="en" class="elementomenu"><a href="../index.html">Home</a></li>
-                <li class="elementomenu"><a href="articoli.html">Articoli</a></li>
-                <li class="elementomenu"><a href="genere.html">Genere</a></li>
-                <li class="elementomenu"><a href="top10.html">Top 10</a></li>
-                <li class="elementomenu"><a href="nuoveuscite.html">Nuove Uscite</a></li>
-                <li class="elementomenu"><a href="accesso.html">Accedi</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <form id="barra-di-ricerca">
-       <fieldset id="fieldSet">
-           <label for="risultati-ricerca">Cerca:</label>
-           <input type="text" id="risultati-ricerca" name="termine-ricerca">
-           <input type="image" id="immagine-lente" src="../img/lente.png" alt="cerca">
-       </fieldset>
-   </form>
-
-
-    <div id="breadcrumb">
-        <p>Il tuo percorso: <span xml:lang="it">Accedi -> Registrazione</span></p>
-    </div>
-
+       <div id="header">
+              <img  id="logo" src="../img/logo-spaziogames.png" alt="Logo sito spaziogames"/>
+              <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>
+              <span id="hamgurger-menu">
+                     <img src="../img/hamburger.png" alt="tasto menu" id="menu-mobile"/>
+              </span>
+              <div id="menu" >
+                     <ul>
+                            <li xml:lang="en" class="elementomenu"><a href="../index.html">Home</a></li>
+                            <li class="elementomenu"><a href="articoli.html">Articoli</a></li>
+                            <li class="elementomenu"><a href="genere.html">Genere</a></li>
+                            <li class="elementomenu"><a href="top10.html">Top 10</a></li>
+                            <li class="elementomenu"><a href="nuoveuscite.html">Nuove Uscite</a></li>
+                            <li class="elementomenu"><a href="accesso.html">Accedi</a></li>
+                     </ul>
+              </div>
+              <div id="barra-di-ricerca"> 
+                     <form>
+                            <fieldset id="fieldSet">
+                            <label for="risultati-ricerca">Cerca:</label>
+                            <input type="text" id="risultati-ricerca" name="termine-ricerca">
+                            <input type="image" id="immagine-lente" src="../img/lente.png" alt="cerca">
+                            </fieldset>
+                     </form>
+              </div>
+              <div id="breadcrumb">
+                     <p tabindex="0"> Il tuo percorso: Registrazione </p>  
+              </div>  
+              <a class="aiuti-screenreader" href="#menu">Vai ai menu</a>
+              <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>   
+       </div>
+       
     <!--Attenzione ai vari tag quando si fa la conversiona al php-->
 
-    <div id="contenutoAccesso">
-        <h1>Registrati</h1>
-        <div id="termini-di-servizio">
-            <h2 >Termini di servizio</h2>
-            <p>Con la registrazione avrai accesso alle funzionalit&agrave; riservate del sito. In particolare potrai visualizzare e scrivere i commenti e votare i tuoi giochi preferiti.</p>
-            <p>Su questo sito non sono permessi insulti o <span xml:lang="en" lang="en">spam</span> quindi se un tuo commento ne contiene verr&agrave; eliminato dagli amministratori.</p>
-        </div>
-       <!-- <form action="../php/handle-signup.php"
-              method="post"
-              id="form-signup">-->
-               <fieldset class="form-fieldset">
-                      <legend class="legend">Inserisci i tuoi dati
-                      </legend>
-                      <ul class="form-container">
-                             <li class="form-element">
-                                    <!--Ho lasciato tutti i valori per il php come linea guida-->
-                                    <label class="form-label"
-                                           for="signup-nick"><span xml:lang="en" lang="en">Nickname</span>:</label>
-                                    <input class="barra-input"
-                                           id="signup-nick" 
-                                           type="text"
-                                           name="nickname"
-                                           value="" />
-                                    <span id="signup-nick-message"
-                                          class="warning">  </span>
-                             </li>
-                             <li class="form-element">
-                                    <label class="form-label"
-                                           for="signup-email"><span xml:lang="en" lang="en">Email</span>:</label>
-                                    <input class="barra-input"
-                                           id="signup-email"
-                                           type="text"
-                                           name="email"
-                                           value="" />
-                                    <span id="signup-email-message"
-                                          class="warning">  </span>
-                             </li>
-                             <li class="form-element">
-                                    <label class="form-label"
-                                           for="signup-password1"><span xml:lang="en" lang="en">Password</span>:</label>
-                                    <input class="barra-input"
-                                           id="signup-password1"
-                                           type="password"
-                                           name="password1"
-                                           value="" />
-                             </li>
-                             <li class="form-element">
-                                    <label class="form-label"
-                                           for="signup-password2">Ripeti
-                                           <span xml:lang="en" lang="en">Password</span>:</label>
-                                    <input class="barra-input"
-                                           id="signup-password2"
-                                           type="password"
-                                           name="password2" />
-                                    <span id="signup-password2-message"
-                                          class="warning">  </span>
-                             </li>
-                             <li class="form-element">
-                                    <input class="submit"
-                                           type="submit"
-                                           value="Registrati" />
-                             </li>
-                      </ul>
-               </fieldset>
-        <!--</form>-->
- </div>
+    <div id="content">
+       <div id="contenutoAccesso">
+              <h1>Registrati</h1>
+              <div id="termini-di-servizio">
+                  <h2 >Termini di servizio</h2>
+                  <p>Con la registrazione avrai accesso alle funzionalit&agrave; riservate del sito. In particolare potrai visualizzare e scrivere i commenti e votare i tuoi giochi preferiti.</p>
+                  <p>Su questo sito non sono permessi insulti o <span xml:lang="en" lang="en">spam</span> quindi se un tuo commento ne contiene verr&agrave; eliminato dagli amministratori.</p>
+              </div>
+             <!-- <form action="../php/handle-signup.php"
+                    method="post"
+                    id="form-signup">-->
+                     <fieldset class="form-fieldset">
+                            <legend class="legend">Inserisci i tuoi dati
+                            </legend>
+                            <ul class="form-container">
+                                   <li class="form-element">
+                                          <!--Ho lasciato tutti i valori per il php come linea guida-->
+                                          <label class="form-label"
+                                                 for="signup-nick"><span xml:lang="en" lang="en">Nickname</span>:</label>
+                                          <input class="barra-input"
+                                                 id="signup-nick" 
+                                                 type="text"
+                                                 name="nickname"
+                                                 value="" />
+                                          <span id="signup-nick-message"
+                                                class="warning">  </span>
+                                   </li>
+                                   <li class="form-element">
+                                          <label class="form-label"
+                                                 for="signup-email"><span xml:lang="en" lang="en">Email</span>:</label>
+                                          <input class="barra-input"
+                                                 id="signup-email"
+                                                 type="text"
+                                                 name="email"
+                                                 value="" />
+                                          <span id="signup-email-message"
+                                                class="warning">  </span>
+                                   </li>
+                                   <li class="form-element">
+                                          <label class="form-label"
+                                                 for="signup-password1"><span xml:lang="en" lang="en">Password</span>:</label>
+                                          <input class="barra-input"
+                                                 id="signup-password1"
+                                                 type="password"
+                                                 name="password1"
+                                                 value="" />
+                                   </li>
+                                   <li class="form-element">
+                                          <label class="form-label"
+                                                 for="signup-password2">Ripeti
+                                                 <span xml:lang="en" lang="en">Password</span>:</label>
+                                          <input class="barra-input"
+                                                 id="signup-password2"
+                                                 type="password"
+                                                 name="password2" />
+                                          <span id="signup-password2-message"
+                                                class="warning">  </span>
+                                   </li>
+                                   <li class="form-element">
+                                          <input class="submit"
+                                                 type="submit"
+                                                 value="Registrati" />
+                                   </li>
+                            </ul>
+                     </fieldset>
+              <!--</form>-->
+       </div>
+    </div>    
         
     </div>
     <div id="footer">
