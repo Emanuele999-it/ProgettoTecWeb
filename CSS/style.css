@@ -164,7 +164,7 @@ ul{
     display: flow-root;
     margin-bottom: 2%;
     padding: 0.4em;
-    background-color: #cecece;
+    background-color: #dbdbdb;
 }
 
 .articoloScheda img{
@@ -295,11 +295,16 @@ a.link-box-genere:visited{
     #logo{
         float: none;
         text-align: center;
+        padding: 0.9em;
     }
 
     #intestazione{
         text-align: center;
         margin-left: auto;
+    }
+
+    #menu ul{
+        margin: 0em;
     }
 
 
@@ -350,6 +355,11 @@ a.link-box-genere:visited{
 }
 
 @media screen and (max-height: 480px) { /*SMARTPHONES*/
+    #contenutoArticoli{
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-top: 2em;
+    }
 
 }
 
