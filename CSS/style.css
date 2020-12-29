@@ -111,17 +111,6 @@ ul{
     margin-bottom: -0.6em;
 }
 
-
-/*?????*/
-#articolodellasettimana{
-
-}
-
-#img-articolo-settimana{
-    width:600px;
-    height:300px;
-}
-
 .elementomenu{
     text-align: center;
     display: inline-block;
@@ -157,11 +146,39 @@ ul{
   margin-top: 2em;
 }
 
-.articolo-home {
-    padding-left: 2em;
-    padding-right: 2em;
-    display: inline-block;
+
+#home-articoli{
+    margin-left: 7em;
+    margin-right: 7em;
+    margin-top: 2em;
 }
+
+.articoloPrincipale{
+    display: flow-root;
+    background-color: #dbdbdb;
+    border-radius: 1em;
+}
+
+.articoloPrincipale img{
+    height: 260px;
+    width:  450px;
+    float: left;
+    border-radius: 2em;
+    margin: 2em;
+}
+
+.articoloPrincipale h2{
+    margin-top: 10%;
+    margin-left: 5%;
+    text-align: left;
+    font-size: 2em;   
+}
+
+.articoloPrincipale p{
+    text-align: left;  
+    margin-left: 5%;
+}
+
 
 /*!!!!!!!!    NUOVA SCHEDA ARTICOLO    !!!!!!!!!!*/
 
@@ -170,18 +187,16 @@ ul{
     margin-bottom: 2%;
     padding: 0.4em;
     background-color: #dbdbdb;
+    border-radius: 1em;
 }
 
 .articoloScheda img{
     height: 120px;
     width:  210px;
     float: left;
-    border-radius: 0.2em;
+    margin: 5px;
+    border-radius: 2em;
     margin-right: 1.5em;
-}
-
-.articoloScheda h3{
-    display: none; /*Mettiamo solo il titolo dell'articolo???*/
 }
 
 .articoloScheda h4{
@@ -235,7 +250,7 @@ a.link-box-genere:visited{
     color: black;
 }
 
-.immagine-box-genere{
+.immagine-box{
     height: 100%;
     width: 100%;
     border-radius: 4em;
@@ -315,7 +330,7 @@ a.link-box-genere:visited{
 
 }
 
-@media screen and (max-width: 768px) { /*TABLET dritti e SMARTPHONES in landscape*/
+@media screen and (max-width: 769px) { /*TABLET dritti e SMARTPHONES in landscape*/
 
     #barra-di-ricerca{
         display: none;
@@ -348,24 +363,51 @@ a.link-box-genere:visited{
         display: none;
     }
 
-    #img-articolo-settimana{
-        width: 320px;
-        height: 150px;
-    }
-
     #contentHomePage h1{
         font-size: 1.7em
     }
 
+    .articoloPrincipale img{
+        height: 95%;
+        width:  95%;
+        float: left;
+        border-radius: 2em;
+        margin: 1em;
+    }
+
 }
 
-@media screen and (max-height: 480px) { /*SMARTPHONES*/
+@media screen and (max-width: 480px) { /*SMARTPHONES*/
     #contenutoArticoli{
         margin-left: 2em;
         margin-right: 2em;
         margin-top: 2em;
     }
 
+    #home-articoli{
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-top: 2em;
+    }
+
+    .articoloPrincipale img{
+        height: 90%;
+        width:  90%;
+        float: left;
+        border-radius: 2em;
+        margin: 1em;
+    }
+
+    .articoloScheda img{        
+        height: 50%;
+        width: 50%;    
+        float: left;    
+        margin: 5px;
+    }
+
+    .articoloScheda h4{
+        font-size: 20px;
+    }
 }
 
 
