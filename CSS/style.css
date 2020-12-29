@@ -313,7 +313,7 @@ a.link-box-genere:visited{
 @media screen and (max-width: 1024px){ /*TABLET in LANDSCAPE*/
 
     #logo{
-        float: none;
+        float: left;
         text-align: center;
         padding: 0.9em;
     }
