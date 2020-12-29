@@ -62,9 +62,14 @@ ul{
     margin-block-end: 0em;
 }
 
+#AccediRegistrati{
+    text-align: right;
+    font-size: 0.8em;
+    padding-right: 1em;
+}
+
 #menu{
     padding: 0.1em 0.1em 0em 0.1em;
-    text-align: center;
 }
 
 #menu a:link{
