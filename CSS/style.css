@@ -43,7 +43,7 @@ body{
     padding: 1.4em;
 }
 
-#hamburger{
+#logo-mobile{
     display: none;
 }
 
@@ -332,25 +332,20 @@ a.link-box-genere:visited{
 
 @media screen and (max-width: 769px) { /*TABLET dritti e SMARTPHONES in landscape*/
 
+    #logo{
+        padding-top: 2em;
+        padding-left: 2em;
+    }
+    
     #barra-di-ricerca{
         display: none;
     }
-
-    #logo{
-        text-align: unset;
-        display: inline-block;
-        padding: unset;
-        padding-top: 2em;
-        padding-left: 1em;
-
-    }
-
+    
     #hamgurger-menu{
         display: inline-block;
         margin-right: 2em;
         margin-top: 1.5em;
         float: right;
-
     }
 
     #menu-mobile{
@@ -378,6 +373,24 @@ a.link-box-genere:visited{
 }
 
 @media screen and (max-width: 480px) { /*SMARTPHONES*/
+
+    #logo{
+        text-align: unset;
+        display: none;
+        padding: unset;
+        padding-top: 2em;
+        padding-left: 1em;
+
+    }
+
+    #logo-mobile{
+        text-align: unset;
+        display: inline-block;
+        padding-left: 2em;
+        padding-top: 2em;
+        padding-bottom: 0.2em;
+    }
+
     #contenutoArticoli{
         margin-left: 2em;
         margin-right: 2em;
@@ -405,7 +418,7 @@ a.link-box-genere:visited{
         margin: 5px;
     }
 
-    .articoloScheda h4{
+    .articoloScheda h3{
         font-size: 20px;
     }
 }
