@@ -10,25 +10,52 @@
     <meta name="description" content="Descrizione sito" />
     <meta name="keywords" content="videogiochi, videogames, recensioni" />
     <meta name="author" content="Emanuele, Davide, Damiano, Filippo" />
-    <meta name="language" content="italian it" />
-
+    <meta name="language" content="it-IT" />
     <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
     <!--altri link css, per ora staccati-->
     <link rel="stylesheet" type="text/css" href="" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)" />
     <link rel="stylesheet" type="text/css" href="" media="print"/>
     <!-- SERVE PER FORZA PER IL MOBILE ?-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("links");
+	  if (x.style.display === "block") {
+		x.style.display = "none";
+	  } else {
+		x.style.display = "block";
+	  }
+	}
+	</script>
 </head>
 
-
 <body>
-       <div id="header">
-              <img  id="logo" src="../img/logo-spaziogames.png" alt="Logo sito spaziogames"/>
-              <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>
-              <span id="hamgurger-menu">
-                     <img src="../img/hamburger.png" alt="tasto menu" id="menu-mobile"/>
-              </span>
+    <div id="header">
+        <img  id="logo" src="../img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
+        <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>
+        <div id="hamburger-menu" class="topnav">
+			<div class="logo-mobile">
+				<img  id="logo-mobile-full" src="../img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
+				<img  id="logo-mobile-short" src="../img/logo-mobile.png" alt="Logo sito The Darksoulers">
+			</div>			
+			<div id="links">
+				<a href="../index.html">Home</a>
+                <a href="articolo.html">Articoli</a>
+                <a href="genere.html">Genere</a>
+                <a href="top10.html">Top 10</a>
+                <a href="nuoveuscite.html">Nuove Uscite</a>
+				<hr>
+				<a href="accesso.html">Accedi</a>
+                <a href="#header" class="active">Registrati</a>
+			</div>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<div class="menu-bars">
+					<div></div>
+					<div></div>
+					<div></div>				
+				</div>
+			</a>
+        </div>
               <div id="menu" >
                      <ul id="AccediRegistrati">
                          <li class="elementomenu"><a href="accesso.html">Accedi</a></li>

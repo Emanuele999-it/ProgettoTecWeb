@@ -17,17 +17,45 @@
     <link rel="stylesheet" type="text/css" href="" media="print"/>
     <!-- SERVE PER FORZA PER IL MOBILE ?-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("links");
+	  if (x.style.display === "block") {
+		x.style.display = "none";
+	  } else {
+		x.style.display = "block";
+	  }
+	}
+	</script>
 </head>
 
 <body>
     <div id="header">
         <img  id="logo" src="img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
-        <img id="logo-mobile" src="img/logo-mobile.png" alt="Logo sito The Darksoulers">
         <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>
-        <span id="hamgurger-menu">
-            <img src="img/hamburger.png" alt="tasto menu" id="menu-mobile"/>
-        </span>
+        <div id="hamburger-menu" class="topnav">
+			<div class="logo-mobile">
+				<img  id="logo-mobile-full" src="img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
+				<img  id="logo-mobile-short" src="img/logo-mobile.png" alt="Logo sito The Darksoulers">
+			</div>			
+			<div id="links">
+				<a href="#header" class="active">Home</a>
+                <a href="HTML/articoli.html">Articoli</a>
+                <a href="HTML/genere.html">Genere</a>
+                <a href="HTML/top10.html">Top 10</a>
+                <a href="HTML/nuoveuscite.html">Nuove Uscite</a>
+				<hr>
+				<a href="HTML/accesso.html">Accedi</a>
+                <a href="HTML/registrazione.html">Registrati</a>
+			</div>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<div class="menu-bars">
+					<div></div>
+					<div></div>
+					<div></div>				
+				</div>
+			</a>
+        </div>
         <div id="menu" >
             <ul id="AccediRegistrati">
                 <li class="elementomenu"><a href="HTML/accesso.html">Accedi</a></li>

@@ -43,12 +43,75 @@ body{
     padding: 1.4em;
 }
 
-#logo-mobile{
-    display: none;
+#hamburger-menu{
+	display: none;
 }
 
-#menu-mobile{
-    display: none;
+#logo-mobile-full{
+	display: none;
+}
+
+#logo-mobile-short{
+	display: none;
+}
+
+.logo-mobile{
+	background: black;
+}
+
+.logo-mobile img{
+	padding-left: 2em;
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #links {
+	display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav p {
+  padding-left: 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.menu-bars div{
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	margin:3px 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
 }
 
 #intestazione {
@@ -333,27 +396,22 @@ a.link-box-genere:visited{
 @media screen and (max-width: 769px) { /*TABLET dritti e SMARTPHONES in landscape*/
 
     #logo{
-        padding-top: 2em;
-        padding-left: 2em;
+		display: none;
     }
     
+	#logo-mobile-full{
+		display: inline;
+	}
+	
     #barra-di-ricerca{
         display: none;
     }
     
-    #hamgurger-menu{
+    #hamburger-menu{
+		width: 100%;
         display: inline-block;
-        margin-right: 2em;
-        margin-top: 1.5em;
-        float: right;
     }
-
-    #menu-mobile{
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-    }
-
+	
     #menu{
         display: none;
     }
@@ -374,23 +432,14 @@ a.link-box-genere:visited{
 
 @media screen and (max-width: 480px) { /*SMARTPHONES*/
 
-    #logo{
-        text-align: unset;
-        display: none;
-        padding: unset;
-        padding-top: 2em;
-        padding-left: 1em;
-
-    }
-
-    #logo-mobile{
-        text-align: unset;
-        display: inline-block;
-        padding-left: 2em;
-        padding-top: 2em;
-        padding-bottom: 0.2em;
-    }
-
+	#logo-mobile-full{
+		display: none;
+	}
+	
+	#logo-mobile-short{
+		display: inline;
+	}
+	
     #contenutoArticoli{
         margin-left: 2em;
         margin-right: 2em;
@@ -422,6 +471,4 @@ a.link-box-genere:visited{
         font-size: 20px;
     }
 }
-
-
 /*fine mobile*/
