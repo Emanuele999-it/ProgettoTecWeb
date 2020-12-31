@@ -165,6 +165,7 @@ ul{
 #risultati-ricerca{
     height: 1.5em;
     overflow: hidden;
+    width: 17em;
 }
 
 #immagine-lente{
@@ -175,7 +176,7 @@ ul{
     border-color: gray;
     border-width: 0.01em;
     padding: 0.4em 1em 0.4em 1em;
-    margin-bottom: -0.6em;
+    margin-bottom: -0.7em;
 }
 
 .elementomenu{
