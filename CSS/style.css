@@ -357,7 +357,31 @@ a.link-box-genere:visited{
     margin-top: 1em;
     margin-bottom: 1em;
     border: none;
+    text-align: center;
 }
+
+/*NUOVO STYLE FORM*/
+
+.form-fieldset li{
+    margin-bottom: 0.2em;
+}
+
+.form-fieldset input{
+    padding: 2.5px;
+}
+
+.form-fieldset label{
+    text-align: left;
+    padding-top: 3px;
+    padding-right: 10px;
+    width: 9em;
+    display: block;
+    float: left;
+    font-weight: bold;
+}
+
+/*FINE NUOVO STYLE FORM*/
+
 
 #contenutoAccesso{
     display: flex;
