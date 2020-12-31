@@ -1,0 +1,35 @@
+body{
+    font-family: Georgia, "Times New Roman", serif;
+    color: black;
+}
+
+/*Da rivedere quando c'è php delle immagini per inserire logo sito*/
+
+#logo-mobile-short, #logo, #links, #icon, #menu, #barra-di-ricerca, .aiuti-screenreader, .torna-su, #footer, img{
+    display: none;
+}
+
+.articoloScheda, .articoloPrincipale{
+    border: rgb(160, 160, 160) ridge;
+    border-radius: 0.25em;
+    border-width: 1px;
+    margin: 1em;
+    padding: 1em;
+}
+
+h3{
+    color: black;
+}
+
+h2{
+    color: black;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.form-container{
+    list-style-type:none;
+}
