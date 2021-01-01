@@ -364,11 +364,12 @@ a.link-box-genere:visited{
 /*NUOVO STYLE FORM*/
 
 .form-fieldset li{
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 .form-fieldset input{
     padding: 2.5px;
+    border-radius: 2em;
 }
 
 .form-fieldset label{
@@ -395,8 +396,10 @@ a.link-box-genere:visited{
 }
 
 #termini-di-servizio{
-    padding: 0em;
-    margin: 0em;
+    padding: 1em;
+    margin: 1em;
+    background-color: #dbdbdb;
+    border-radius: 1em;
 }
 
 
