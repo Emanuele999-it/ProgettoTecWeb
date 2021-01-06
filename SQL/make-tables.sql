@@ -22,6 +22,7 @@ CREATE TABLE articolo (
   img_path VARCHAR(256) NOT NULL,
   cat_id INT NOT NULL,
   is_admin BOOLEAN DEFAULT FALSE,
+  alt VARCHAR(256) NOT NULL,
   PRIMARY KEY (articolo_id), 
   FOREIGN KEY (cat_id) REFERENCES categoria (cat_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
