@@ -9,7 +9,7 @@
         <h2 tabindex="0">Articolo del Momento</h2>
         <div class="articoloPrincipale">
             <img src="img/keanu.jpg" alt="Immagine con Keanu Reeves"/>
-            <a href="HTML/articolo_page.html"><h2> E' arrivato Cyberpunk !</h2></a>
+            <a href="php/articolopage.php"><h2> E' arrivato Cyberpunk !</h2></a>
             <p>bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
                 bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
             </p>

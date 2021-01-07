@@ -11,10 +11,9 @@
     <meta name="keywords" content="videogiochi, videogames, recensioni" />
     <meta name="author" content="Emanuele, Davide, Damiano, Filippo" />
     <meta name="language" content="it-IT" />
-    <link rel="stylesheet" type="text/css" href="CSS/style.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
-    <!--altri link css, per ora staccati-->
-    <link rel="stylesheet" type="text/css" href="" media="handheld, screen and (max-width:640px), only screen and (max-device-width:640px)" />
+    <link rel="stylesheet" type="text/css" href="<correzioneLink />CSS/style.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="<correzioneLink />CSS/print.css" media="print"/>
+    
     
     <!-- SERVE PER FORZA PER IL MOBILE ?-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
