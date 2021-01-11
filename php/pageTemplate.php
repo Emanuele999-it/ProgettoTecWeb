@@ -31,23 +31,17 @@
 
   <body>
     <div id="header">
-      <img  id="logo" src="<rootFolder />/img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
-      <div id="hamburger-menu" class="topnav">
-        <div class="logo-mobile">
-          <img  id="logo-mobile-full" src="<rootFolder />/img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
-          <img  id="logo-mobile-short" src="<rootFolder />/img/logo-mobile.png" alt="Logo sito The Darksoulers">
-        </div>          
-      </div>
+      <img  id="logo" src="<rootFolder />/img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>      
       <navBarPlaceholder />
-        <div id="barra-di-ricerca"> 
-          <form>
-            <fieldset id="fieldSet">
-                <label for="risultati-ricerca">Cerca:</label>
-                <input type="text" id="risultati-ricerca" name="termine-ricerca">
-                <input type="image" id="immagine-lente" src="<rootFolder />/img/lente.png" alt="cerca">
-            </fieldset>
-          </form>
-        </div>   
+      <div id="barra-di-ricerca"> 
+        <form method="get" action="<rootFolder />/php/menu.php?id=0">
+          <fieldset id="fieldSet">
+              <label for="risultati-ricerca">Cerca:</label>
+              <input type="text" id="risultati-ricerca" name="termine-ricerca">
+              <input type="image" id="immagine-lente" src="<rootFolder />/img/lente.png" alt="cerca">
+          </fieldset>
+        </form>
+      </div>   
       <div id="breadcrumb">
           <p tabindex="0"> Il tuo percorso: <percorsoPlaceholder /> </p>  
       </div>  

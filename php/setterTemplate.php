@@ -40,6 +40,11 @@ class setterTemplate{
         echo $this->page;
     }
 
+    public function getPage()
+    {
+        return $this->page;
+    }
+
     private function replaceRoot()
     {
         $this->page = str_replace("<rootFolder />", $this->root, $this->page);
