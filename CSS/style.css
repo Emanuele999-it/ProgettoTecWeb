@@ -149,12 +149,10 @@ ul{
     text-align: center;
 }
 
-/*Sezione cerca*/
 #barra-di-ricerca{
     background-color: black;
     color: white;
     justify-content: center;
-    /*align-items: center;*/
     text-align: right;
 }
 
