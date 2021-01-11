@@ -36,8 +36,9 @@
         <div class="logo-mobile">
           <img  id="logo-mobile-full" src="<rootFolder />/img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
           <img  id="logo-mobile-short" src="<rootFolder />/img/logo-mobile.png" alt="Logo sito The Darksoulers">
-        </div>			
-        <navBarPlaceholder />
+        </div>          
+      </div>
+      <navBarPlaceholder />
         <div id="barra-di-ricerca"> 
           <form>
             <fieldset id="fieldSet">
@@ -46,8 +47,7 @@
                 <input type="image" id="immagine-lente" src="<rootFolder />/img/lente.png" alt="cerca">
             </fieldset>
           </form>
-        </div>     
-      </div>
+        </div>   
       <div id="breadcrumb">
           <p tabindex="0"> Il tuo percorso: <percorsoPlaceholder /> </p>  
       </div>  
