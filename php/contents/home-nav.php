@@ -1,7 +1,7 @@
 <div id="hamburger-menu" class="topnav">
     <div class="logo-mobile">
-        <img  id="logo-mobile-full" src="<rootFolder />/img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
-        <img  id="logo-mobile-short" src="<rootFolder />/img/logo-mobile.png" alt="Logo sito The Darksoulers">
+        <img  id="logo-mobile-full" src="<rootFolder />/img/logo-soulers.png" alt="Logo sito The Darksoulers"/>
+        <img  id="logo-mobile-short" src="<rootFolder />/img/logo-short.png" alt="Logo sito The Darksoulers">
     </div>    
     <div id="links">
         <a href="<rootFolder />/index.php" xml:lang="en">Home</a>

@@ -31,7 +31,7 @@
 
   <body>
     <div id="header">
-      <img  id="logo" src="<rootFolder />/img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>      
+      <img  id="logo" src="<rootFolder />/img/logo-soulers.png" alt="Logo sito The Darksoulers"/>      
       <navBarPlaceholder />
       <div id="barra-di-ricerca"> 
         <form method="get" action="<rootFolder />/php/menu.php?id=0">
