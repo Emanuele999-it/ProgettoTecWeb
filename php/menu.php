@@ -25,7 +25,7 @@ if ($currPag == 0 && !key_exists("termine-ricerca", $_GET)) {
     exit;
 }
 
-if ($currPag < 0 || $currPag >= 4) {
+if ($currPag < 0 || $currPag >= 5) {
     header("Location: error/404.php");
     exit;
 }
@@ -34,15 +34,24 @@ $setterPagina->setTitle("$pag[$currPag] | The Darksoulers");
 $nav = file_get_contents(__DIR__ . "/contents/home-nav.php");
 
 switch ($currPag) {
-    case 0:$setterPagina->setDescription("Elenco degli articoli il cui nome contiene il termine ricercato");
+    case 0:
+        $setterPagina->setDescription("Elenco degli articoli il cui nome contiene il termine ricercato");
         break;
-    case 1:$setterPagina->setDescription("Elenco di tutti gli articoli");
+    case 1:
+        $setterPagina->setDescription("Elenco di tutti gli articoli");
+        $setterPagina->setContent("articoliContent.php");
         break;
-    case 2:$setterPagina->setDescription("Elenco dei generi dei videogames");
+    case 2:
+        $setterPagina->setDescription("Elenco dei generi dei videogames");
+        $setterPagina->setContent("genereContent.php");
         break;
-    case 3:$setterPagina->setDescription("Elendo dei top 10 giochi più votati");
+    case 3:
+        $setterPagina->setDescription("Elendo dei top 10 giochi più votati");
+        $setterPagina->setContent("top10Content.php");
         break;    
-    case 3:$setterPagina->setDescription("Nuove uscite");
+    case 4:
+        $setterPagina->setDescription("Nuove uscite");
+        $setterPagina->setContent("nuoveusciteContent.php");
         break;
 }
 
@@ -63,4 +72,4 @@ if ($currPag != 0) {
 $setterPagina->setNavBar($nav);
 
 $setterPagina->setFooter();
-$handler->send();
+$setterPagina->validate();
