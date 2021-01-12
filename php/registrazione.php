@@ -12,11 +12,11 @@
             "((?s)<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a>)",
             "<a href=\"#header\" class=\"active\">Registrati</a>",
             preg_replace(
-                "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/Registrati.php\">Registrati</a></li>)",
+                "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/registrazione.php\">Registrati</a></li>)",
                 "<li id=\"currentLink\" class=\"elementomenu\">Registrati</li>",
                 file_get_contents(__DIR__ . "/contents/home-nav.php"))));
 
-    $setterPagina->setPercorso("Registrazione");
+    $setterPagina->setPercorso("Registrati");
     
     //da sistemare una volta implementato il db
     $setterPagina->setContent("registrazioneContent.php");
