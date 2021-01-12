@@ -1,17 +1,26 @@
 <?php
     require_once __DIR__ . "/setterTemplate.php";
 
-    $setterPagina = new setterTemplate("../");
+    $setterPagina = new setterTemplate("..");
 
-    /*manca codice per settare i meta, da inserire nella classe in setterTemplate*/
-
-    $setterPagina->setHeader();
     
+    $setterPagina->setTitle("Registrati | The Darksoulers");
+    $setterPagina->setDescription("Pagina per la registrazione");  
+
+    $setterPagina->setNavBar(
+        preg_replace(
+            "((?s)<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a>)",
+            "<a href=\"#header\" class=\"active\">Registrati</a>",
+            preg_replace(
+                "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/Registrati.php\">Registrati</a></li>)",
+                "<li id=\"currentLink\" class=\"elementomenu\">Registrati</li>",
+                file_get_contents(__DIR__ . "/contents/home-nav.php"))));
+
+    $setterPagina->setPercorso("Registrazione");
+    
+    //da sistemare una volta implementato il db
     $setterPagina->setContent("registrazioneContent.php");
     $setterPagina->setFooter();
 
-    $setterPagina->sistemaLink();
-    $setterPagina->sistemaMenu();
-    $setterPagina->stampaHtml(); //fa l'echo della pagina
-
+    $setterPagina->validate();
 ?>

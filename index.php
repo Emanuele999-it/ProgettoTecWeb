@@ -3,8 +3,6 @@
 
     $setterPagina = new setterTemplate(".");
 
-    /*manca codice per settare i meta, da inserire nella classe in setterTemplate*/
-
     $setterPagina->setTitle("The Darksoulers");
     $setterPagina->setDescription("Pagina iniziale del sito The Darksoulers");  
 
