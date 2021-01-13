@@ -4,34 +4,29 @@ class setterTemplate{
     private $root;
 
     public function __construct(string $root){
-        $this->page = file_get_contents(__DIR__ . "/pageTemplate.php");
         $this->root = $root;
+        $this->page = file_get_contents(__DIR__ . "/pageTemplate.php");
     }
 
-    /*sistemaLink() serve a compensare il fatto che index.php si trova in un percorso diverso rispetto alle altre pagine.
-    Aggiusta quindi i link delle immagini e style che sono presenti in header*/
-    public function sistemaLink(){
-        $this->page = str_replace("<correzioneLink />", $this->root, $this->page);
+    public function setTitle(string $title)
+    {
+        $this->page = str_replace("<titlePlaceholder />", $title, $this->page);
     }
 
-    public function sistemaMenu(){
-        if($this->root == ""){
-            $this->page = str_replace("<correzioneMenu />", "php/", $this->page);
-        }
-        else{
-            $this->page = str_replace("<correzioneMenu />", "", $this->page);
-        }
+    public function setDescription(string $description)
+    {
+        $this->page = str_replace("<descriptionPlaceholder />", $description, $this->page);
+    }
+    
+    public function setNavBar(string $navbar){
+        $this->page = str_replace("<navBarPlaceholder />", $navbar, $this->page);
     }
 
-    public function setHeader(){
-        $this->page = str_replace("<headerSegnaposto />", file_get_contents(__DIR__ . "/contents/header.php"), $this->page);
+    public function setPercorso(string $percorso){
+        $this->page = str_replace("<percorsoPlaceholder />", $percorso, $this->page);
     }
 
-    public function setContent(string $content){ //$content deve essere == al nome del file senza percorso
-        //CONTROLLO $content
-        /*if ($content != controllo) {
-            throw eccezione
-        }*/
+    public function setContent(string $content){
         $this->page = str_replace("<contentSegnaposto />", file_get_contents(__DIR__ . "/contents/" . $content), $this->page);
     }
 
@@ -39,8 +34,20 @@ class setterTemplate{
         $this->page = str_replace("<footerSegnaposto />", file_get_contents(__DIR__ . "/contents/footer.php"), $this->page);
     }
 
-    public function stampaHtml(){
+    public function validate()
+    {
+        $this->replaceRoot();
         echo $this->page;
+    }
+
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    private function replaceRoot()
+    {
+        $this->page = str_replace("<rootFolder />", $this->root, $this->page);
     }
 }
 

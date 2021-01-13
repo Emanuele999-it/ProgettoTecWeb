@@ -1,17 +1,26 @@
 <?php
     require_once __DIR__ . "/setterTemplate.php";
 
-    $setterPagina = new setterTemplate("../");
+    $setterPagina = new setterTemplate("..");
 
-    /*manca codice per settare i meta, da inserire nella classe in setterTemplate*/
-
-    $setterPagina->setHeader();
     
+    $setterPagina->setTitle("Login | The Darksoulers");
+    $setterPagina->setDescription("Pagina di login");  
+
+    $setterPagina->setNavBar(
+        preg_replace(
+            "((?s)<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>)",
+            "<a href=\"#header\" class=\"active\">Accedi</a>",
+            preg_replace(
+                "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/accesso.php\">Accedi</a></li>)",
+                "<li id=\"currentLink\" class=\"elementomenu\">Accedi</li>",
+                file_get_contents(__DIR__ . "/contents/home-nav.php"))));
+
+    $setterPagina->setPercorso("Accedi");
+    
+    //da sistemare una volta implementato il db
     $setterPagina->setContent("accessoContent.php");
     $setterPagina->setFooter();
 
-    $setterPagina->sistemaLink();
-    $setterPagina->sistemaMenu();
-    $setterPagina->stampaHtml(); //fa l'echo della pagina
-
+    $setterPagina->validate();
 ?>
