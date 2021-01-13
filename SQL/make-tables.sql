@@ -1,8 +1,20 @@
+DROP TABLE IF EXISTS categoria;
 CREATE TABLE categoria (
-  cat_id INT AUTO_INCREMENT,
-  nome VARCHAR(30) NOT NULL,
+  cat_id INT(11) AUTO_INCREMENT,
+  nome VARCHAR(64) NOT NULL,
   PRIMARY KEY (cat_id)
 );
+
+DROP TABLE IF EXISTS gioco;
+CREATE TABLE gioco (
+  game_id INT AUTO_INCREMENT,
+  nome CHAR(64) NOT NULL,
+  cat_id INT(11) NOT NULL,
+  PRIMARY KEY (game_id),
+  FOREIGN KEY (cat_id) REFERENCES categoria (cat_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+DROP TABLE IF EXISTS utente;
 CREATE TABLE utente (
   user_id INT AUTO_INCREMENT,
   nome VARCHAR(30) NOT NULL,
@@ -14,25 +26,35 @@ CREATE TABLE utente (
   PRIMARY KEY (user_id),
   UNIQUE (email)
 );
+
+DROP TABLE IF EXISTS articolo;
 CREATE TABLE articolo (
   articolo_id INT AUTO_INCREMENT,
-  titolo VARCHAR(65) NOT NULL,
-  sommario VARCHAR(65),
+  titolo VARCHAR(128) NOT NULL,
+  sommario VARCHAR(512) NOT NULL,
   testo TEXT NOT NULL,
   data_pub DATETIME NOT NULL,
   img_path VARCHAR(256) NOT NULL,
   cat_id INT NOT NULL,
   alt VARCHAR(256) NOT NULL,
+  game_id INT (11) NOT NULL,
   PRIMARY KEY (articolo_id), 
-  FOREIGN KEY (cat_id) REFERENCES categoria (cat_id) ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (cat_id) REFERENCES categoria (cat_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (game_id) REFERENCES gioco (game_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+DROP TABLE IF EXISTS voto;
 CREATE TABLE voto (
   user_id INT NOT NULL,
-  articolo_id INT NOT NULL,
-  PRIMARY KEY (user_id, articolo_id),
+  gioco_id INT NOT NULL,
+  voto INT DEFAULT 0,
+  CHECK (voto>=0 AND voto<= 5),
+  PRIMARY KEY (user_id, gioco_id),
   FOREIGN KEY (user_id) REFERENCES utente (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (articolo_id) REFERENCES articolo (articolo_id) ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (gioco_id) REFERENCES gioco (game_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+DROP TABLE IF EXISTS commento;
 CREATE TABLE commento (
   comment_id INT AUTO_INCREMENT,
   articolo_id INT NOT NULL,
