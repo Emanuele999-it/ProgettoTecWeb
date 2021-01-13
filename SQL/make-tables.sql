@@ -17,11 +17,11 @@ CREATE TABLE utente (
 CREATE TABLE articolo (
   articolo_id INT AUTO_INCREMENT,
   titolo VARCHAR(65) NOT NULL,
+  sommario VARCHAR(65),
   testo TEXT NOT NULL,
   data_pub DATETIME NOT NULL,
   img_path VARCHAR(256) NOT NULL,
   cat_id INT NOT NULL,
-  is_admin BOOLEAN DEFAULT FALSE,
   alt VARCHAR(256) NOT NULL,
   PRIMARY KEY (articolo_id), 
   FOREIGN KEY (cat_id) REFERENCES categoria (cat_id) ON DELETE CASCADE ON UPDATE CASCADE
