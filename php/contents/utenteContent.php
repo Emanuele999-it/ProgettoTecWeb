@@ -5,9 +5,10 @@
         <h1>Benvenuto Utente</h1>
     </div>
 
-    <p id="modifica-dati" style="text-align: center;">Per modificare i tuoi dati personali schiaccia qui: 
+    <p id="modifica-dati" >Per modificare i tuoi dati personali schiaccia qui: 
     <a id="modifica-link" href="">Modifica dati</a>
     </p>
+    <a id="aggiungi-articolo" href=" ../php/add-articolo.php"> Aggiungi nuovo Articolo </a>
 
     <form id="eliminazione-account" method="POST" action="" >
         <fieldset  class="form-fieldset">

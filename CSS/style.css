@@ -359,6 +359,8 @@ a.link-box-genere:visited{
     text-align: center;
 }
 
+
+
 /*NUOVO STYLE FORM*/
 
 .form-fieldset li{
@@ -418,10 +420,27 @@ a.link-box-genere:visited{
     margin-right: 3em;
 }
 
+#modifica-dati{
+    text-align: center;
+    margin: 3em;
+}
+
+#aggiungi-articolo{
+    text-align: center;
+    margin: auto;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    border-radius: 1em;
+    display: block;
+    width: 12em;
+}
+
 #eliminazione-account{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin:3em;
 }
 
 
