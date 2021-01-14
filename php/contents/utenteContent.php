@@ -8,7 +8,7 @@
     <p id="modifica-dati" >Per modificare i tuoi dati personali schiaccia qui: 
     <a id="modifica-link" href="">Modifica dati</a>
     </p>
-    <a id="aggiungi-articolo" href=" ../php/add-articolo.php"> Aggiungi nuovo Articolo </a>
+    <a id="aggiungi-articolo" href=" ../php/newArticolo.php"> Aggiungi nuovo Articolo </a>
 
     <form id="eliminazione-account" method="POST" action="" >
         <fieldset  class="form-fieldset">

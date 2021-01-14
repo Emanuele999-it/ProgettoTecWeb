@@ -443,6 +443,31 @@ a.link-box-genere:visited{
     margin:3em;
 }
 
+/* FINE PAGINA UTENTE*/
+
+/*PAGINA AGGIUNGI ARTICOLO*/
+
+.form-new-articolo{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: none;
+}
+
+.form-new-articolo li{
+    margin: 2em;
+}
+
+.form-contenuto-datiarticolo{
+
+}
+
+.form-elemento-datiarticolo{
+
+}
+
+
+/* FINE PAGINA AGGIUNGI ARTICOLO*/
+
 
 
 /*mobile*/
