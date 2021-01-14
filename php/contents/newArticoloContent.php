@@ -1,4 +1,4 @@
-<div id="content">
+<div id="content-aggiungi-articolo">
 
 <h1>Aggiungi un nuovo Articolo</h1>
 

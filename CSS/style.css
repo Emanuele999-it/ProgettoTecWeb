@@ -447,6 +447,10 @@ a.link-box-genere:visited{
 
 /*PAGINA AGGIUNGI ARTICOLO*/
 
+#content-aggiungi-articolo{
+    margin: 3em;
+}
+
 .form-new-articolo{
     margin-top: 2em;
     margin-bottom: 2em;
