@@ -45,8 +45,8 @@ switch ($currPag) {
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");
-        $genereCon = file_get_contents(__DIR__ . "/contents/genereContent.php");
-        $setterPagina->setContent($genereCon);
+        $GenereCon = file_get_contents(__DIR__ . "/contents/genereContent.php");
+        $setterPagina->setContent($GenereCon);
         break;
     case 3:
         $setterPagina->setDescription("Elendo dei top 10 giochi più votati");

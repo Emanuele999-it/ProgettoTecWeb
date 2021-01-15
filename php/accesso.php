@@ -19,7 +19,8 @@
     $setterPagina->setPercorso("Accedi");
     
     //da sistemare una volta implementato il db
-    $setterPagina->setContent("accessoContent.php");
+    $accCon = file_get_contents(__DIR__ . "/contents/accessoContent.php");
+    $setterPagina->setContent($accCon);
     $setterPagina->setFooter();
 
     $setterPagina->validate();

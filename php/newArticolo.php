@@ -10,7 +10,8 @@
 
     $setterPagina->setPercorso("Utente");
     
-    $setterPagina->setContent("newArticoloContent.php");
+    $newArtCon = file_get_contents(__DIR__ . "/contents/newArticoloContent.php");
+    $setterPagina->setContent($newArtCon);
     $setterPagina->setFooter();
 
     $setterPagina->validate();

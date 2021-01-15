@@ -18,7 +18,8 @@
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
     
     //da sistemare una volta implementato il db
-    $setterPagina->setContent("homeContent.php");
+    $HomCon = file_get_contents(__DIR__ . "/contents/homeContent.php");
+    $setterPagina->setContent($HomCon);
     $setterPagina->setFooter();
 
     $setterPagina->validate();

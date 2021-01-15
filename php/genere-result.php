@@ -55,7 +55,8 @@ switch ($currCat) {
 }
 
 //da pescare da database in base al genere
-$setterPagina->setContent("listaArticoliGenereContent.php");
+$listaGenCon = file_get_contents(__DIR__ . "/contents/listaArticoliGenereContent.php");
+$setterPagina->setContent($listaGenCon);
 
 if ($currCat != 0) {
     $setterPagina->setPercorso("Genere -> " . $categoria[$currCat]);

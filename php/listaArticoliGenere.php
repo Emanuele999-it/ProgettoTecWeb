@@ -7,7 +7,8 @@
 
     $setterPagina->setHeader();
     
-    $setterPagina->setContent("listaArticoliGenereContent.php");
+    $listaArtCon = file_get_contents(__DIR__ . "/contents/listaArticoliGenereContent.php");
+    $setterPagina->setContent($listaArtCon);
     $setterPagina->setFooter();
 
     $setterPagina->sistemaLink();

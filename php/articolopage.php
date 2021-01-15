@@ -9,7 +9,8 @@
     
     //la riga seguente andrà sostituita con lo script per importare dal database
     //una volta fatto lo script per recuperare dal database VA ELIMINATO il file articolopageContent
-    $setterPagina->setContent("articolopageContent.php");
+    $artPageCon = file_get_contents(__DIR__ . "/contents/articolopageContent.php");
+    $setterPagina->setContent($artPageCon);
     $setterPagina->setFooter();
 
     $setterPagina->sistemaLink();

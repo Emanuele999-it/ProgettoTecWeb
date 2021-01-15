@@ -19,7 +19,8 @@
     $setterPagina->setPercorso("Registrati");
     
     //da sistemare una volta implementato il db
-    $setterPagina->setContent("registrazioneContent.php");
+    $regCon = file_get_contents(__DIR__ . "/contents/registrazioneContent.php");
+    $setterPagina->setContent($regCon);
     $setterPagina->setFooter();
 
     $setterPagina->validate();

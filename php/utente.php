@@ -10,7 +10,8 @@
 
     $setterPagina->setPercorso("Utente");
     
-    $setterPagina->setContent("utenteContent.php");
+    $utenteCon = file_get_contents(__DIR__ . "/contents/utenteContent.php");
+    $setterPagina->setContent($utenteCon);
     $setterPagina->setFooter();
 
     $setterPagina->validate();
