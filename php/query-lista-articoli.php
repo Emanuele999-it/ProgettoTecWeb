@@ -12,15 +12,15 @@ function dieciArticoli($from)
     $risultato = "";
 
     if ($result) {
-        $risultato .= "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >"
+        $risultato .= "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img_path'];
             $alt = $row['alt'];
             $titolo = $row['titolo'];
             $sommario = $row['sommario'];
 
-            /*
-            if ($immagine == null) {
+            
+            /*if ($immagine == null) {
                 
             }
 
@@ -29,8 +29,8 @@ function dieciArticoli($from)
             $voto = number_format($voto, 1);
             $id = $row['id'];
             $link = "<rootFolder />/php/ricetta.php?id=$id&amp;pagina=1";
-            $livello = 2;
-            */
+            $livello = 2;*/
+            
 
             $risultato .= schedaArticolo($immagine, $alt, $titolo, $sommario);
         }
