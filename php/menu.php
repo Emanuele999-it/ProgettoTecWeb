@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/setterTemplate.php";
-/*require_once __DIR__ . "/query-lista-articoli.php";*/
+require_once __DIR__ . "/query-lista-articoli.php";
 
 $setterPagina = new setterTemplate("..");
 
@@ -40,19 +40,23 @@ switch ($currPag) {
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
-        $setterPagina->setContent("articoliContent.php");
+        $ArtCon = dieciArticoli(0);
+        $setterPagina->setContent($ArtCon);
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");
-        $setterPagina->setContent("genereContent.php");
+        $genereCon = file_get_contents(__DIR__ . "/contents/genereContent.php");
+        $setterPagina->setContent($genereCon);
         break;
     case 3:
         $setterPagina->setDescription("Elendo dei top 10 giochi più votati");
-        $setterPagina->setContent("top10Content.php");
+        $TopCon = file_get_contents(__DIR__ . "/contents/top10Content.php");
+        $setterPagina->setContent($TopCon);
         break;    
     case 4:
         $setterPagina->setDescription("Nuove uscite");
-        $setterPagina->setContent("nuoveusciteContent.php");
+        $NuoveCon = file_get_contents(__DIR__ . "/contents/nuoveusciteContent.php");
+        $setterPagina->setContent($NuoveCon);
         break;
 }
 

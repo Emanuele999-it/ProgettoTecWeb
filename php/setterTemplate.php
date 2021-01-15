@@ -27,7 +27,7 @@ class setterTemplate{
     }
 
     public function setContent(string $content){
-        $this->page = str_replace("<contentSegnaposto />", file_get_contents(__DIR__ . "/contents/" . $content), $this->page);
+        $this->page = str_replace("<contentSegnaposto />", $content, $this->page);
     }
 
     public function setFooter(){
