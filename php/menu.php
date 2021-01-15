@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/setterTemplate.php";
+require_once __DIR__ . "query-lista-articoli.php";
 
 $setterPagina = new setterTemplate("..");
 
@@ -39,7 +40,7 @@ switch ($currPag) {
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
-        $setterPagina->setContent("articoliContent.php");
+        $setterPagina->setContent(dieciArticoli(0));
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");

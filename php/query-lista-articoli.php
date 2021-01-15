@@ -9,19 +9,19 @@ function dieciArticoli($from)
     $query = "SELECT * FROM articolo ORDER BY data_pub DESC LIMIT $from,10";
     $result = $mysql->query($query);
 
-    require_once __DIR__ . '/scheda-articolo.php';
     $risultato = "";
 
     if ($result) {
-
+        $risultato .= "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >"
         while ($row = $result->fetch_assoc()) {
-            $nome = $row['nome'];
-            $difficolta = $row['difficolta'];
-            $tempo = $row['tempo'];
-            $immagine = $row['img'];
+            $immagine = $row['img_path'];
+            $alt = $row['alt'];
+            $titolo = $row['titolo'];
+            $sommario = $row['sommario'];
 
+            /*
             if ($immagine == null) {
-
+                
             }
 
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
@@ -30,19 +30,19 @@ function dieciArticoli($from)
             $id = $row['id'];
             $link = "<rootFolder />/php/ricetta.php?id=$id&amp;pagina=1";
             $livello = 2;
+            */
 
-            $risultato .=
-            '<div class="articoloScheda">' .
-            schedaArticolo($immagine, $nome, $difficolta, $tempo, $voto, $link, $livello) .
-                '</div>';
+            $risultato .= schedaArticolo($immagine, $alt, $titolo, $sommario);
         }
-
-        $risultato .= "</ul>";
+        $risultato .= "<div class=\"torna-su\" ><a class=\"torna-su-link\" href=\"#header\">Torna su</a></div></div>";
+    }
+    else{
+        $risultato .= "<p>Nessun articolo presente</p>";
     }
 
     $mysql->disconnect();
 
-    return [$risultato];
+    return $risultato; //ritorna l'html della lista degli articoli (qui è creato tutto ciò che è dentro articoliContent)
 }
 
 
