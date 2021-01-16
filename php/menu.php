@@ -44,7 +44,7 @@ switch ($currPag) {
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
-        $pageContent = dieciArticoli(0);
+        $pageContent = dieciArticoli(1);
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");
