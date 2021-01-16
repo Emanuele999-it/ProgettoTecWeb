@@ -18,27 +18,7 @@
 
     <div id="home-articoli">
         <h2 tabindex="0">Altri articoli che potrebbero interessarti:</h2>
-        <div class="articoloScheda">
-            <img src="img/fifa2.jpg" alt="" />
-            <a href="#"><h3>FIFA 21</h3></a>
-            <p>bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
-            </p>
-        </div>
-        <div class="articoloScheda">
-            <img src="img/doom2.jpg" alt="" />
-            <a href="#"><h3>DOOM</h3></a>
-            <p>bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
-            </p>
-        </div>
-        <div class="articoloScheda">
-            <img src="img/nba2.jpg" alt="" />
-            <a href="#"><h3>NBA 2K21</h3></a>
-            <p>bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
-            </p>
-        </div>
+        <last3art />
     </div>
     
     <div class="torna-su" >

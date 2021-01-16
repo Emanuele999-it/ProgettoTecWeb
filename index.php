@@ -1,5 +1,6 @@
 <?php
     require_once __DIR__ . "/php/setterTemplate.php";
+    require_once __DIR__ . "/query-lista-articoli.php";
 
     $setterPagina = new setterTemplate(".");
 
@@ -19,9 +20,10 @@
                 file_get_contents(__DIR__ . "/php/contents/home-nav.php"))));
 
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
-    
-    //da sistemare una volta implementato il db
-    $HomCon = file_get_contents(__DIR__ . "/php/contents/homeContent.php");
+
+    $last3articoli = getArticoli(0, 3);
+
+    $HomCon = str_replace("<last3art />", $last3articoli, file_get_contents(__DIR__ . "/php/contents/homeContent.php"));
     $setterPagina->setContent($HomCon);
     $setterPagina->setFooter();
 
