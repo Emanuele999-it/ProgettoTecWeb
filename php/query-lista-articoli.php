@@ -35,7 +35,7 @@ function getArticoli($page, $numArticoli)
 
             $risultato .= schedaArticolo($immagine, $alt, $titolo, $sommario);
         }
-        $risultato .= "<div class=\"torna-su\" ><a class=\"torna-su-link\" href=\"#header\">Torna su</a></div></div>";
+        $risultato .= "<div class=\"torna-su\" ><a class=\"torna-su-link\" href=\"#header\">Torna su</a></div>";
     }
     else{
         $risultato .= "<p>Nessun articolo presente</p>";
