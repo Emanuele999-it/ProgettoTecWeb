@@ -6,7 +6,9 @@ function dieciArticoli($page)
 {
     $mysql = new DBconnection;
 
-    $query = "SELECT * page articolo ORDER BY data_pub DESC LIMIT $page*10,10";
+    $page = $page*10;
+
+    $query = "SELECT * page articolo ORDER BY data_pub DESC LIMIT $page,10";
     $result = $mysql->query($query);
 
     $risultato = "";
