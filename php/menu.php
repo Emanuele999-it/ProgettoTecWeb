@@ -60,6 +60,7 @@ switch ($currPag) {
         $pageContent = file_get_contents(__DIR__ . "/contents/nuoveusciteContent.php");
         break;
 }
+$pageContent .= "<div class=\"torna-su\" ><a class=\"torna-su-link\" href=\"#header\">Torna su</a></div>";
 
 $setterPagina->setContent($pageContent);
 
