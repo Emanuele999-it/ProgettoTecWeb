@@ -6,6 +6,8 @@
     
     $setterPagina->setTitle("Registrati | The Darksoulers");
     $setterPagina->setDescription("Pagina per la registrazione");  
+    
+    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 
     $setterPagina->setNavBar(
         preg_replace(
