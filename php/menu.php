@@ -44,7 +44,8 @@ switch ($currPag) {
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
-        $pageContent = dieciArticoli(0);
+        $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
+        $pageContent .= getArticoli(0, 10) . "</div>";
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");

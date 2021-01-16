@@ -2,19 +2,18 @@
 require_once __DIR__ . '/db-handler.php';
 require_once __DIR__ . '/scheda-articolo.php';
 
-function dieciArticoli($page)
+function getArticoli($page, $numArticoli)
 {
     $mysql = new DBconnection;
 
     $page = $page*10;
 
-    $query = "SELECT * FROM articolo ORDER BY data_pub DESC LIMIT $page,10";
+    $query = "SELECT * FROM articolo ORDER BY data_pub DESC LIMIT $page,$numArticoli";
     $result = $mysql->query($query);
 
     $risultato = "";
 
     if ($result) {
-        $risultato .= "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img_path'];
             $alt = $row['alt'];
