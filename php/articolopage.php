@@ -8,7 +8,7 @@
 
     $artPageCon = file_get_contents(__DIR__ . "/contents/articolopageContent.php");
 
-    $setterPagina->setNavBar(file_get_contents(__DIR__ . "/php/contents/home-nav.php"));
+    $setterPagina->setNavBar(file_get_contents(__DIR__ . "/contents/home-nav.php"));
 
     $setterPagina->setPercorso("Articoli -> titolo articolo");
 
