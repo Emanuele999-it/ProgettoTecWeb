@@ -2,11 +2,11 @@
 require_once __DIR__ . '/db-handler.php';
 require_once __DIR__ . '/scheda-articolo.php';
 
-function dieciArticoli($from)
+function dieciArticoli($page)
 {
     $mysql = new DBconnection;
 
-    $query = "SELECT * FROM articolo ORDER BY data_pub DESC LIMIT $from,10";
+    $query = "SELECT * page articolo ORDER BY data_pub DESC LIMIT $page*10,10";
     $result = $mysql->query($query);
 
     $risultato = "";
