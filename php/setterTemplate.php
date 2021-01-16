@@ -13,6 +13,12 @@ class setterTemplate{
         $this->page = str_replace("<titlePlaceholder />", $title, $this->page);
     }
 
+    public function setLoginContent(string $logContent, string $logMobileContent)
+    {
+        $this->page = str_replace("<logincontentMobile />", $logMobileContent, $this->page);
+        $this->page = str_replace("<logincontent />", $logContent, $this->page);
+    }
+
     public function setDescription(string $description)
     {
         $this->page = str_replace("<descriptionPlaceholder />", $description, $this->page);

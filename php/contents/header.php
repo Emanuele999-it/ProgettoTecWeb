@@ -13,8 +13,7 @@
             <a href="<correzioneMenu />top10.php">Top 10</a>
             <a href="<correzioneMenu />nuoveuscite.php">Nuove Uscite</a>
             <hr>
-            <a href="<correzioneMenu />accesso.php">Accedi</a>
-            <a href="<correzioneMenu />registrazione.php">Registrati</a>
+            <logincontentMobile />
         </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <div class="menu-bars">
@@ -25,10 +24,7 @@
         </a>
     </div>
     <div id="menu" >
-        <ul id="AccediRegistrati">
-            <li class="elementomenu"><a href="<correzioneMenu />accesso.php">Accedi</a></li>
-            <li class="elementomenu"><a href="<correzioneMenu />registrazione.php">Registrati</a></li>
-        </ul>
+        <logincontent />
         <ul id=listaMenu>
             <li xml:lang="en" id="currentLink" class="elementomenu">Home</li>
             <li class="elementomenu"><a href="<correzioneMenu />articoli.php">Articoli</a></li>
