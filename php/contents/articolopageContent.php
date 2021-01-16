@@ -2,7 +2,6 @@
     <div id="recensione" style="margin-right:5em;">
         <h1>Cyberpunk 2077 recensione</h1>
         <h2>Cyberpunk 2077 è un colossal che traccia una nuova direzione per i GDR open-world. Approfondiamo tutti i dettagli nella nostra recensione.</h2>
-        <!--Prova, correggere suddivisione contenuto presentazione-->
         <p>Elevare il medium videoludico è un’operazione assai complessa e fuori dalla portata di gran parte degli studi di sviluppo, spesso inadatti o disinteressati a proporre qualcosa che vada al di là del semplice prodotto da vendere. Trovare una quadra tra necessità di monetizzare e capacità di proporre qualcosa di davvero avveniristico, con una narrativa pregnante e un sistema di gioco in grado di appagare fino in fondo, è persino più complesso; ma come ci insegnano i colpi di coda di fine generazione, qualcuno ce la fa davvero, diventando un nuovo paradigma per l’industria.</p>
         <img src=../img/keanu.jpg alt="" style="width:50%; float:left; padding: 1em 1em 1em 1em;"/>
         <p>Cyberpunk 2077, dopo una genesi travagliata e i continui rinvii che stavano assumendo le sembianze di un brutto scherzo sempre meno divertente, spazza via ogni dubbio e ci restituisce un’opera di rara vigoria e ispirazione, capace d’imporsi come la nuova avanguardia dei giochi di ruolo open-world, con tematiche e personaggi di una profondità raramente riscontrabile altrove.

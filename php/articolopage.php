@@ -1,20 +1,20 @@
 <?php
     require_once __DIR__ . "/setterTemplate.php";
 
-    $setterPagina = new setterTemplate("../");
+    $setterPagina = new setterTemplate("..");
 
-    /*manca codice per settare i meta, da inserire nella classe in setterTemplate*/
+    $setterPagina->setTitle("Articolo | The Darksoulers");
+    $setterPagina->setDescription("Articolo riguardante un gioco");  
 
-    $setterPagina->setHeader();
-    
-    //la riga seguente andrà sostituita con lo script per importare dal database
-    //una volta fatto lo script per recuperare dal database VA ELIMINATO il file articolopageContent
     $artPageCon = file_get_contents(__DIR__ . "/contents/articolopageContent.php");
+
+    $setterPagina->setNavBar(file_get_contents(__DIR__ . "/php/contents/home-nav.php"));
+
+    $setterPagina->setPercorso("Articoli -> titolo articolo");
+
     $setterPagina->setContent($artPageCon);
     $setterPagina->setFooter();
 
-    $setterPagina->sistemaLink();
-    $setterPagina->sistemaMenu();
-    $setterPagina->stampaHtml(); //fa l'echo della pagina
+    $setterPagina->validate()
 
 ?>
