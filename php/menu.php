@@ -33,6 +33,7 @@ if ($currPag < 0 || $currPag >= 5) {
 
 $setterPagina->setTitle("$pag[$currPag] | The Darksoulers");
 $nav = file_get_contents(__DIR__ . "/contents/home-nav.php");
+$pageContent = ""; //bisogna inserire un default
 
 switch ($currPag) {
     case 0:
@@ -40,25 +41,23 @@ switch ($currPag) {
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
-        $ArtCon = dieciArticoli(0);
-        $setterPagina->setContent($ArtCon);
+        $pageContent = dieciArticoli(0);
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");
-        $GenereCon = file_get_contents(__DIR__ . "/contents/genereContent.php");
-        $setterPagina->setContent($GenereCon);
+        $pageContent = file_get_contents(__DIR__ . "/contents/genereContent.php");
         break;
     case 3:
         $setterPagina->setDescription("Elendo dei top 10 giochi più votati");
-        $TopCon = file_get_contents(__DIR__ . "/contents/top10Content.php");
-        $setterPagina->setContent($TopCon);
+        $pageContent = file_get_contents(__DIR__ . "/contents/top10Content.php");
         break;    
     case 4:
         $setterPagina->setDescription("Nuove uscite");
-        $NuoveCon = file_get_contents(__DIR__ . "/contents/nuoveusciteContent.php");
-        $setterPagina->setContent($NuoveCon);
+        $pageContent = file_get_contents(__DIR__ . "/contents/nuoveusciteContent.php");
         break;
 }
+
+$setterPagina->setContent($pageContent);
 
 if ($currPag != 0) {
     $nav = preg_replace(
