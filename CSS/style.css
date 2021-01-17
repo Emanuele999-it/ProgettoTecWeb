@@ -219,9 +219,9 @@ ul{
     text-align: left;
 }
 
-#recensione #immagineArticolo{
-    width:50%; 
-    float:left; 
+#recensione img{
+    width: 50%; 
+    float: left; 
     padding: 1em 1em 1em 1em;
 }
 
