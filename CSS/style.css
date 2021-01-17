@@ -29,9 +29,8 @@ body{
 }
 
 .contenutoGenerale{
-    text-align: left;
+    text-align: center;
 }
-
 
 
 #header {
@@ -212,6 +211,19 @@ ul{
   margin-top: 2em;
 }
 
+#recensione{
+    margin-right:5em;
+}
+
+#recensione p{
+    text-align: left;
+}
+
+#recensione #immagineArticolo{
+    width:50%; 
+    float:left; 
+    padding: 1em 1em 1em 1em;
+}
 
 #home-articoli{
     margin-left: 7em;
