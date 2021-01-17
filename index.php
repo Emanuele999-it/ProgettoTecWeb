@@ -1,6 +1,6 @@
 <?php
     require_once __DIR__ . "/php/setterTemplate.php";
-    require_once __DIR__ . "/php/query-lista-articoli.php";
+    require_once __DIR__ . "/php/query-articoli.php";
 
     $setterPagina = new setterTemplate(".");
 
