@@ -3,7 +3,7 @@
 function schedaArticolo($immagine, $alt, $titolo, $sommario, $idArticolo){
     $scheda = "<div class=\"articoloScheda\">"
         . "<img src=\"" . $immagine . "\" alt=\"" . $alt . "\" />"
-        . "<a href=\"<rootFolder />/php/articolo?id=".$idArticolo."\"><h3>" . $titolo . "</h3></a>"
+        . "<a href=\"<rootFolder />/php/articolo.php?id=".$idArticolo."\"><h3>" . $titolo . "</h3></a>"
         . "<p>" . $sommario . "</p>"
         . "</div>";
     return $scheda;
