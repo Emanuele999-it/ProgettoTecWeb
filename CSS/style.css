@@ -277,9 +277,19 @@ ul{
     margin-right: 1.5em;
 }
 
+.articoloScheda h2{
+    float: right;
+    margin: 0px;
+    color: blue;
+}
+
 .articoloScheda h3{
     margin: 0em;
     text-align: left;
+    font-size: 2em;
+}
+
+.articoloScheda h4{
     font-size: 2em;
 }
 
@@ -288,6 +298,17 @@ ul{
     text-align: left;
 }
 
+#Top1{
+    background-color: gold;
+}
+
+#Top2{
+    background-color: silver;
+}
+
+#Top3{
+    background-color: brown;
+}
 
 /*!!!!!!!!     FINE NUOVA SCHEDA ARTICOLO     !!!!!!!!!*/
 
@@ -580,6 +601,10 @@ a.link-box-genere:visited{
 
     .articoloScheda h3{
         font-size: 20px;
+    }
+
+    .articoloScheda h4{
+        font-size: 17px;
     }
 }
 /*fine mobile*/

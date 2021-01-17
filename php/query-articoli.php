@@ -93,13 +93,13 @@ function getTop10()
     $risultato = "<h1>TOP 10 giochi piu votati</h1>";
 
     if ($result) {
+        $iter = 1;
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img'];
             $alt = $row['alt'];
             $gioco = $row['nome'];
             $votoM = $row['votoM'];
-            $iter = 1;         
-
+            
             $risultato .= schedaTop10($immagine, $alt, $gioco, $votoM, $iter);
 
             $iter += 1;
