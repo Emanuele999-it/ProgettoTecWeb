@@ -1,5 +1,5 @@
 <div class="contenutoGenerale" id="contenutoArticoli" >
-    <h1> CLASSIFICA TOP10 VIDEOGAMES DELL'ANNO</h1>
+    <h1>TOP 10 giochi piu votati</h1>
     <div class="articoloScheda">
         <img src="../img/fifa2.jpg" alt="" />
         <h3>FIFA 21</h3>

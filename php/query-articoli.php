@@ -79,7 +79,37 @@ function getArticoli($page, $numArticoli)
 
     $mysql->disconnect();
 
-    return $risultato; //ritorna l'html della lista degli articoli (qui è creato tutto ciò che è dentro articoliContent)
+    return $risultato;
 }
 
+function getTop10()
+{
+    $mysql = new DBconnection;
 
+    $query = "SELECT gioco_id, nome, avg(voto) AS votoM, img, alt FROM voto, gioco WHERE voto.gioco_id=gioco.game_id
+        GROUP BY voto.gioco_id ORDER BY votoM DESC LIMIT 0,10";
+    $result = $mysql->query($query);
+
+    $risultato = "<h1>TOP 10 giochi piu votati</h1>";
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $immagine = $row['img'];
+            $alt = $row['alt'];
+            $gioco = $row['nome'];
+            $votoM = $row['votoM'];
+            $iter = 1;         
+
+            $risultato .= schedaTop10($immagine, $alt, $gioco, $votoM, $iter);
+
+            $iter += 1;
+        }
+    }
+    else{
+        $risultato .= "<p>Nessun gioco presente</p>";
+    }
+
+    $mysql->disconnect();
+
+    return $risultato;
+}

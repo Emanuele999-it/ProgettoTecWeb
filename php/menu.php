@@ -52,8 +52,9 @@ switch ($currPag) {
         $pageContent = file_get_contents(__DIR__ . "/contents/genereContent.php");
         break;
     case 3:
-        $setterPagina->setDescription("Elendo dei top 10 giochi più votati");
-        $pageContent = file_get_contents(__DIR__ . "/contents/top10Content.php");
+        $setterPagina->setDescription("Elenco dei top 10 giochi più votati");
+        $pageContent = "<div class=\"contenutoGenerale\" id=\"contenutoArticoli\" >";
+        $pageContent .= getTop10() . "</div>";
         break;    
     case 4:
         $setterPagina->setDescription("Nuove uscite");
