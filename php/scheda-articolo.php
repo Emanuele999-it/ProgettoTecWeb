@@ -13,7 +13,7 @@ function composeArticolo($immagine, $alt, $titolo, $sommario, $testo){
     $articolo = "<div id=\"recensione\" style=\"margin-right:5em;\"><h1>".$titolo."</h1>
     <h3>".$sommario."</h3>
     <img src=".$immagine." alt=\"".$alt."\" style=\"width:50%; float:left; padding: 1em 1em 1em 1em;\"/>
-    <p>."$testo."</p></div>";
+    <p>".$testo."</p></div>";
     return $articolo;
 }
 
