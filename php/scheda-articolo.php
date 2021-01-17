@@ -18,8 +18,8 @@ function composeArticolo($immagine, $alt, $titolo, $sommario, $testo){
 }
 
 function schedaTop10($immagine, $alt, $gioco, $votoM, $iter){
-    $scheda = "<div class=\"articoloScheda\""
-    if($iter<4){
+    $scheda = "<div class=\"articoloScheda\"";
+    if($iter < 4){
         $scheda .= " id=\"Top" . $iter . "\"";
     }
     $scheda .= ">"
