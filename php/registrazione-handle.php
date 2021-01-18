@@ -1,6 +1,6 @@
 <?php
-require_once "./db-handler.php";
-require_once "./utente-class.php";
+require_once __DIR__ . '/db-handler.php';
+require_once __DIR__ . '/utente-class.php';
 
 
 session_start();

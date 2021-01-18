@@ -1,4 +1,4 @@
-<?
+<?php
 require_once __DIR__ . "/db-handler.php";
 
     class Utente {
@@ -47,4 +47,4 @@ require_once __DIR__ . "/db-handler.php";
 
 }
 
->
+?>
