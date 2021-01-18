@@ -5,9 +5,7 @@
         <p>Con la registrazione avrai accesso alle funzionalit&agrave; riservate del sito. In particolare potrai visualizzare e scrivere i commenti e votare i tuoi giochi preferiti.</p>
         <p>Su questo sito non sono permessi insulti o <span xml:lang="en" lang="en">spam</span> quindi se un tuo commento ne contiene verr&agrave; eliminato dagli amministratori.</p>
     </div>
-    <!-- <form action="../php/handle-signup.php"
-            method="post"
-            id="form-signup">-->
+    <form action="../php/registrazione-handle.php"  method="post"  id="form-registrazione">
     <fieldset class="form-fieldset">
     <legend class="legend">Inserisci i tuoi dati</legend>
     <ul class="form-container">
@@ -60,5 +58,5 @@
         </li>
     </ul>
     </fieldset>
-    <!--</form>-->
+    </form>
 </div>
