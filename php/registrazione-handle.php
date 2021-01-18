@@ -17,7 +17,7 @@ $connection = new DBConnection();
 $queryperincremento= $mysqli -> queryquery("SELECT COUNT(nome) FROM utente");
 $queryperincremento++;
 $query      = "INSERT INTO utente (nome,cognome,email,img_path,passw) 
-                VALUES ('prova','prova','$queryperincremento','prova','prova')";
+                VALUES ('prova','prova','email di prova','prova','prova')";
 
 $connection->query($query);
 
