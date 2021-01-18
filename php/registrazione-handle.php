@@ -17,7 +17,7 @@ $connection = new DBConnection();
 $query      = "INSERT INTO utente (useri_id,nome,cognome,email,img_path,passw,is_admin)
                 VALUES             ('1','1','1','1','1','1','1')";
 
-$result = $mysql->query($query);
+$connection->query($query);
 
 
 
