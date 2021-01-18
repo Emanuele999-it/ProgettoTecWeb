@@ -14,9 +14,9 @@ $_SESSION["password"]   =   $_POST['password1'];
 
 
 $connection = new DBConnection();
-$connection->query("INSERT INTO utente(nome,email,passw)
-                    VALUES (\"{$_POST['nickname']}\",
-                    \"{$_POST['email']}\",\"{$_POST['password1']}\");");
+$connection->query("INSERT INTO utente(useri_id,nome,cognome,email,img_path,passw,is_admin)
+                     VALUES (\"{$_POST['nickname']}\",\"{$_POST['nickname']}\",\"{$_POST['nickname']}\",
+                     \"{$_POST['nickname']}\",\"{$_POST['nickname']}\",\"{$_POST['nickname']}\",);");
 
 
 //$user = new Utente($_POST['nickname']);

@@ -28,11 +28,11 @@ require_once __DIR__ . "/db-handler.php";
 
         $this->user_id  =   $user_row['user_id'];
         $this->nome     =   $nome;                  // CORREGGO ANCHE DOPO QUA
-        $this->cognome  =   $user_row;
-        $this->email    =   $user_row;
-        $this->img_path =   $user_row;
-        $this->passw    =   $user_row;
-        $this->is_admin =   $user_row;
+        $this->cognome  =   $user_row['cognome'];
+        $this->email    =   $user_row['email'];
+        $this->img_path =   $user_row['img_path'];
+        $this->passw    =   $user_row['passw'];
+        $this->is_admin =   $user_row['is_admin'];
 
 
 
