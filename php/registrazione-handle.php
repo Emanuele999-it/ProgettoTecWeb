@@ -14,7 +14,7 @@ $_SESSION["password"]   =   $_POST['password1'];
 
 
 $connection = new DBConnection();
-$queryperincremento= $mysqli -> query("SELECT COUNT(nome) FROM utente");
+$queryperincremento= query("SELECT COUNT(nome) FROM utente");
 $queryperincremento++;
 $query      = "INSERT INTO utente (nome,cognome,email,img_path,passw) 
                 VALUES ('prova','prova','$queryperincremento','prova','prova')";
