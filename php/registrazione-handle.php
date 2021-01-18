@@ -23,7 +23,7 @@ $user = new Utente($_POST['nickname']);
 
 // ALTRE INFO DI SESSIONE
 
-
+header("Location: ./utente.php");
 
 
 
