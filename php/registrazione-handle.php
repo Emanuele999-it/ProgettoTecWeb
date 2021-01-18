@@ -19,6 +19,9 @@ $queryperincremento++;*/
 $query      = "INSERT INTO utente (nome,cognome,email,img_path,passw) 
                 VALUES ('prova','prova','email di prova','prova','prova')";
 
+$connection->query($query);
+
+/*
 $prova= $connection->query($query);
 
 
@@ -27,7 +30,7 @@ if (!$prova) {
     throw new Exception ("User doesn't exixst", 1);
     exit;
 }
-
+*/
 
 
 //$user = new Utente($_POST['nickname']);
