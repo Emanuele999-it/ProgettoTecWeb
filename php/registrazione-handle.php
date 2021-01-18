@@ -19,7 +19,7 @@ $connection->query("INSERT INTO utente(nome,email,passw)
                     \"{$_POST['email']}\",\"{$_POST['password1']}\");");
 
 
-$user = new Utente($_POST['nickname']);
+//$user = new Utente($_POST['nickname']);
 
 // ALTRE INFO DI SESSIONE
 
