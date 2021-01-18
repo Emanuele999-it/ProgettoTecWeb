@@ -14,9 +14,18 @@ $_SESSION["password"]   =   $_POST['password1'];
 
 
 $connection = new DBConnection();
-$connection->query("INSERT INTO utente(useri_id,nome,cognome,email,img_path,passw,is_admin)
+$query      = "INSERT INTO utente (useri_id,nome,cognome,email,img_path,passw,is_admin)
+                VALUES             ('1','1','1','1','1','1','1')";
+
+/*$prova = $connection->query("INSERT INTO utente(useri_id,nome,cognome,email,img_path,passw,is_admin)
                      VALUES (\"{$_POST['nickname']}\",\"{$_POST['nickname']}\",\"{$_POST['nickname']}\",
                      \"{$_POST['nickname']}\",\"{$_POST['nickname']}\",\"{$_POST['nickname']}\",);");
+
+if (!$prova) {
+    throw new Exception ("User doesn't exixst", 1);
+    exit;
+}*/
+
 
 
 //$user = new Utente($_POST['nickname']);

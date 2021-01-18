@@ -3,7 +3,7 @@ require_once __DIR__ . "/db-handler.php";
 
     class Utente {
 
-    private $user_id;
+    private $userid;
     private $nome;
     private $cognome;
     private $email;
@@ -16,12 +16,14 @@ require_once __DIR__ . "/db-handler.php";
     {
         $connection = new DBConnection();
 
-        $result = $connection->query("SELECT user_id, nome, cognome, email, img_path, passw, is_admin   FROM utente where nome=\"{$nome}\"");
+        $result = $connection->query("SELECT user_id, nome, cognome, email, img_path, passw, is_admin 
+                                          FROM utente where nome=\"{$nome}\"");
 
-        if (!result) {
+        if (!$result) {
             throw new Exception ("User doesn't exixst", 1);
             exit;
         }
+
 
 
         $user_row = $result->fetch_assoc();
