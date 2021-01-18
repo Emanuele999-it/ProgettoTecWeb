@@ -2,11 +2,6 @@
 
 <h1>Aggiungi un nuovo Articolo</h1>
 
-<p>Per permettere una corretta stesura dell'articolo in modo che rispetti le regole dell'accessibilità
-    ricordati di inserire le parole straniere nel modo seguente: [lingua=parola].<br/>
-    Esempio: "In conclusione si può affermare che durante le fasi di [En=gameplay] il gioco risulta
-    molto gratificante."
-</p>
 
 <form action="" method="post" id="" >
     <fieldset class="form-new-articolo">
