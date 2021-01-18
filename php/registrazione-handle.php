@@ -16,8 +16,8 @@ $_SESSION["password"]   =   $_POST['password1'];
 $connection = new DBConnection();
 $queryperincremento="SELECT COUNT (nome) FROM utente";
 $queryperincremento++;
-$query      = "INSERT INTO utente (useri_id,nome,cognome,email,img_path,passw,is_admin)
-                VALUES             ('$queryperincremento','1','1','1','1','1','1')";
+$query      = "INSERT INTO utente (nome,cognome,email,img_path,passw,is_admin)
+                VALUES             ('1','1','1','1','1','1')";
 
 $connection->query($query);
 
