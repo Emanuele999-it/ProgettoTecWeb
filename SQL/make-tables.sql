@@ -12,7 +12,7 @@ CREATE TABLE `articolo` (
   PRIMARY KEY (articolo_id),
   FOREIGN KEY (`cat_id`) REFERENCES `categoria` (`cat_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`game_id`) REFERENCES `gioco` (`game_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 
 INSERT INTO `articolo` (`articolo_id`, `titolo`, `sommario`, `testo`, `data_pub`, `img_path`, `cat_id`, `alt`, `game_id`) VALUES
@@ -38,7 +38,7 @@ CREATE TABLE `categoria` (
   `cat_id` int(11) AUTO_INCREMENT NOT NULL,
   `nome` varchar(64) NOT NULL,
   PRIMARY KEY (cat_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+); 
 
 INSERT INTO `categoria` (`cat_id`, `nome`) VALUES
 (1, 'Giochi di ruolo'),
@@ -59,7 +59,7 @@ CREATE TABLE `commento` (
   PRIMARY KEY (comment_id),
   FOREIGN KEY (`user_id`) REFERENCES `utente` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`articolo_id`) REFERENCES `articolo` (`articolo_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+); 
 
 INSERT INTO `commento` (`comment_id`, `articolo_id`, `user_id`, `testo`, `data_com`) VALUES
 (1, 7, 3, 'Fantastico! Grazie per la recensione', '2020-12-12 12:45:06'),
@@ -84,7 +84,7 @@ CREATE TABLE `gioco` (
   `img` VARCHAR(256) DEFAULT NULL,
   `alt` VARCHAR(256) DEFAULT NULL,
   FOREIGN KEY (`cat_id`) REFERENCES `categoria` (`cat_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 INSERT INTO `gioco` (`game_id`, `nome`, `cat_id`, `data_pubb`, `img`, `alt`) VALUES
 (1, 'Cyberpunk 2077', 4, '2020-12-10','../img/keanu.jpg', 'Immagine del personaggio di Keanu Reeves presente nel gioco'),
@@ -116,7 +116,7 @@ CREATE TABLE `utente` (
   `is_admin` tinyint(1) DEFAULT 0,
   PRIMARY KEY (user_id),
   UNIQUE (email)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 INSERT INTO `utente` (`user_id`, `nome`, `cognome`, `email`, `img_path`, `passw`, `is_admin`) VALUES
 (1, 'Mario', 'Rossi', 'mario.rossi@gmail.com', '../img/avatar.jpg', 'password', 1),
@@ -135,7 +135,7 @@ CREATE TABLE `voto` (
   PRIMARY KEY (user_id, gioco_id),
   FOREIGN KEY (`user_id`) REFERENCES `utente` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`gioco_id`) REFERENCES `gioco` (`game_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+);
 
 INSERT INTO `voto` (`user_id`, `gioco_id`, `voto`) VALUES
 (1, 2, 3),
