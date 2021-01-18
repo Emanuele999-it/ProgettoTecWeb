@@ -483,6 +483,9 @@ a.link-box-genere:visited{
 
 #content-aggiungi-articolo{
     margin: 3em;
+    background-color: #dbdbdb;
+    border-radius: 3em;
+    padding: 2em;
 }
 
 .form-new-articolo{
