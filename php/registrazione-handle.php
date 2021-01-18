@@ -19,18 +19,14 @@ $queryperincremento++;*/
 $query      = "INSERT INTO utente (nome,cognome,email,img_path,passw) 
                 VALUES ('prova','prova','email di prova','prova','prova')";
 
-$connection->query($query);
+$prova= $connection->query($query);
 
 
-
-/*$prova = $connection->query("INSERT INTO utente(useri_id,nome,cognome,email,img_path,passw,is_admin)
-                     VALUES (\"{$_POST['nickname']}\",\"{$_POST['nickname']}\",\"{$_POST['nickname']}\",
-                     \"{$_POST['nickname']}\",\"{$_POST['nickname']}\",\"{$_POST['nickname']}\",);");
 
 if (!$prova) {
     throw new Exception ("User doesn't exixst", 1);
     exit;
-}*/
+}
 
 
 
