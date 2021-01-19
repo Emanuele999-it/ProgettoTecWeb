@@ -2,10 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
   <head>
-      <title>
-        <titlePlaceholder />
-      </title>
-
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="title" content="<titlePlaceholder />" />
       <meta name="description" content="<descriptionPlaceholder />" />
@@ -27,6 +23,10 @@
         }
       }
       </script>
+
+      <title>
+        <titlePlaceholder />
+      </title>
   </head>
 
   <body>
