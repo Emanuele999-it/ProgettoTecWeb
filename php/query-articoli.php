@@ -176,3 +176,32 @@ function getTop10()
 
     return $risultato;
 }
+
+function getNuoveUscite()
+{
+    $mysql = new DBconnection;
+
+    $todayDate = date("Y-m-d");
+    $query = "SELECT * FROM `gioco` WHERE data_pubb > $todayDate ORDER BY data_pubb DESC LIMIT 0,10";
+    $result = $mysql->query($query);
+
+    $risultato = "<h1> PROSSIME USCITE</h1>";
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $immagine = $row['img'];
+            $alt = $row['alt'];
+            $gioco = $row['nome'];
+            $data_pubb = $row['data_pubb'];
+            
+            $risultato .= schedaNuovaUscita($immagine, $alt, $gioco, $data_pubb);
+        }
+    }
+    else{
+        $risultato .= "<p>Nessun gioco in uscita</p>";
+    }
+
+    $mysql->disconnect();
+
+    return $risultato;
+}

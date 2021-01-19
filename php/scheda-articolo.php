@@ -41,5 +41,14 @@ function schedaTop10($immagine, $alt, $gioco, $votoM, $iter){
     return $scheda;
 }
 
+schedaNuovaUscita($immagine, $alt, $gioco, $data_pubb){
+    $scheda = "<div class=\"articoloScheda\">"
+        . "<img src=\"" . $immagine . "\" alt=\"" . $alt . "\" />"
+        . "<h3>" . $gioco . "</h3>"
+        . "<h4>" . $data_pubb . "</h4>"
+        . "</div>";
+    return $scheda;
+}
+
 
 ?>

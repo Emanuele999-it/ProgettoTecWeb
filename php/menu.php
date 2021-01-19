@@ -62,7 +62,8 @@ switch ($currPag) {
         break;    
     case 4:
         $setterPagina->setDescription("Nuove uscite");
-        $pageContent = file_get_contents(__DIR__ . "/contents/nuoveusciteContent.php");
+        $pageContent = "<div  class=\"contenutoGenerale\" id=\"contenutoArticoli\" >";
+        $pageContent .= getNuoveUscite() . "</div>";
         break;
 }
 $pageContent .= "<div class=\"torna-su\" ><a class=\"torna-su-link\" href=\"#header\">Torna su</a></div>";
