@@ -119,7 +119,7 @@ function cercaArticoli($value, $page)
 
     $page = $page*10;
 
-    $query = "select * from articolo a join categoria c on (a.cat_id =c.cat_id)
+    $query = "select a.img_path, a.alt, a.titolo, a.sommario, a.articolo_id from articolo a join categoria c on (a.cat_id =c.cat_id)
     where c.nome LIKE '%".$value."%' OR a.titolo LIKE '%".$value."%' OR a.sommario LIKE '%".$value."%' OR a.testo LIKE '%".$value."%' LIMIT ".$page.", 10";
     $result = $mysql->query($query);
 
@@ -140,6 +140,8 @@ function cercaArticoli($value, $page)
         $risultato .= "<p>Nessun articolo trovato</p>";
     }
 
+
+    $risultato = $value;
     $mysql->disconnect();
 
     return $risultato;
