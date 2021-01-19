@@ -22,12 +22,13 @@ $pag = [
     "Nuove Uscite",
 ];
 
-$currPag = array_key_exists('id', $_GET) ? $_GET['id'] : 0;
+$currPag = array_key_exists('id', $_GET) ? $_GET['id'] : -1;
 
 if ($currPag == 0 && !key_exists("termine-ricerca", $_GET)) {
     header("Location: error/400.php");
     exit;
 }
+$termineCerca = $_GET['termine-ricerca'];
 
 if ($currPag < 0 || $currPag >= 5) {
     header("Location: error/404.php");
@@ -41,6 +42,8 @@ $pageContent = ""; //bisogna inserire un default
 switch ($currPag) {
     case 0:
         $setterPagina->setDescription("Elenco degli articoli il cui nome contiene il termine ricercato");
+        $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
+        $pageContent .= cercaArticoli($termineCerca, 1) . "</div>";
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");

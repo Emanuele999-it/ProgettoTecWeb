@@ -6,7 +6,7 @@ require_once __DIR__ . '/scheda-articolo.php';
 function getSingoloArticolo($idArticolo){
     $mysql = new DBconnection;
 
-    $query = "SELECT titolo, sommario, img_path, alt, testo FROM articolo WHERE articolo_id=$idArticolo";
+    $query = "SELECT titolo, sommario, img_path, alt, testo FROM articolo WHERE articolo_id=".$idArticolo;
     $result = $mysql->query($query);
 
     $risultato = "";
@@ -62,7 +62,7 @@ function getArticoloPrincipale(){
 function getTitolo($idArticolo){
     $mysql = new DBconnection;
 
-    $query = "SELECT titolo FROM articolo WHERE articolo_id=$idArticolo";
+    $query = "SELECT titolo FROM articolo WHERE articolo_id=".$idArticolo;
     $result = $mysql->query($query);
 
     $risultato = "";
@@ -88,7 +88,7 @@ function getArticoli($page, $numArticoli, $woPrincipale = false)
 
     $query = "SELECT img_path, alt, titolo, sommario, articolo_id FROM articolo ";
     if($woPrincipale) $query .= " WHERE prima_pagina = 0 ";
-    $query .= " ORDER BY data_pub DESC LIMIT $page,$numArticoli";
+    $query .= " ORDER BY data_pub DESC LIMIT ".$page.",".$numArticoli;
     $result = $mysql->query($query);
 
     $risultato = "";
@@ -106,6 +106,38 @@ function getArticoli($page, $numArticoli, $woPrincipale = false)
     }
     else{
         $risultato .= "<p>Nessun articolo presente</p>";
+    }
+
+    $mysql->disconnect();
+
+    return $risultato;
+}
+
+function cercaArticoli($value, $page)
+{
+    $mysql = new DBconnection;
+
+    $page = $page*10;
+
+    $query = "select * from articolo a join categoria c on (a.cat_id =c.cat_id)
+    where c.nome LIKE '%".$value."%' OR a.titolo LIKE '%".$value."%' OR a.sommario LIKE '%".$value."%' OR a.testo LIKE '%".$value."%' LIMIT ".$page.", 10";
+    $result = $mysql->query($query);
+
+    $risultato = "";
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $immagine = $row['img_path'];
+            $alt = $row['alt'];
+            $titolo = $row['titolo'];
+            $sommario = $row['sommario']; 
+            $idArticolo = $row['articolo_id'];          
+
+            $risultato .= schedaArticolo($immagine, $alt, $titolo, $sommario, $idArticolo);
+        }
+    }
+    else{
+        $risultato .= "<p>Nessun articolo trovato</p>";
     }
 
     $mysql->disconnect();
