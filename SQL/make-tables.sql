@@ -9,6 +9,7 @@ CREATE TABLE `articolo` (
   `cat_id` int(11) NOT NULL,
   `alt` varchar(256) NOT NULL,
   `game_id` int(11) NOT NULL,
+  prima_pagina` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (articolo_id),
   FOREIGN KEY (`cat_id`) REFERENCES `categoria` (`cat_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`game_id`) REFERENCES `gioco` (`game_id`) ON DELETE CASCADE ON UPDATE CASCADE
