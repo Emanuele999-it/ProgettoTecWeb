@@ -140,8 +140,6 @@ function cercaArticoli($value, $page)
         $risultato .= "<p>Nessun articolo trovato</p>";
     }
 
-
-    $risultato = $value;
     $mysql->disconnect();
 
     return $risultato;
