@@ -9,6 +9,16 @@ function schedaArticolo($immagine, $alt, $titolo, $sommario, $idArticolo){
     return $scheda;
 }
 
+function schedaPrincipale($immagine, $alt, $titolo, $sommario, $idArticolo){
+    $scheda = "<h2 tabindex=\"0\">Articolo del Momento</h2>
+    <div class=\"articoloPrincipale\">"
+        . "<img src=\"" . $immagine . "\" alt=\"" . $alt . "\" />"
+        . "<a href=\"<rootFolder />/php/articolo.php?id=".$idArticolo."\"><h2>" . $titolo . "</h2></a>"
+        . "<p>" . $sommario . "</p>"
+        . "</div>";
+    return $scheda;
+}
+
 function composeArticolo($immagine, $alt, $titolo, $sommario, $testo){
     $articolo = "<div id=\"recensione\" ><h1>".$titolo."</h1>
     <h3>".$sommario."</h3>

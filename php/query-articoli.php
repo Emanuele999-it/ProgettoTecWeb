@@ -30,6 +30,35 @@ function getSingoloArticolo($idArticolo){
     return $risultato;
 }
 
+function getArticoloPrincipale(){
+
+    $mysql = new DBconnection;
+
+    $query = "SELECT img_path, alt, titolo, sommario, articolo_id FROM articolo WHERE prima_pagina = 1 LIMIT 1";
+    $result = $mysql->query($query);
+
+    $risultato = "";
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $immagine = $row['img_path'];
+            $alt = $row['alt'];
+            $titolo = $row['titolo'];
+            $sommario = $row['sommario']; 
+            $idArticolo = $row['articolo_id'];          
+
+            $risultato .= schedaArticolo($immagine, $alt, $titolo, $sommario, $idArticolo);
+        }
+    }
+    else{
+        $risultato = "";
+    }
+
+    $mysql->disconnect();
+
+    return $risultato;
+}
+
 function getTitolo($idArticolo){
     $mysql = new DBconnection;
 
@@ -51,13 +80,15 @@ function getTitolo($idArticolo){
     return $risultato;
 }
 
-function getArticoli($page, $numArticoli)
+function getArticoli($page, $numArticoli, $woPrincipale = false)
 {
     $mysql = new DBconnection;
 
     $page = $page*10;
 
-    $query = "SELECT img_path, alt, titolo, sommario, articolo_id FROM articolo ORDER BY data_pub DESC LIMIT $page,$numArticoli";
+    $query = "SELECT img_path, alt, titolo, sommario, articolo_id FROM articolo ";
+    if($woPrincipale) $query .= " WHERE prima_pagina = 0 ";
+    $query .= " ORDER BY data_pub DESC LIMIT $page,$numArticoli";
     $result = $mysql->query($query);
 
     $risultato = "";

@@ -21,9 +21,11 @@
 
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 
-    $last3articoli = getArticoli(0, 3);
+    $last3articoli = getArticoli(0, 3, true);
+    $articoloPrincipale = getArticoloPrincipale();
 
     $HomCon = str_replace("<last3art />", $last3articoli, file_get_contents(__DIR__ . "/php/contents/homeContent.php"));
+    $HomCon = str_replace("<articoloPrincipale />", $articoloPrincipale, $HomCon);
     $setterPagina->setContent($HomCon);
     $setterPagina->setFooter();
 

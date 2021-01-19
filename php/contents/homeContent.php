@@ -6,14 +6,7 @@
         <p>Quello che leggerai negli articoli sarà un parere solido sul gioco.</p>
     </div>
     <div id="home-articoli">
-        <h2 tabindex="0">Articolo del Momento</h2>
-        <div class="articoloPrincipale">
-            <img src="img/keanu.jpg" alt="Immagine con Keanu Reeves"/>
-            <a href="<rootFolder />/php/articolo.php?id=1"><h2> E' arrivato Cyberpunk !</h2></a>
-            <p>bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
-                bla bla bla blabla bla bla blabla bla bla blabla bla bla bla
-            </p>
-        </div>
+        <articoloPrincipale />
     </div>
 
     <div id="home-articoli">
