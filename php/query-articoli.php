@@ -213,7 +213,7 @@ function getArticoliDaGenere($page, $numArticoli, $woPrincipale = false, $catego
     $page = $page*10;
 
     $query = "SELECT img_path, alt, titolo, sommario, articolo_id FROM articolo WHERE cat_id=" . $categoria;
-    if($woPrincipale) $query .= " WHERE prima_pagina = 0 ";
+    if($woPrincipale) $query .= " AND prima_pagina = 0 ";
     $query .= " ORDER BY data_pub DESC LIMIT ".$page.",".$numArticoli;
     $result = $mysql->query($query);
 
