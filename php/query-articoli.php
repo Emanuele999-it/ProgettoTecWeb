@@ -47,7 +47,7 @@ function getArticoloPrincipale(){
             $sommario = $row['sommario']; 
             $idArticolo = $row['articolo_id'];          
 
-            $risultato .= schedaArticolo($immagine, $alt, $titolo, $sommario, $idArticolo);
+            $risultato .= schedaPrincipale($immagine, $alt, $titolo, $sommario, $idArticolo);
         }
     }
     else{
