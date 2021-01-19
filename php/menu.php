@@ -44,7 +44,7 @@ switch ($currPag) {
     case 0:
         $setterPagina->setDescription("Elenco degli articoli il cui nome contiene il termine ricercato");
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
-        $pageContent .= cercaArticoli($termineCerca, 1) . "</div>";
+        $pageContent .= cercaArticoli($termineCerca, 0) . "</div>";
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
