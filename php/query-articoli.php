@@ -182,7 +182,7 @@ function getNuoveUscite()
     $mysql = new DBconnection;
 
     $todayDate = date("Y-m-d");
-    $query = "SELECT * FROM `gioco` WHERE data_pubb > \"" . $todayDate . "\" ORDER BY data_pubb DESC LIMIT 0,10";
+    $query = "SELECT * FROM `gioco` WHERE data_pubb > \"" . $todayDate . "\" ORDER BY data_pubb ASC LIMIT 0,10";
     $result = $mysql->query($query);
 
     $risultato = "<h1> PROSSIME USCITE</h1>";
