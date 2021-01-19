@@ -205,3 +205,39 @@ function getNuoveUscite()
 
     return $risultato;
 }
+
+function getArticoliDaGenere($page, $numArticoli, $woPrincipale = false, $categoria)
+{
+    $mysql = new DBconnection;
+
+    $page = $page*10;
+
+    $query = "SELECT img_path, alt, titolo, sommario, articolo_id FROM articolo WHERE cat_id=" . $categoria;
+    if($woPrincipale) $query .= " WHERE prima_pagina = 0 ";
+    $query .= " ORDER BY data_pub DESC LIMIT ".$page.",".$numArticoli;
+    $result = $mysql->query($query);
+
+    $risultato = "";
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $immagine = $row['img_path'];
+            $alt = $row['alt'];
+            $titolo = $row['titolo'];
+            $sommario = $row['sommario']; 
+            $idArticolo = $row['articolo_id'];          
+
+            $risultato .= schedaArticolo($immagine, $alt, $titolo, $sommario, $idArticolo);
+        }
+    }
+    else{
+        $risultato .= "<p>Nessun articolo presente</p>";
+    }
+
+    $mysql->disconnect();
+
+    return $risultato;
+}
+
+
+?>
