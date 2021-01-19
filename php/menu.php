@@ -22,12 +22,13 @@ $pag = [
     "Nuove Uscite",
 ];
 
-$currPag = array_key_exists('id', $_GET) ? $_GET['id'] : -1;
+$currPag = array_key_exists('id', $_GET) ? $_GET['id'] : 0;
 
 if ($currPag == 0 && !key_exists("termine-ricerca", $_GET)) {
     header("Location: error/400.php");
     exit;
 }
+
 $termineCerca = $_GET['termine-ricerca'];
 
 if ($currPag < 0 || $currPag >= 5) {
