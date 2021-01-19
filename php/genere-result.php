@@ -34,31 +34,31 @@ $listaGenCon = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
 switch ($currCat) {
     case 0:
         $setterPagina->setDescription("Errore");
-        $listaGenCon = "<p>Errore</p>";
+        $listaGenCon .= "<p>Errore</p>";
         break;
     case 1:
         $setterPagina->setDescription("Elenco degli articoli di categoria Giochi di ruolo");
-        $listaGenCon = getArticoliDaGenere(0, 10, false, 1) . "</div>";
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 1) . "</div>";
         break;
     case 2:
         $setterPagina->setDescription("Elenco degli articoli di categoria Sportivi");
-        $listaGenCon = getArticoliDaGenere(0, 10, false, 2) . "</div>";
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 2) . "</div>";
         break;
     case 3:
         $setterPagina->setDescription("Elenco degli articoli di categoria Sparatutto");
-        $listaGenCon = getArticoliDaGenere(0, 10, false, 3) . "</div>";
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 3) . "</div>";
         break;    
     case 4:
         $setterPagina->setDescription("Elenco degli articoli di categoria Avventura");
-        $listaGenCon = getArticoliDaGenere(0, 10, false, 4) . "</div>";
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 4) . "</div>";
         break;
     case 5:
         $setterPagina->setDescription("Elenco degli articoli di categoria Azione");
-        $listaGenCon = getArticoliDaGenere(0, 10, false, 5) . "</div>";
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 5) . "</div>";
         break;
     case 6:
         $setterPagina->setDescription("Elenco degli articoli di categoria Gestionale");
-        $listaGenCon = getArticoliDaGenere(0, 10, false, 6) . "</div>";
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 6) . "</div>";
         break;
 }
 
