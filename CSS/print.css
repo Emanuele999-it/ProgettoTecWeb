@@ -4,8 +4,6 @@ body{
     color: black;
 }
 
-
-
 #logo-mobile-short, #links, #icon, #menu, #barra-di-ricerca, .aiuti-screenreader, .torna-su, #footer,
 .articoloPrincipale img, .articoloScheda img,#logo-mobile-full, .boxgenere img{
     display: none;
@@ -17,6 +15,10 @@ body{
     border-width: 1px;
     margin: 0.25em;
     padding: 0.2em;
+}
+
+abbr{
+  text-decoration: none;
 }
 
 h3{
