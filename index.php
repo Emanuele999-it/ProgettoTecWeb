@@ -10,9 +10,6 @@
     $setterPagina->setTitle("The Darksoulers");
     $setterPagina->setDescription("Pagina iniziale del sito The Darksoulers");  
 
-	
-	
-
     $setterPagina->setNavBar(
         preg_replace(
             "((?s)<a href=\"<rootFolder />/index.php\" xml:lang=\"en\">Home</a>)",
@@ -24,8 +21,8 @@
 
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 	//controllo se l'utente e' loggato
-
 	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 		$uteneteMobile=file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php");
 		$utenteFull=file_get_contents(__DIR__ . "/php/contents/userLogin.php");
