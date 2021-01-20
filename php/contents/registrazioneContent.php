@@ -10,46 +10,44 @@
     <legend class="legend">Inserisci i tuoi dati</legend>
     <ul class="form-container">
         <li class="form-element">
-            <!--Ho lasciato tutti i valori per il php come linea guida-->
             <label class="form-label"
-                for="signup-nick"><span xml:lang="en" lang="en">Nickname</span>:</label>
-            <input class="barra-input"
-                id="signup-nick" 
+                for="registrazione-nome">Nome</span>:</label>
+            <input id="registrazione-nome" 
                 type="text"
-                name="nickname"
+                name="nome"
                 value="" />
-            <span id="signup-nick-message" class="warning">  </span>
         </li>
         <li class="form-element">
             <label class="form-label"
-                    for="signup-email"><span xml:lang="en" lang="en">Email</span>:</label>
-            <input class="barra-input"
-                    id="signup-email"
+                for="registrazione-cognome">Cognome</span>:</label>
+            <input id="registrazione-cognome" 
+                type="text"
+                name="cognome"
+                value="" />
+        </li>
+        <li class="form-element">
+            <label class="form-label"
+                    for="registrazione-email"><span xml:lang="en" lang="en">Email</span>:</label>
+            <input id="registrazione-email"
                     type="text"
                     name="email"
                     value="" />
-            <span id="signup-email-message"
-                    class="warning">  </span>
         </li>
         <li class="form-element">
             <label class="form-label"
-                    for="signup-password1"><span xml:lang="en" lang="en">Password</span>:</label>
-            <input class="barra-input"
-                    id="signup-password1"
+                    for="registrazione-password1"><span xml:lang="en" lang="en">Password</span>:</label>
+            <input id="registrazione-password1"
                     type="password"
                     name="password1"
                     value="" />
         </li>
         <li class="form-element">
             <label class="form-label"
-                    for="signup-password2">Ripeti
+                    for="registrazione-password2">Ripeti
                     <span xml:lang="en" lang="en">Password</span>:</label>
-            <input class="barra-input"
-                    id="signup-password2"
+            <input id="registrazione-password2"
                     type="password"
                     name="password2" />
-            <span id="signup-password2-message"
-                    class="warning">  </span>
         </li>
         <li class="form-element">
             <input class="submit"

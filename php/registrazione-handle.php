@@ -5,40 +5,32 @@ require_once __DIR__ . '/utente-class.php';
 
 session_start();
 
-$_SESSION["nickname"]   =   $_POST['nickname'];
+$_SESSION["nome"]       =   $_POST['nome'];
+$_SESSION["cognome"]    =   $_POST['cognome'];
 $_SESSION["email"]      =   $_POST['email'];
 $_SESSION["password"]   =   $_POST['password1'];
 
 // Funzioni di controllo ???
 
-
-
 $connection = new DBConnection();
-/*$queryperincremento= query("SELECT COUNT(nome) FROM utente");
-$queryperincremento++;*/
+
+
+
+
+
 $query      = "INSERT INTO utente (nome,cognome,email,img_path,passw) 
-                VALUES ('prova','prova','email di prova','prova','prova')";
+                VALUES (\"{$_POST['nome']}\",\"{$_POST['cognome']}\",\"{$_POST['email']}\",'../img/avatar.jpg',\"{$_POST['password1']}\")";
 
 $connection->query($query);
 
-/*
-$prova= $connection->query($query);
 
-
-
-if (!$prova) {
-    throw new Exception ("User doesn't exixst", 1);
-    exit;
-}
-*/
-
-
-//$user = new Utente($_POST['nickname']);
+$user = new Utente($_POST['email']);
+$_SESSION['user'] = $user;
 
 // ALTRE INFO DI SESSIONE
-
+$connection->disconnect();
 header("Location: ./utente.php");
-
+exit;
 
 
 ?>

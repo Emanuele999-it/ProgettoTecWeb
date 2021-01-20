@@ -395,6 +395,18 @@ a.link-box-genere:visited{
 
 
 
+/*                        */
+
+.errore-credenziali{
+    color:red;
+    display: block;
+}
+
+/*    MODIFICA UTENTE*/
+#modifca-utente{
+    text-align: center;
+}
+
 /*NUOVO STYLE FORM*/
 
 .form-fieldset li{
