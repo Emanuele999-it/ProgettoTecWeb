@@ -8,8 +8,6 @@
     $setterPagina->setTitle("Login | The Darksoulers");
     $setterPagina->setDescription("Pagina di login");  
     
-    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
-
     $setterPagina->setNavBar(
         preg_replace(
             "((?s)<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>)",
@@ -19,6 +17,9 @@
                 "<li id=\"currentLink\" class=\"elementomenu\">Accedi</li>",
                 file_get_contents(__DIR__ . "/contents/home-nav.php"))));
 
+	//controllo se ha fatto il login
+    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
+	
     $setterPagina->setPercorso("Accedi");
     
     //da sistemare una volta implementato il db
