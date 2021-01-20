@@ -553,11 +553,11 @@ a.link-box-genere:visited{
     }
 
     .articoloPrincipale img{
-        height: 95%;
-        width:  95%;
+        height: 90%;
+        width:  90%;
         float: left;
         border-radius: 2em;
-        margin: 1em;
+        margin: 3%;
     }
 
 }
@@ -593,7 +593,7 @@ a.link-box-genere:visited{
         width:  90%;
         float: left;
         border-radius: 2em;
-        margin: 1em;
+        margin: 5%;
     }
 
     .articoloScheda img{        
