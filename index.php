@@ -1,9 +1,6 @@
 <?php
-
-	require_once __DIR__ . "/php/utente-class.php";
     require_once __DIR__ . "/php/setterTemplate.php";
     require_once __DIR__ . "/php/query-articoli.php";
-	require_once __DIR__ . "/php/contents/userLogin.php";
 
     $setterPagina = new setterTemplate(".");
 
@@ -20,12 +17,14 @@
                 "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/index.php\" xml:lang=\"en\">Home</a></li>)",
                 "<li xml:lang=\"en\" id=\"currentLink\" class=\"elementomenu\">Home</li>",
                 file_get_contents(__DIR__ . "/php/contents/home-nav.php"))));
+				
+    //controllo se l'utente e' loggato
+    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 
 
 	//controllo se l'utente e' loggato
-
 	
 	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 		
@@ -42,6 +41,7 @@
 	else {
 		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 	}
+
 
     $last3articoli = getArticoli(0, 3, true);
     $articoloPrincipale = getArticoloPrincipale();

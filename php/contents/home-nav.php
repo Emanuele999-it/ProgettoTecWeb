@@ -10,10 +10,8 @@
         <a href="<rootFolder />/php/menu.php?id=3">Top 10</a>
         <a href="<rootFolder />/php/menu.php?id=4">Nuove Uscite</a>
         <hr>
-		
-		<logincontentMobile />
-		
-        </div>
+        <logincontentMobile />
+    </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <div class="menu-bars">
         <div></div>
