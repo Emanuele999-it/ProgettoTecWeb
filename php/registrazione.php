@@ -7,8 +7,7 @@
     $setterPagina->setTitle("Registrati | The Darksoulers");
     $setterPagina->setDescription("Pagina per la registrazione");  
     
-    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
-
+    
     $setterPagina->setNavBar(
         preg_replace(
             "((?s)<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a>)",
@@ -20,6 +19,9 @@
 
     $setterPagina->setPercorso("Registrati");
     
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
+
+	
     //da sistemare una volta implementato il db
     $regCon = file_get_contents(__DIR__ . "/contents/registrazioneContent.php");
     $setterPagina->setContent($regCon);
