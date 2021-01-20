@@ -13,6 +13,7 @@
 
 	//login eseguito sicuramente
     $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
+	$utenteNome= str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteNome);
 	
     $setterPagina->setPercorso("Utente");
     
