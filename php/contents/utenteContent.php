@@ -2,17 +2,16 @@
 <div id="content">        
     <div id="benvenuto-utente">
         <img src="../img/avatar.jpg" alt="foto profilo" class="foto-profilo">
-        <h1>Benvenuto Utente</h1>
+        <h1>Benvenuto <NomeUtenetSegnaposto /></h1>
     </div>
 
     <p id="modifica-dati" >Per modificare i tuoi dati personali schiaccia qui: 
-    <a id="modifica-link" href="">Modifica dati</a>
+    <a id="modifica-link" href="../php/modifica-utente.php">Modifica dati</a>
     </p>
-    <a id="aggiungi-articolo" href=" ../php/newArticolo.php"> Aggiungi nuovo Articolo </a>
-
-    <form id="eliminazione-account" method="POST" action="" >
+    <SegnapostoAggiungiNuovoArticolo />
+    <form id="eliminazione-account" method="POST" action="elimina-account.php" >
         <fieldset  class="form-fieldset">
-            <legend class="legend"> Eliminazione <span xml:lang="en" lang="en" >Account</span></legend>
+            <legend class="legend"> Eliminazione <span xml:lang="en" lang="en" >Account</span>, inserisci la password</legend>
             <input type="password" id="eliminazione-password" name="utente-password">
             <input type="submit"   value="Elimina Account">
         </fieldset> 
