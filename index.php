@@ -22,7 +22,7 @@
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 
 	//controllo se l'utente e' loggato
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 
     $last3articoli = getArticoli(0, 3, true);
     $articoloPrincipale = getArticoloPrincipale();
