@@ -12,39 +12,76 @@ require_once __DIR__ . "/db-handler.php";
     private $is_admin;
 
 
-    public function __construct (string $nome) //ATTENZIONE CI VA NICKNAME MA PRIMA MODIFICO IL DB E POI CORREGGO
+    public function __construct (string $email) 
     {
         $connection = new DBConnection();
-
-        $result = $connection->query("SELECT user_id, nome, cognome, email, img_path, passw, is_admin 
-                                          FROM utente where nome=\"{$nome}\"");
-
+        $result = $connection->query("SELECT  user_id, nome, cognome, email, img_path, passw, is_admin 
+                                          FROM utente WHERE email=\"{$email}\"");
         if (!$result) {
-            throw new Exception ("User doesn't exixst", 1);
+            throw new Exception("L'utente non esiste", 1);
             exit;
         }
-
-
-
+        
         $user_row = $result->fetch_assoc();
 
-        $this->user_id  =   $user_row['user_id'];
-        $this->nome     =   $nome;                  // CORREGGO ANCHE DOPO QUA
+        $this->userid   =   $user_row['userid'];                  
+        $this->nome     =   $user_row['nome'];                  
         $this->cognome  =   $user_row['cognome'];
         $this->email    =   $user_row['email'];
         $this->img_path =   $user_row['img_path'];
         $this->passw    =   $user_row['passw'];
         $this->is_admin =   $user_row['is_admin'];
 
+        $connection->disconnect();
+    }
 
+    public function update()
+    {
+        $connection = new DBConnection();
+        $result = $connection->query("SELECT user_id, nome, cognome, email, img_path, passw, is_admin 
+                                          FROM utente WHERE  user_id=\"{$this->userid}\"");
+        if (!$result) {
+            throw new Exception("L'utente non esiste", 1);
+            exit;
+        }
+
+        $user_row = $result->fetch_assoc();
+
+        $this->userid   =   $user_row['userid'];                  
+        $this->nome     =   $user_row['nome'];                  
+        $this->cognome  =   $user_row['cognome'];
+        $this->email    =   $user_row['email'];
+        $this->img_path =   $user_row['img_path'];
+        $this->passw    =   $user_row['passw'];
+        $this->is_admin =   $user_row['is_admin'];
 
         $connection->disconnect();
 
-
-
     }
 
-    // FARE FUNZIONI GET E UPDATE
+    public function getUserid(){
+        return $this->userid;
+    }
+
+    public function getNome(){
+        return $this->nome;
+    }
+
+    public function getCognome(){
+        return $this->cognome;
+    }
+
+    public function getAdmin(){
+        return $this->is_admin;
+    }
+
+    public function getPassword(){
+        return $this->passw;
+    }
+
+    public function getEmail(){
+        return $this->email;
+    }
 
 
 }
