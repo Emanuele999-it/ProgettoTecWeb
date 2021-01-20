@@ -11,7 +11,6 @@
     $setterPagina->setDescription("Pagina iniziale del sito The Darksoulers");  
 
 	
-	
 
     $setterPagina->setNavBar(
         preg_replace(
@@ -24,11 +23,12 @@
 
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 
-	//controllo se l'utente e' loggato
-<<<<<<< HEAD
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
-=======
 
+	//controllo se l'utente e' loggato
+
+	
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
+		
 	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 		$uteneteMobile=file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php");
 		$utenteFull=file_get_contents(__DIR__ . "/php/contents/userLogin.php");
@@ -42,7 +42,6 @@
 	else {
 		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 	}
->>>>>>> parent of dfafb13 (test home)
 
     $last3articoli = getArticoli(0, 3, true);
     $articoloPrincipale = getArticoloPrincipale();
