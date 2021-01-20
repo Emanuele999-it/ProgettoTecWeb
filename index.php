@@ -1,14 +1,14 @@
 <?php
-
-	require_once __DIR__ . "/php/utente-class.php";
     require_once __DIR__ . "/php/setterTemplate.php";
     require_once __DIR__ . "/php/query-articoli.php";
-	require_once __DIR__ . "/php/contents/userLogin.php";
 
     $setterPagina = new setterTemplate(".");
 
     $setterPagina->setTitle("The Darksoulers");
     $setterPagina->setDescription("Pagina iniziale del sito The Darksoulers");  
+
+    //controllo se l'utente e' loggato
+    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 
     $setterPagina->setNavBar(
         preg_replace(
@@ -20,9 +20,6 @@
                 file_get_contents(__DIR__ . "/php/contents/home-nav.php"))));
 
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
-
-	//controllo se l'utente e' loggato
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 
     $last3articoli = getArticoli(0, 3, true);
     $articoloPrincipale = getArticoloPrincipale();

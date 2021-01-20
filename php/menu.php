@@ -4,6 +4,8 @@ require_once __DIR__ . "/query-articoli.php";
 
 $setterPagina = new setterTemplate("..");
 
+//controllo se l'utente e' loggato
+$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 
 if (key_exists("pagina", $_GET)) {
     if (intval($_GET["pagina"] < 1)) {
@@ -83,10 +85,6 @@ if ($currPag != 0) {
 }
 
 $setterPagina->setNavBar($nav);
-
-//controllo se l'utente e' loggato
-$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
-
 
 $setterPagina->setFooter();
 $setterPagina->validate();
