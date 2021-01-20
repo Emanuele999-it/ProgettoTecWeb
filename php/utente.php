@@ -11,14 +11,17 @@
 
     $setterPagina->setNavBar(file_get_contents(__DIR__ . "/contents/home-nav.php"));
 
-	//login eseguito sicuramente
-    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
-	$utenteNome= str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteNome);
 	
     $setterPagina->setPercorso("Utente");
     
     $utenteCon = file_get_contents(__DIR__ . "/contents/utenteContent.php");
     $utenteCon = str_replace("<NomeUtenetSegnaposto />", $_SESSION['user']->getNome(), $utenteCon);
+	
+	//login eseguito sicuramente
+    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
+	$utenteNome= str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteNome);
+	
+	
     if ($_SESSION["user"]->getAdmin()) {
         $utenteCon = str_replace("<SegnapostoAggiungiNuovoArticolo />",
          "<a id=\"aggiungi-articolo\" href=\" ../php/newArticolo.php\"> Aggiungi nuovo Articolo </a>",
