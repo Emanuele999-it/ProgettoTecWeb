@@ -87,9 +87,19 @@ if ($currPag != 0) {
 $setterPagina->setNavBar($nav);
 
 
-//controllo se l'utente e' loggato
-$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
-
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+		$uteneteMobile=file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php");
+		$utenteFull=file_get_contents(__DIR__ . "/php/contents/userLogin.php");
+		
+		$uteneteMobile=str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(),$uteneteMobile);
+		$uteneteFull=str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(),$uteneteFull);
+		
+		$setterPagina->setLoginContent($uteneteMobile,$utenteFull);
+		
+	}
+	else {
+		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
+	}
 
 $setterPagina->setFooter();
 $setterPagina->validate();

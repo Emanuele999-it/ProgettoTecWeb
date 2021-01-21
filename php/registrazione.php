@@ -15,10 +15,22 @@
             preg_replace(
                 "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/registrazione.php\">Registrati</a></li>)",
                 "<li id=\"currentLink\" class=\"elementomenu\">Registrati</li>",
-                file_get_contents(__DIR__ . "/contents/home-nav.php"))));
+                file_get_contents(__DIR__ . "/contents/home-nav.php")))+ù
+	);
 
-	//controllo se ha fatto il login
-    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
+	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+		$uteneteMobile=file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php");
+		$utenteFull=file_get_contents(__DIR__ . "/php/contents/userLogin.php");
+		
+		$uteneteMobile=str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(),$uteneteMobile);
+		$uteneteFull=str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(),$uteneteFull);
+		
+		$setterPagina->setLoginContent($uteneteMobile,$utenteFull);
+		
+	}
+	else {
+		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
+	}
 	
     $setterPagina->setPercorso("Registrati");
     
