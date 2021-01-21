@@ -2,6 +2,8 @@
     require_once __DIR__ . "/php/setterTemplate.php";
     require_once __DIR__ . "/php/query-articoli.php";
 
+	session_start();
+
     $setterPagina = new setterTemplate(".");
 
     $setterPagina->setTitle("The Darksoulers");
