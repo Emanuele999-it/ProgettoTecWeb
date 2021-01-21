@@ -24,19 +24,16 @@
 
 
 	//controllo se l'utente e' loggato
-	$utenteMobile="";
-	$utenteFull="";
 	
 	if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'])) {
-		$utenteMobile = file_get_contents(__DIR__ . "/contents/logRegMobileContent.php");
-		$utenteFull = file_get_contents(__DIR__ . "/contents/logRegContent.php");
+		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
 	}
 	else {
 		$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
 		$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
+		$setterPagina->setLoginContent($utenteFull,$utenteMobile);
 	}
-	
-	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
+
 
     $last3articoli = getArticoli(0, 3, true);
     $articoloPrincipale = getArticoloPrincipale();
