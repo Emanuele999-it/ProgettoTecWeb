@@ -14,14 +14,7 @@
 	
     $setterPagina->setPercorso("Utente");
     
-	$uteneteMobile=file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php");
-	$utenteFull=file_get_contents(__DIR__ . "/php/contents/userLogin.php");
-	
-	$setterPagina->setLoginContent($uteneteMobile,$utenteFull);
-	
-	$uteneteMobile=str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(),$uteneteMobile);
-	$uteneteFull=str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(),$uteneteFull);
-	
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/userLogin.php"), file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php"));
 	
     $utenteCon = file_get_contents(__DIR__ . "/contents/utenteContent.php");
     $utenteCon = str_replace("<NomeUtenetSegnaposto />", $_SESSION['user']->getNome(), $utenteCon);
