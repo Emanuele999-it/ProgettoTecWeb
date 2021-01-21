@@ -15,7 +15,7 @@ require_once __DIR__ . "/db-handler.php";
     public function __construct (string $email) 
     {
         $connection = new DBConnection();
-        $result = $connection->query("SELECT  user_id, nome, cognome, email, img_path, passw, is_admin 
+        $result = $connection->query("SELECT  userid, nome, cognome, email, img_path, passw, is_admin 
                                           FROM utente WHERE email=\"{$email}\"");
         if (!$result) {
             throw new Exception("L'utente non esiste", 1);
@@ -38,8 +38,8 @@ require_once __DIR__ . "/db-handler.php";
     public function update()
     {
         $connection = new DBConnection();
-        $result = $connection->query("SELECT user_id, nome, cognome, email, img_path, passw, is_admin 
-                                          FROM utente WHERE  user_id=\"{$this->userid}\"");
+        $result = $connection->query("SELECT userid, nome, cognome, email, img_path, passw, is_admin 
+                                          FROM utente WHERE  userid=\"{$this->userid}\"");
         if (!$result) {
             throw new Exception("L'utente non esiste", 1);
             exit;

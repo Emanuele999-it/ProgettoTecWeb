@@ -10,10 +10,8 @@ $_SESSION["cognome"]    =   $_POST['cognome'];
 $_SESSION["email"]      =   $_POST['email'];
 $_SESSION["password"]   =   $_POST['password1'];
 
-// Funzioni di controllo ???
 
 $connection = new DBConnection();
-
 
 
 
@@ -27,7 +25,6 @@ $connection->query($query);
 $user = new Utente($_POST['email']);
 $_SESSION['user'] = $user;
 
-// ALTRE INFO DI SESSIONE
 $connection->disconnect();
 header("Location: ./utente.php");
 exit;
