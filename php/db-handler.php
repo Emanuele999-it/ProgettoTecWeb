@@ -9,10 +9,10 @@ class DBConnection
 
     public function __construct()
     {
-        $this->username = "siteuser";
-        $this->password = "IloveDS";
+        $this->username = "root";
+        $this->password = "";
 
-        $this->connectTo("TecWeb");
+        $this->connectTo("tecweb");
     }
 
     public function connectTo(string $database)

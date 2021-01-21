@@ -1,6 +1,5 @@
 <?php
     require_once __DIR__ . "/setterTemplate.php";
-
     session_start();
 
     $setterPagina = new setterTemplate("..");

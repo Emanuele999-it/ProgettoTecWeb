@@ -27,7 +27,7 @@
 	$setterPagina->setPercorso("Articoli -> $titoloArticolo");
 
 	//controllo se l'utente e' loggato
-	if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'])) {
+	if (isset($_SESSION['nome']) && $_SESSION['loggedin']) {
 		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
 	}
 	else {

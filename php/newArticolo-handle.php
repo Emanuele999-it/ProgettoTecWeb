@@ -35,56 +35,30 @@ $data_pub_gioco               = $_POST["data-pubblicazione-gioco"];
 $data_pub_articolo            = date("Y-m-d H:i:s");
 
 
-//CONTROLLO SE IL GIOCO ESISTE GIA' NEL DATABASE
-$controllotrovato=false;
-$controllogioco=$connection->query("SELECT nome FROM `gioco`");
-while ($row = $controllogioco->fetch_assoc()) {
-    $controllogiocotitolo =  $row["nome"];
-    if ( $controllogiocotitolo == $nomedelgioco )
-        $controllotrovato=true;
-}
-if (!$controllogioco) {
-    throw new Exception("CONTROLLO GIOCO SBAGLIATO", 1);
-    exit;
-} 
-
-
- 
 /* QUERY FUNZIONANTE 
 INSERT INTO `gioco`(`game_id`, `nome`, `cat_id`, `data_pubb`, `img`, `alt`) 
 VALUES (NULL,"",1,"2021-10-30","","")
 */
 //QUERY FUNZIONANTE PER INSERIMENTO DEL GIOCO NUOVO ALTRIMENTI NON POSSO INSERIRE L'ARTICOLO
-if (!$controllotrovato){
-    $ultimogame_id=$connection->query("SELECT COUNT(game_id) FROM `gioco`");
-    while ($row = $ultimogame_id->fetch_assoc()) {
-        $game_id =  intval($row['COUNT(game_id)']);
-        $game_id = $game_id + 1;                        //INCREMENTO PER OTTENTE IL NUOVO GAME_ID
-    }
-    if (!$ultimogame_id) {
-        throw new Exception("GET GAME_ID SBAGLIATO", 1);
-        exit;
-    }
+$ultimogame_id=$connection->query("SELECT COUNT(game_id) FROM `gioco`");
+while ($row = $ultimogame_id->fetch_assoc()) {
+    $game_id =  intval($row['COUNT(game_id)']);
+    $game_id = $game_id + 1;                        //INCREMENTO PER OTTENTE IL NUOVO GAME_ID
 }
-else{
-    $ultimogame_id=$connection->query("SELECT game_id FROM `gioco` WHERE nome=\"{$nomedelgioco}\" ");
-    $row = $ultimogame_id->fetch_assoc();
-    $game_id  = intval($row["game_id"]);
+if (!$ultimogame_id) {
+    throw new Exception("GET GAME_ID SBAGLIATO", 1);
+    exit;
 }
 
-//INSERIMENTO GIOCO OPPURE NO  
-if (!$controllotrovato){
-        $result=$connection->query("INSERT INTO gioco (game_id, nome, cat_id,
-                                                        data_pubb, img, alt)
-                                    VALUES (\"{$game_id}\",\"{$nomedelgioco}\",\"{$cat_id}\",
-                                            \"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")");
-        if (!$result) {
-            throw new Exception("INSERIMENTO GIOCO SBAGLIATO", 1);
-            exit;
-        }
-} 
-else {
 
+
+$result=$connection->query("INSERT INTO gioco (game_id, nome, cat_id,
+                                                 data_pubb, img, alt)
+                             VALUES (\"{$game_id}\",\"{$nomedelgioco}\",\"{$cat_id}\",
+                                    \"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")");
+if (!$result) {
+    throw new Exception("INSERIMENTO GIOCO SBAGLIATO", 1);
+    exit;
 }
 
 // OTTENGO IL GAME_ID DEL DEL NUOVO GIOCO CHE CORRISPONDE AL NUMERO DI RIGHE
@@ -130,14 +104,10 @@ if (!$result) {
     throw new Exception("INSERIMENTO DATI ARTICOLO query SBAGLIATO", 1);
     exit;
 }
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////FILE IMMAGINE
 if(!isset($_FILES['immagine']['error']) ){
     throw new Exception("upload IMMAGINE SBAGLIATO", 1);
 }
+
 $target_file = "../img/" . basename($_FILES["immagine"]["name"]);
 $imageFileType = strtolower(pathinfo($_FILES["immagine"]["name"], PATHINFO_EXTENSION));
 $target_dir ="../img/";
@@ -147,23 +117,20 @@ move_uploaded_file($_FILES['immagine']['tmp_name'], $target_file);
 UPDATE articolo SET img_path="prova" WHERE titolo="metal"
  */
 // UPDATE SET per il path immagine di articolo
-
-    $result=$connection->query("UPDATE articolo SET img_path=\"{$target_file}\" WHERE titolo=\"{$titolo}\" ");
-    if (!$result) {
-        throw new Exception("QUERY ARTICOLO update file SBAGLIATA", 1);
-        exit;
-        }
+$result=$connection->query("UPDATE articolo SET img_path=\"{$target_file}\" WHERE titolo=\"{$titolo}\" ");
+if (!$result) {
+    throw new Exception("QUERY ARTICOLO update file SBAGLIATA", 1);
+    exit;
+}
 
 /*      QUERY CORRETTA
     UPDATE gioco SET img="../img/metalgear.jpg" WHERE nome="a"
 */
 //UPDATE SET per il path immaggine di gioco
-if (!$controllotrovato){
-    $result=$connection->query("UPDATE gioco SET img=\"{$target_file}\" WHERE nome=\"{$nomedelgioco}\" ");
-    if (!$result) {
-        throw new Exception("QUERY GIOCO update file SBAGLIATA", 1);
-        exit;
-}
+$result=$connection->query("UPDATE gioco SET img=\"{$target_file}\" WHERE nome=\"{$nomedelgioco}\" ");
+if (!$result) {
+    throw new Exception("QUERY GIOCO update file SBAGLIATA", 1);
+    exit;
 }
 
 $connection->disconnect();

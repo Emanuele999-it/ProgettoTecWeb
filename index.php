@@ -1,16 +1,15 @@
 <?php
     require_once __DIR__ . "/php/setterTemplate.php";
     require_once __DIR__ . "/php/query-articoli.php";
+	require_once __DIR__ . "/php/utente-class.php";
 
+	session_start();
 
     $setterPagina = new setterTemplate(".");
 
     $setterPagina->setTitle("The Darksoulers");
     $setterPagina->setDescription("Pagina iniziale del sito The Darksoulers");  
 
-	
-	$setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
-	
     $setterPagina->setNavBar(
         preg_replace(
             "((?s)<a href=\"<rootFolder />/index.php\" xml:lang=\"en\">Home</a>)",
@@ -21,15 +20,16 @@
                 file_get_contents(__DIR__ . "/php/contents/home-nav.php")))
 	);
 	
+	$setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 	
 	//controllo se l'utente e' loggato
-	if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'])) {
-		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"),file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php") );
-	}
-	else {
+	if (isset($_SESSION['nome']) && $_SESSION['loggedin']) {
 		$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php"));
 		$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/php/contents/userLogin.php"));
 		$setterPagina->setLoginContent($utenteFull, $utenteMobile);
+	}
+	else {
+		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"),file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php") );	
 	}
 	
 

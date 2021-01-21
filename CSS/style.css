@@ -1,8 +1,9 @@
-
-* {
+/* ANDREBBE MESSO DI DEFAULT ma fotte un po il layout, andrebbe adattato
+{
 	padding: 0em;
 	margin: 0em;
 }
+*/
 
 .aiuti-screenreader {
     position: absolute;
