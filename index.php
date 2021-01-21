@@ -19,6 +19,7 @@
                 file_get_contents(__DIR__ . "/php/contents/home-nav.php")))
 	);
 	
+	$setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 
 	//controllo se l'utente e' loggato
 	if (key_exists("loggedin", $_SESSION)&& $_SESSION['loggedin']) {
@@ -29,8 +30,6 @@
 	else {
 		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
 	}
-	
-	$setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 	
 
     $last3articoli = getArticoli(0, 3, true);

@@ -5,8 +5,6 @@ require_once __DIR__ . "/query-articoli.php";
 $setterPagina = new setterTemplate("..");
 
 
-
-
 if (key_exists("pagina", $_GET)) {
     if (intval($_GET["pagina"] < 1)) {
         header("Location: error/404.php");
