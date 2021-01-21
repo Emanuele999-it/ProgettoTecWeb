@@ -14,6 +14,10 @@
             <input type="text" id="aggiungi-gioco" name="gioco" value="" />
         </li>
         <li>
+            <label for="aggiungi-anno-publicazione">Data pubblicazione gioco</label>
+            <input type="date" id="aggiungi-anno-publicazione" name="data-pubblicazione-gioco" value="" />
+        </li>
+        <li>
             <label for="aggiungi-titolo">Titolo Articolo</label>
             <input type="text" id="aggiungi-titolo" name="titolo" value="" />
         </li>
