@@ -25,23 +25,17 @@
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 
 
-	//controllo se l'utente e' loggato
-	
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
-		
+	//controllo se l'utente e' loggato	
 	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-		$uteneteMobile=file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php");
-		$utenteFull=file_get_contents(__DIR__ . "/php/contents/userLogin.php");
-		
-		$uteneteMobile=str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(),$uteneteMobile);
-		$uteneteFull=str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(),$uteneteFull);
-		
-		$setterPagina->setLoginContent($uteneteMobile,$utenteFull);
-		
+		$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
+		$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
 	}
 	else {
-		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
+		$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
+		$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/logRegContent.php"));
 	}
+
+	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
 
 
     $last3articoli = getArticoli(0, 3, true);

@@ -21,7 +21,8 @@
 	$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
     
 	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
-			
+	
+	
     if ($_SESSION["user"]->getAdmin()) {
         $utenteCon = str_replace("<SegnapostoAggiungiNuovoArticolo />",
          "<a id=\"aggiungi-articolo\" href=\" ../php/newArticolo.php\"> Aggiungi nuovo Articolo </a>",
