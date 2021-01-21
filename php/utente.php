@@ -14,8 +14,6 @@
 	
     $setterPagina->setPercorso("Utente");
     
-    $setterPagina->setPercorso("Utente");
-
     $utenteCon = file_get_contents(__DIR__ . "/contents/utenteContent.php");
     $utenteCon = str_replace("<NomeUtenetSegnaposto />", $_SESSION['user']->getNome(), $utenteCon);
 
