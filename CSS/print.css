@@ -4,14 +4,10 @@ body{
     color: black;
 }
 
-<<<<<<< HEAD
-/*Da rivedere quando c'è php delle immagini per inserire logo sito*/
 
-#logo-mobile-short, #links, #icon, #menu, #barra-di-ricerca, .aiuti-screenreader, .torna-su, #footer, img{
-=======
 #logo-mobile-short, #links, #icon, #menu, #barra-di-ricerca, .aiuti-screenreader, .torna-su, #footer,
 .articoloPrincipale img, .articoloScheda img,#logo-mobile-full, .boxgenere img{
->>>>>>> 8ea5f584d463a925f6bd6df4f32097a1f4121dd5
+
     display: none;
 }
 
