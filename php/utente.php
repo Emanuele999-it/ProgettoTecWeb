@@ -19,10 +19,16 @@
     $utenteCon = file_get_contents(__DIR__ . "/contents/utenteContent.php");
     $utenteCon = str_replace("<NomeUtenetSegnaposto />", $_SESSION['user']->getNome(), $utenteCon);
 
-    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
-	$utenteCon = str_replace("<SegnapostoNome />", "mario", $utenteCon);
-	$utenteCon = str_replace("<SegnapostoNomeMobile />", "mario", $utenteCon);
-	$utenteCon = str_replace("<mario />", "mario", $utenteCon);
+    
+	$provaUtente=file_get_contents(__DIR__ . "/contents/userLogin.php");
+	$provaUtenteMobile=file_get_contents(__DIR__ . "/contents/userLoginMobile.php");
+	
+	$setterPagina->setLoginContent(/*file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php")*/$provaUtente,$provaUtenteMobile);
+	
+	
+	$provaUtente = str_replace("<SegnapostoNome />", "mario", $utenteCon);
+	$provaUtenteMobile = str_replace("<SegnapostoNomeMobile />", "mario", $utenteCon);
+	$provaUtente = str_replace("<mario />", "mario", $utenteCon);
 	
 	//$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
 	
