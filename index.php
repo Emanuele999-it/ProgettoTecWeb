@@ -21,13 +21,13 @@
 	
 
 	//controllo se l'utente e' loggato
-	if (!$_SESSION['loggedin']) {
-		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
-	}
-	else {
+	if (key_exists("loggedin", $_SESSION)&& $_SESSION['loggedin']) {
 		$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
 		$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
 		$setterPagina->setLoginContent($utenteFull, $utenteMobile);
+	}
+	else {
+		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
 	}
 	
 	$setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
