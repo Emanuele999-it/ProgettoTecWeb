@@ -8,7 +8,8 @@
     $setterPagina->setDescription("Pagina iniziale del sito The Darksoulers");  
 
 	
-
+	$setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
+	
     $setterPagina->setNavBar(
         preg_replace(
             "((?s)<a href=\"<rootFolder />/index.php\" xml:lang=\"en\">Home</a>)",
@@ -19,7 +20,7 @@
                 file_get_contents(__DIR__ . "/php/contents/home-nav.php")))
 	);
 	
-	$setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
+	
 
 	//controllo se l'utente e' loggato
 	if (key_exists("loggedin", $_SESSION)&& $_SESSION['loggedin']) {
