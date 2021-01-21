@@ -18,14 +18,10 @@
                 file_get_contents(__DIR__ . "/contents/home-nav.php")))+ù
 	);
 
+	$setterPagina->setPercorso("Registrati");
+
 	//controllo se l'utente e' loggato
 	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
-	
-	
-    $setterPagina->setPercorso("Registrati");
-    
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
-
 	
     //da sistemare una volta implementato il db
     $regCon = file_get_contents(__DIR__ . "/contents/registrazioneContent.php");
