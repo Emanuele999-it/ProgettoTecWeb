@@ -21,7 +21,7 @@
 	
 
 	//controllo se l'utente e' loggato
-	if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'])) {
+	if (!$_SESSION['loggedin']) {
 		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
 	}
 	else {
