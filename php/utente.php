@@ -25,9 +25,8 @@
 	
 	$setterPagina->setLoginContent(/*file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php")*/$provaUtente,$provaUtenteMobile);
 	
-	
-	$provaUtente = str_replace("<SegnapostoNome />", "mario", $utenteCon);
-	$provaUtenteMobile = str_replace("<SegnapostoNomeMobile />", "mario", $utenteCon);
+	$provaUtente = str_replace("<SegnapostoNome />", "<p>Mario</p>", $utenteCon);
+	$provaUtenteMobile = str_replace("<SegnapostoNomeMobile />", "<p>Mario</p>", $utenteCon);
 	$provaUtente = str_replace("<mario />", "mario", $utenteCon);
 	
 	//$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
