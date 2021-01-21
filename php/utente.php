@@ -24,8 +24,9 @@
 	$utenteCon = str_replace("<SegnapostoNome />", "mario", $utenteCon);
 	*/
 	
-	setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
-	
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
+	 
+	 
     if ($_SESSION["user"]->getAdmin()) {
         $utenteCon = str_replace("<SegnapostoAggiungiNuovoArticolo />",
          "<a id=\"aggiungi-articolo\" href=\" ../php/newArticolo.php\"> Aggiungi nuovo Articolo </a>",
