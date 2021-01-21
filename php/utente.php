@@ -14,12 +14,18 @@
 	
     $setterPagina->setPercorso("Utente");
     
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/userLogin.php"), file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php"));
-	
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
+	$utenteMobile= str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteMobile);
+	$utenteFull= str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteFull);
+
+
+
+    $setterPagina->setPercorso("Utente");
+
     $utenteCon = file_get_contents(__DIR__ . "/contents/utenteContent.php");
     $utenteCon = str_replace("<NomeUtenetSegnaposto />", $_SESSION['user']->getNome(), $utenteCon);
-	
-	
+
+    
     if ($_SESSION["user"]->getAdmin()) {
         $utenteCon = str_replace("<SegnapostoAggiungiNuovoArticolo />",
          "<a id=\"aggiungi-articolo\" href=\" ../php/newArticolo.php\"> Aggiungi nuovo Articolo </a>",
