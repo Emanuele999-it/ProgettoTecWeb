@@ -22,7 +22,7 @@
     $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
 	$utenteCon = str_replace("<SegnapostoNome />", "mario", $utenteCon);
 	$utenteCon = str_replace("<SegnapostoNomeMobile />", "mario", $utenteCon);
-	
+	$utenteCon = str_replace("<mario />", "mario", $utenteCon);
 	
 	//$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
 	
