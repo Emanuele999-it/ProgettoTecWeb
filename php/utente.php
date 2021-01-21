@@ -20,8 +20,8 @@
     $utenteCon = str_replace("<NomeUtenetSegnaposto />", $_SESSION['user']->getNome(), $utenteCon);
 
     $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
-	$utenteCon = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteCon);
-	$utenteCon = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteCon);
+	$utenteCon = str_replace("<SegnapostoNome />", "mario", $utenteCon);
+	$utenteCon = str_replace("<SegnapostoNome />", "mario", $utenteCon);
 	
 	
     if ($_SESSION["user"]->getAdmin()) {
