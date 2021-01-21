@@ -19,10 +19,12 @@
     $utenteCon = file_get_contents(__DIR__ . "/contents/utenteContent.php");
     $utenteCon = str_replace("<NomeUtenetSegnaposto />", $_SESSION['user']->getNome(), $utenteCon);
 
-    $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
+    /*$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/userLogin.php"), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
 	$utenteCon = str_replace("<SegnapostoNome />", "mario", $utenteCon);
 	$utenteCon = str_replace("<SegnapostoNome />", "mario", $utenteCon);
+	*/
 	
+	setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
 	
     if ($_SESSION["user"]->getAdmin()) {
         $utenteCon = str_replace("<SegnapostoAggiungiNuovoArticolo />",

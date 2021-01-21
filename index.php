@@ -16,8 +16,9 @@
             preg_replace(
                 "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/index.php\" xml:lang=\"en\">Home</a></li>)",
                 "<li xml:lang=\"en\" id=\"currentLink\" class=\"elementomenu\">Home</li>",
-                file_get_contents(__DIR__ . "/php/contents/home-nav.php"))));
-				
+                file_get_contents(__DIR__ . "/php/contents/home-nav.php")))
+	);
+	
     //controllo se l'utente e' loggato
     $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
 
