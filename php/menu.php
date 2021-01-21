@@ -1,9 +1,6 @@
 <?php
 require_once __DIR__ . "/setterTemplate.php";
 require_once __DIR__ . "/query-articoli.php";
-require_once __DIR__ . "/utente-class.php";
-
-session_start();
 
 $setterPagina = new setterTemplate("..");
 
@@ -89,7 +86,7 @@ $setterPagina->setNavBar($nav);
 
 
 //controllo se l'utente e' loggato
-	if (isset($_SESSION['nome']) && $_SESSION['loggedin']) {
+	if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'])) {
 		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
 	}
 	else {
