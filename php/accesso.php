@@ -18,10 +18,11 @@
                 file_get_contents(__DIR__ . "/contents/home-nav.php")))
 	);
 
-
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
-    $setterPagina->setPercorso("Accedi");
     
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
+	$setterPagina->setPercorso("Accedi");
+	
+	
     //da sistemare una volta implementato il db
     $accCon = file_get_contents(__DIR__ . "/contents/accessoContent.php");
     if ($_SESSION["err-credenziali"]==true) {
