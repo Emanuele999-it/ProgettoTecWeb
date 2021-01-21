@@ -24,8 +24,10 @@
 
     $setterPagina->setPercorso("<span xml:lang=\"en\"> Home</span>");
 
-
-	//controllo se l'utente e' loggato	
+	
+	//controllo se l'utente e' loggato
+	$utenteFull;
+	$utenteMobile;	
 	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 		$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
 		$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
