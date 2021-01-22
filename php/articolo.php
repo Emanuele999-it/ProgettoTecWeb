@@ -28,14 +28,14 @@
 	$titoloArticolo = getTitolo($idArticolo);
 	$setterPagina->setPercorso("Articoli -> $titoloArticolo");
 
-	//controllo se l'utente e' loggato
+	//controllo accesso
 	if ($_SESSION['loggedin']) {
-		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
+	$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
+	$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
+	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
 	}
-	else {
-		$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
-		$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
-		$setterPagina->setLoginContent($utenteFull, $utenteMobile);
+else{
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
 	}
 
 	//modifico il contenuto in base alla query ricevuta
