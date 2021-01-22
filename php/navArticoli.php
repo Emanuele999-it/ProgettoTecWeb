@@ -11,7 +11,8 @@ function navArticoli($numArticoli, $pagNav){
         }
         $risultato .= "<div id=\"navArticoli\"><ul>";
         if($pagNav != 0){
-            $risultato .= "<li class=\"elNavArticoli\"><a href=\"<rootFolder />/php/menu.php?id=1&page=" . $pagNav-1
+            $prec = $pagNav-1;
+            $risultato .= "<li class=\"elNavArticoli\"><a href=\"<rootFolder />/php/menu.php?id=1&page=" . $prec
                 . "\" >< </a></li>";
         }
         else{
@@ -28,7 +29,8 @@ function navArticoli($numArticoli, $pagNav){
             }
         }
         if($pagNav+1 != $numPagine){
-            $risultato .= "<li class=\"elNavArticoli\"><a href=\"<rootFolder />/php/menu.php?id=1&page=" . $pagNav+1
+            $succ = $pagNav+1;
+            $risultato .= "<li class=\"elNavArticoli\"><a href=\"<rootFolder />/php/menu.php?id=1&page=" . $succ
                 . "\" > ></a></li></ul>";
         }
         else{
