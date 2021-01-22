@@ -47,37 +47,37 @@ switch ($currCat) {
         $setterPagina->setDescription("Elenco degli articoli di categoria Giochi di ruolo");
         $numArticoli = contaArticoli("genere",1);
         $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 1) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = preg_replace("<navArtPlaceholder />", "genere-result.php?id=1",$listaGenCon);
+        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=1",$listaGenCon);
         break;
     case 2:
         $setterPagina->setDescription("Elenco degli articoli di categoria Sportivi");
         $numArticoli = contaArticoli("genere",2);
         $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 2) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = preg_replace("<navArtPlaceholder />", "genere-result.php?id=2",$listaGenCon);
+        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=2",$listaGenCon);
         break;
     case 3:
         $setterPagina->setDescription("Elenco degli articoli di categoria Sparatutto");
         $numArticoli = contaArticoli("genere",3);
         $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 3) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = preg_replace("<navArtPlaceholder />", "genere-result.php?id=3",$listaGenCon);
+        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=3",$listaGenCon);
         break;    
     case 4:
         $setterPagina->setDescription("Elenco degli articoli di categoria Avventura");
         $numArticoli = contaArticoli("genere",4);
         $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 4) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = preg_replace("<navArtPlaceholder />", "genere-result.php?id=4",$listaGenCon);
+        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=4",$listaGenCon);
         break;
     case 5:
         $setterPagina->setDescription("Elenco degli articoli di categoria Azione");
         $numArticoli = contaArticoli("genere",5);
         $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 5) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = preg_replace("<navArtPlaceholder />", "genere-result.php?id=5",$listaGenCon);
+        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=5",$listaGenCon);
         break;
     case 6:
         $setterPagina->setDescription("Elenco degli articoli di categoria Gestionale");
         $numArticoli = contaArticoli("genere",6);
         $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 6) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = preg_replace("<navArtPlaceholder />", "genere-result.php?id=6",$listaGenCon);
+        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=6",$listaGenCon);
         break;
 }
 

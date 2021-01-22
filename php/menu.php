@@ -50,7 +50,7 @@ switch ($currPag) {
         $numArticoli = contaArticoli("ricerca",$termineCerca);
         $pageContent .= cercaArticoli($termineCerca, $pagNav) . navArticoli($numArticoli, $pagNav) . "</div>";
         $replacingLink = "menu.php?termine-ricerca=" . $termineCerca . "&x=0&y=0";
-        $pageContent = preg_replace("<navArtPlaceholder />", $replacingLink,$pageContent);
+        $pageContent = str_replace("<navArtPlaceholder />", $replacingLink,$pageContent);
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
@@ -73,7 +73,7 @@ switch ($currPag) {
         $pageContent = "<div  class=\"contenutoGenerale\" id=\"contenutoArticoli\" >";
         $numArticoli = contaArticoli("nuove uscite","");
         $pageContent .= getNuoveUscite($pagNav) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $pageContent = preg_replace("<navArtPlaceholder />", "menu.php?id=4",$pageContent);
+        $pageContent = str_replace("<navArtPlaceholder />", "menu.php?id=4",$pageContent);
         break;
 }
 $pageContent .= "<div class=\"torna-su\" ><a class=\"torna-su-link\" href=\"#header\">Torna su</a></div>";
