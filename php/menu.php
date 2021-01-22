@@ -32,6 +32,7 @@ if ($currPag == 0 && !key_exists("termine-ricerca", $_GET)) {
 }
 
 $termineCerca = $_GET['termine-ricerca'];
+$pagNav = $_GET['page'];
 
 if ($currPag < 0 || $currPag >= 5) {
     header("Location: error/404.php");
@@ -52,7 +53,7 @@ switch ($currPag) {
         $setterPagina->setDescription("Elenco di tutti gli articoli");
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
         $numArticoli = contaArticoli();
-        $pageContent .= getArticoli(0, 10) . navArticoli($numArticoli) . "</div>";
+        $pageContent .= getArticoli($pagNav*10, 10) . navArticoli($numArticoli) . "</div>";
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");

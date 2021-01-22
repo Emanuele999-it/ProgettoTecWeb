@@ -315,13 +315,13 @@ ul{
 
 #navArticoli{
     float: right;
+    font-size: 1.4em;
 }
 
 .elNavArticoli{
     text-align: center;
     display: inline-block;
     margin: 0.5em;
-    font-size: 1em;
     font-weight: bolder;
 }
 

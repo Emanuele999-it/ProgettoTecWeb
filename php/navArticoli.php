@@ -13,13 +13,18 @@ function navArticoli($numArticoli){
         $risultato .= "<li class=\"elNavArticoli\"><a href=\"\" >< </a></li>";
         for($i = 0; $i < $numPagine; $i++){
             $numero = $i + 1;
-            $risultato .= "<li class=\"elNavArticoli\"><a href=\"\" >" . $numero . "</a></li>";
+            $risultato .= "<li class=\"elNavArticoli\"><a href=\"<rootFolder />/php/menu.php?id=1&page=" . $i . "\" >"
+                . $numero . "</a></li>";
         }
         $risultato .= "<li class=\"elNavArticoli\"><a href=\"\" > ></a></li></ul>";
         $risultato .= "</div>";
     }
     return $risultato;
 }
+
+/*
+<a href="<rootFolder />/php/genere-result.php?id=2"
+*/
 
 
 
