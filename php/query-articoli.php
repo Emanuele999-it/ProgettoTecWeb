@@ -121,8 +121,10 @@ function contaArticoli(){
 
     $num = 0;
 
+
     if ($result) {
-        $num = $result['num'];
+        $row=$result->fetch_assoc();
+        $num=$row['num'];
     }
     else{
         $num = -1;
