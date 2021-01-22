@@ -40,9 +40,25 @@
 		}
 
 
+
+
 	//modifico il contenuto in base alla query ricevuta
 	$artPageCon = file_get_contents(__DIR__ . "/contents/articolopageContent.php");
 	$artPageCon = str_replace("<articoloContent />", $htmlArticolo, $artPageCon);
+
+	// DELETE ARTICOLO
+	if (key_exists("user", $_SESSION) &&  $_SESSION["user"]->getAdmin()){	
+	
+		$id = $_GET["id"];
+		$artPageCon = str_replace("<SegnapostoDeleteArticolo />",
+		 "<a class=\"torna-su-link\" id=\"delete-articolo\" href=\" ../php/elimina-articolo.php?deleteID=$id\"> Elimina articolo </a>",
+		 $artPageCon);
+	} else {
+		$artPageCon = str_replace("<SegnapostoDeleteArticolo />", "", $artPageCon);
+	}		
+
+
+
 	$setterPagina->setContent($artPageCon);
 	$setterPagina->setFooter();
 
