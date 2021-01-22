@@ -1,6 +1,6 @@
 <?php
 
-function navArticoli($numArticoli){
+function navArticoli($numArticoli, $pagNav){
     $risultato="";
     if($numArticoli > 10){
         if($numArticoli%10 == 0){
@@ -10,13 +10,30 @@ function navArticoli($numArticoli){
             $numPagine = floor($numArticoli / 10) + 1;
         }
         $risultato .= "<div id=\"navArticoli\"><ul>";
-        $risultato .= "<li class=\"elNavArticoli\"><a href=\"\" >< </a></li>";
+        if($pagNav != 0){
+            $risultato .= "<li class=\"elNavArticoli\"><a href=\"<rootFolder />/php/menu.php?id=1&page=" . $pagNav-1
+                . "\" >< </a></li>";
+        }
+        else{
+            $risultato .= "<li class=\"elNavArticoli\">< </li>";
+        }
         for($i = 0; $i < $numPagine; $i++){
             $numero = $i + 1;
-            $risultato .= "<li class=\"elNavArticoli\"><a href=\"<rootFolder />/php/menu.php?id=1&page=" . $i . "\" >"
-                . $numero . "</a></li>";
+            if($i == $pagNav){
+                $risultato .= "<li class=\"elNavArticoli\">" . $numero . "</li>";
+            }
+            else{
+                $risultato .= "<li class=\"elNavArticoli\"><a href=\"<rootFolder />/php/menu.php?id=1&page=" . $i . "\" >"
+                    . $numero . "</a></li>";
+            }
         }
-        $risultato .= "<li class=\"elNavArticoli\"><a href=\"\" > ></a></li></ul>";
+        if($pagNav+1 != $numPagine){
+            $risultato .= "<li class=\"elNavArticoli\"><a href=\"<rootFolder />/php/menu.php?id=1&page=" . $pagNav+1
+                . "\" > ></a></li></ul>";
+        }
+        else{
+            $risultato .= "<li class=\"elNavArticoli\"> ></li></ul>";
+        }
         $risultato .= "</div>";
     }
     return $risultato;

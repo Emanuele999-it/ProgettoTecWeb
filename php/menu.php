@@ -53,7 +53,7 @@ switch ($currPag) {
         $setterPagina->setDescription("Elenco di tutti gli articoli");
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
         $numArticoli = contaArticoli();
-        $pageContent .= getArticoli($pagNav, 10) . navArticoli($numArticoli) . "</div>";
+        $pageContent .= getArticoli($pagNav, 10) . navArticoli($numArticoli, $pagNav) . "</div>";
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");
