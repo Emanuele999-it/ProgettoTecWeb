@@ -57,7 +57,7 @@ switch ($currPag) {
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
         $numArticoli = contaArticoli("articoli","");
         $pageContent .= getArticoli($pagNav, 10) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $pageContent = preg_replace("<navArtPlaceholder />", "menu.php?id=1",$pageContent);
+        $pageContent = str_replace("<navArtPlaceholder />", "menu.php?id=1",$pageContent);
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");
