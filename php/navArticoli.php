@@ -10,12 +10,12 @@ function navArticoli($numArticoli){
             $numPagine = floor($numArticoli / 10) + 1;
         }
         $risultato .= "<div id=\"navArticoli\"><ul>";
-        $risultato .= "<li>< </li>";
+        $risultato .= "<li class=\"elNavArticoli\"><a href=\"\" >< </a></li>";
         for($i = 0; $i < $numPagine; $i++){
             $numero = $i + 1;
-            $risultato .= "<li>" . $numero . "</li>";
+            $risultato .= "<li class=\"elNavArticoli\"><a href=\"\" >" . $numero . "</a></li>";
         }
-        $risultato .= "<li> ></li></ul>";
+        $risultato .= "<li class=\"elNavArticoli\"><a href=\"\" > ></a></li></ul>";
         $risultato .= "</div>";
     }
     return $risultato;

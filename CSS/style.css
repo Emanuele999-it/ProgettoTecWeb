@@ -184,7 +184,6 @@ ul{
     font-size: 1.3em;
     font-weight: bolder;
     color: white;
-
 }
 
 #breadcrumb {
@@ -314,6 +313,18 @@ ul{
 
 /*!!!!!!!!     FINE NUOVA SCHEDA ARTICOLO     !!!!!!!!!*/
 
+#navArticoli{
+    float: right;
+}
+
+.elNavArticoli{
+    text-align: center;
+    display: inline-block;
+    margin: 0.5em;
+    font-size: 1em;
+    font-weight: bolder;
+}
+
 .top10-page{
     margin: 2em;
     padding: 2em;
@@ -333,19 +344,13 @@ ul{
 }
 
 .boxgenere{
-    /*padding: 1em;*/
     height: 100px;
     width: 200px;
-    /*border: 1px solid black;*/
     display: inline-block;
     margin: 2em;
-    /*border-radius: 2em;*/
     color: black;
 }
 
-.link-box-genere{
-
-}
 
 a.link-box-genere:visited{
     color: black;
@@ -357,11 +362,6 @@ a.link-box-genere:visited{
     border-radius: 4em;
 
 }
-
-.top10-articolo{
-
-}
-
 
 .torna-su{
     padding: 3em;
