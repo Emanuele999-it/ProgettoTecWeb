@@ -41,10 +41,5 @@ function navArticoli($numArticoli, $pagNav){
     return $risultato;
 }
 
-/*
-<a href="<rootFolder />/php/genere-result.php?id=2"
-*/
-
-
 
 ?>
