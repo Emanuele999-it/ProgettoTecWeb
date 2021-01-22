@@ -109,12 +109,9 @@ VALUES (NULL,'a','a','a','2020-12-07 18:00:21','',1,'',20, 0)");
 */
 // OTTENGO  ARTICOLO_ID DEL DEL NUOVO GIOCO CHE CORRISPONDE AL NUMERO DI RIGHE + 1
 
-//SELECT MAX(articolo_id) FROM articolo
-
-
-$ultimoarticolo_id=$connection->query("SELECT MAX(articolo_id) FROM articolo");
+$ultimoarticolo_id=$connection->query("SELECT COUNT(articolo_id) FROM `articolo`");
 while ($row = $ultimoarticolo_id->fetch_assoc()) {
-    $articolo_id =  intval($row['MAX(articolo_id)']);
+    $articolo_id =  intval($row['COUNT(articolo_id)']);
     $articolo_id = $articolo_id + 1;                        //INCREMENTO PER OTTENTE IL NUOVO ARTICOLO_ID
 }
 if (!$ultimoarticolo_id) {
