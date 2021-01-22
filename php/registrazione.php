@@ -15,7 +15,7 @@
             preg_replace(
                 "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/registrazione.php\">Registrati</a></li>)",
                 "<li id=\"currentLink\" class=\"elementomenu\">Registrati</li>",
-                file_get_contents(__DIR__ . "/contents/home-nav.php")))+ù
+                file_get_contents(__DIR__ . "/contents/home-nav.php")))
 	);
 
 	$setterPagina->setPercorso("Registrati");
@@ -29,7 +29,6 @@
 	$utenteFull = str_replace("<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a>","Registrati", $utenteFull);
 	
 	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
-	
 	
 	
 	
