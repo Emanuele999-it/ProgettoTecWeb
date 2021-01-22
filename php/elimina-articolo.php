@@ -21,7 +21,7 @@ if (!$result) {
     exit;
 }
 $connection->disconnect();
-header("Location: http://".$_SERVER['HTTP_HOST'] ."/index.php");
+header("Location: ../index.php");
 exit;
 
 ?>
