@@ -25,7 +25,6 @@
 	
 	//controllo se l'utente e' loggato
 	if ($_SESSION['loggedin']){
-		
 		$utenteMobile = file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php");
 		$utenteFull = file_get_contents(__DIR__ . "/php/contents/userLogin.php");
 		

@@ -26,7 +26,7 @@
 	$utenteFull = file_get_contents(__DIR__ . "/contents/logRegContent.php");
 		
 	$utenteMobile = str_replace("<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a>","Registrati", $utenteMobile);
-	$utenteFull = str_replace("<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a></li><SegnapostoNome /></a>","Registrati", $utenteFull);
+	$utenteFull = str_replace("<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a>","Registrati", $utenteFull);
 	
 	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
 	
