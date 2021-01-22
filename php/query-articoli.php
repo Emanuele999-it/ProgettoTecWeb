@@ -113,6 +113,26 @@ function getArticoli($page, $numArticoli, $woPrincipale = false)
     return $risultato;
 }
 
+function contaArticoli(){
+    $mysql = new DBconnection;
+
+    $query = "SELECT count(*) AS num FROM articolo ";
+    $result = $mysql->query($query);
+
+    $num = 0;
+
+    if ($result) {
+        $num = $result['num'];
+    }
+    else{
+        $num = -1
+    }
+
+    $mysql->disconnect();
+
+    return $num;
+}
+
 function cercaArticoli($value, $page)
 {
     $mysql = new DBconnection;
