@@ -3,6 +3,8 @@ require_once __DIR__ . "/setterTemplate.php";
 require_once __DIR__ . "/query-articoli.php";
 require_once __DIR__ . "/utente-class.php";
 
+session_start();
+
 $setterPagina = new setterTemplate("..");
 
 if (key_exists("pagina", $_GET)) {
