@@ -8,7 +8,7 @@
         <a href="<rootFolder />/php/menu.php?id=1&page=0">Articoli</a>
         <a href="<rootFolder />/php/menu.php?id=2">Genere</a>
         <a href="<rootFolder />/php/menu.php?id=3">Top 10</a>
-        <a href="<rootFolder />/php/menu.php?id=4">Nuove Uscite</a>
+        <a href="<rootFolder />/php/menu.php?id=4&page=0">Nuove Uscite</a>
         <hr>
         <logincontentMobile />
     </div>

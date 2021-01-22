@@ -113,10 +113,29 @@ function getArticoli($page, $numArticoli, $woPrincipale = false)
     return $risultato;
 }
 
-function contaArticoli(){
+function contaArticoli($paginaRichiesta, $ut){
     $mysql = new DBconnection;
 
-    $query = "SELECT count(*) AS num FROM articolo ";
+    $query = "";
+    switch($paginaRichiesta){
+        case "articoli":
+            $query = "SELECT count(*) AS num FROM articolo ";
+            break;
+        case "nuove uscite":
+            $todayDate = date("Y-m-d");
+            $query = "SELECT count(*) AS num FROM (SELECT * FROM `gioco` WHERE data_pubb > \"" . $todayDate . "\" ) AS Q1";
+            break;
+        case "genere":
+            $query = "SELECT count(*) AS num FROM (SELECT articolo_id FROM articolo WHERE cat_id=" . $ut;
+            if($woPrincipale) $query .= " AND prima_pagina = 0) AS Q1 ";
+            break;
+        case "ricerca":
+            $query = "SELECT count(*) AS num FROM (select a.img_path, a.alt, a.titolo, a.sommario, a.articolo_id from articolo a join categoria c on (a.cat_id =c.cat_id)
+            where c.nome LIKE '%".$ut."%' OR a.titolo LIKE '%".$ut."%' OR a.sommario LIKE '%".$ut."%' OR a.testo LIKE '%".$ut."%') AS Q1";
+            break;
+    }
+
+
     $result = $mysql->query($query);
 
     $num = 0;
@@ -199,12 +218,14 @@ function getTop10()
     return $risultato;
 }
 
-function getNuoveUscite()
+function getNuoveUscite($page)
 {
     $mysql = new DBconnection;
 
+    $page = $page*10;
     $todayDate = date("Y-m-d");
-    $query = "SELECT * FROM `gioco` WHERE data_pubb > \"" . $todayDate . "\" ORDER BY data_pubb ASC LIMIT 0,10";
+    $query = "SELECT * FROM `gioco` WHERE data_pubb > \"" . $todayDate . "\" ORDER BY data_pubb ASC LIMIT " . $page
+        . ", 10";
     $result = $mysql->query($query);
 
     $risultato = "<h1> PROSSIME USCITE</h1>";

@@ -47,13 +47,17 @@ switch ($currPag) {
     case 0:
         $setterPagina->setDescription("Elenco degli articoli il cui nome contiene il termine ricercato");
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
-        $pageContent .= cercaArticoli($termineCerca, 0) . "</div>";
+        $numArticoli = contaArticoli("ricerca",$termineCerca);
+        $pageContent .= cercaArticoli($termineCerca, $pagNav) . navArticoli($numArticoli, $pagNav) . "</div>";
+        $replacingLink = "menu.php?termine-ricerca=" . $termineCerca . "&x=0&y=0";
+        $pageContent = preg_replace("<navArtPlaceholder />", $replacingLink,$pageContent);
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
-        $numArticoli = contaArticoli();
+        $numArticoli = contaArticoli("articoli","");
         $pageContent .= getArticoli($pagNav, 10) . navArticoli($numArticoli, $pagNav) . "</div>";
+        $pageContent = preg_replace("<navArtPlaceholder />", "menu.php?id=1",$pageContent);
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");
@@ -67,7 +71,9 @@ switch ($currPag) {
     case 4:
         $setterPagina->setDescription("Nuove uscite");
         $pageContent = "<div  class=\"contenutoGenerale\" id=\"contenutoArticoli\" >";
-        $pageContent .= getNuoveUscite() . "</div>";
+        $numArticoli = contaArticoli("nuove uscite","");
+        $pageContent .= getNuoveUscite($pagNav) . navArticoli($numArticoli, $pagNav) . "</div>";
+        $pageContent = preg_replace("<navArtPlaceholder />", "menu.php?id=4",$pageContent);
         break;
 }
 $pageContent .= "<div class=\"torna-su\" ><a class=\"torna-su-link\" href=\"#header\">Torna su</a></div>";
