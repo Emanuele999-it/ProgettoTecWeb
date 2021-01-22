@@ -55,28 +55,11 @@ INSERT INTO `gioco`(`game_id`, `nome`, `cat_id`, `data_pubb`, `img`, `alt`)
 VALUES (NULL,"",1,"2021-10-30","","")
 */
 //QUERY FUNZIONANTE PER INSERIMENTO DEL GIOCO NUOVO ALTRIMENTI NON POSSO INSERIRE L'ARTICOLO
-if (!$controllotrovato){
-    $ultimogame_id=$connection->query("SELECT COUNT(game_id) FROM `gioco`");
-    while ($row = $ultimogame_id->fetch_assoc()) {
-        $game_id =  intval($row['COUNT(game_id)']);
-        $game_id = $game_id + 1;                        //INCREMENTO PER OTTENTE IL NUOVO GAME_ID
-    }
-    if (!$ultimogame_id) {
-        throw new Exception("GET GAME_ID SBAGLIATO", 1);
-        exit;
-    }
-}
-else{
-    $ultimogame_id=$connection->query("SELECT game_id FROM `gioco` WHERE nome=\"{$nomedelgioco}\" ");
-    $row = $ultimogame_id->fetch_assoc();
-    $game_id  = intval($row["game_id"]);
-}
-
 //INSERIMENTO GIOCO OPPURE NO  
 if (!$controllotrovato){
         $result=$connection->query("INSERT INTO gioco (game_id, nome, cat_id,
                                                         data_pubb, img, alt)
-                                    VALUES (\"{$game_id}\",\"{$nomedelgioco}\",\"{$cat_id}\",
+                                    VALUES (NULL,\"{$nomedelgioco}\",\"{$cat_id}\",
                                             \"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")");
         if (!$result) {
             throw new Exception("INSERIMENTO GIOCO SBAGLIATO", 1);
@@ -87,17 +70,17 @@ else {
 
 }
 
-// OTTENGO IL GAME_ID DEL DEL NUOVO GIOCO CHE CORRISPONDE AL NUMERO DI RIGHE
-$result=$connection->query("SELECT COUNT(game_id) FROM `gioco`");
-while ($row = $result->fetch_assoc()) {
-    $game_id =  intval($row['COUNT(game_id)']);
-}
-
-// INTVAL LO USO PER CASTARE IL DATO RICEVUTO INDIETRO DA fetch_assoc()
+// OTTENGO IL GAME_ID DEL   GIOCO 
+$result=$connection->query("SELECT game_id FROM `gioco` WHERE nome=\"{$nomedelgioco}\" ");
 if (!$result) {
     throw new Exception("GET GAME_ID SBAGLIATO", 1);
     exit;
 }
+while ($row = $result->fetch_assoc()) {
+    $game_id =  intval($row['game_id']);
+}
+// INTVAL LO USO PER CASTARE IL DATO RICEVUTO INDIETRO DA fetch_assoc()
+
 
 
 /*      QUERY FUNZIONANTE
@@ -126,7 +109,7 @@ if (!$ultimoarticolo_id) {
 $result=$connection->query("INSERT INTO articolo (articolo_id,titolo, sommario,
                                                   testo, data_pub, img_path,
                                                   cat_id, alt,  game_id, prima_pagina )
-                    VALUES (NULL, \"{$titolo}\",\"{$sommario}\",
+                    VALUES (\"{$articolo_id}\", \"{$titolo}\",\"{$sommario}\",
                     \"{$testo}\",\"{$data_pub_articolo}\",\"{$img_path}\",
                     \"{$cat_id}\",\"{$alt_immagine}\",\"{$game_id}\",\"{$prima_pagina}\")");
 if (!$result) {
