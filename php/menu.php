@@ -2,6 +2,7 @@
 require_once __DIR__ . "/setterTemplate.php";
 require_once __DIR__ . "/query-articoli.php";
 require_once __DIR__ . "/utente-class.php";
+require_once __DIR__ . "/navArticoli.php";
 
 session_start();
 
@@ -50,7 +51,8 @@ switch ($currPag) {
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
-        $pageContent .= getArticoli(0, 10) . strval(contaArticoli()) . "</div>";
+        $numArticoli = contaArticoli();
+        $pageContent .= getArticoli(0, 10) . navArticoli($numArticoli) . "</div>";
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");
