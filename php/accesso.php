@@ -18,8 +18,8 @@
 	);
 
     //accesso
-	$utenteMobile = file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php");
-	$utenteFull = file_get_contents(__DIR__ . "/php/contents/logRegContent.php");
+	$utenteMobile = file_get_contents(__DIR__ . "/contents/logRegMobileContent.php");
+	$utenteFull = file_get_contents(__DIR__ . "/contents/logRegContent.php");
 		
 	$utenteMobile = str_replace("<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>","Accedi", $utenteMobile);
 	$utenteFull = str_replace("<a href=\"<rootFolder />/php/accesso.php\">Accedi</a></li>","Accedi", $utenteFull);

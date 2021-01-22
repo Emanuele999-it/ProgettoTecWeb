@@ -29,9 +29,6 @@
 		$utenteMobile = file_get_contents(__DIR__ . "/php/contents/userLoginMobile.php");
 		$utenteFull = file_get_contents(__DIR__ . "/php/contents/userLogin.php");
 		
-		$utenteMobile = str_replace("<a href=\"<rootFolder />/php/utente.php\"><SegnapostoNomeMobile /></a>","<SegnapostoNomeMobile />", $utenteMobile);
-		$utenteFull = str_replace("<a  href=\"<rootFolder />/php/utente.php\"><SegnapostoNome /></a>","<SegnapostoNome />", $utenteFull);
-		
 		$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), $utenteMobile);
 		$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteFull);
 		$setterPagina->setLoginContent($utenteFull, $utenteMobile);
