@@ -20,8 +20,18 @@
 
 	$setterPagina->setPercorso("Registrati");
 
-	//controllo se l'utente e' loggato
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
+	
+	//registrazione
+	$utenteMobile = file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php");
+	$utenteFull = file_get_contents(__DIR__ . "/php/contents/logRegContent.php");
+		
+	$utenteMobile = str_replace("<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a>","Registrati", $utenteMobile);
+	$utenteFull = str_replace("<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a></li><SegnapostoNome /></a>","Registrati", $utenteFull);
+	
+	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
+	
+	
+	
 	
     //da sistemare una volta implementato il db
     $regCon = file_get_contents(__DIR__ . "/contents/registrazioneContent.php");

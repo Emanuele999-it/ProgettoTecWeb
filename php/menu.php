@@ -88,7 +88,7 @@ if ($currPag != 0) {
 $setterPagina->setNavBar($nav);
 
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+if ($_SESSION['loggedin']) {
 	$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
 	$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
 	$setterPagina->setLoginContent($utenteFull, $utenteMobile);

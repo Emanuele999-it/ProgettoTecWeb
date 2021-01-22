@@ -17,10 +17,15 @@
                 file_get_contents(__DIR__ . "/contents/home-nav.php")))
 	);
 
-    /*
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
-	$setterPagina->setPercorso("Accedi");
-	*/
+    //accesso
+	$utenteMobile = file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php");
+	$utenteFull = file_get_contents(__DIR__ . "/php/contents/logRegContent.php");
+		
+	$utenteMobile = str_replace("<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>","Accedi", $utenteMobile);
+	$utenteFull = str_replace("<a href=\"<rootFolder />/php/accesso.php\">Accedi</a></li>","Accedi", $utenteFull);
+	
+	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
+	
 	
     //da sistemare una volta implementato il db
     $accCon = file_get_contents(__DIR__ . "/contents/accessoContent.php");
