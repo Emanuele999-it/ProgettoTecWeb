@@ -125,7 +125,7 @@ function contaArticoli(){
         $num = $result['num'];
     }
     else{
-        $num = -1
+        $num = -1;
     }
 
     $mysql->disconnect();
