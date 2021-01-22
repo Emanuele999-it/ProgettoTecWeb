@@ -126,7 +126,7 @@ if (!$ultimoarticolo_id) {
 $result=$connection->query("INSERT INTO articolo (articolo_id,titolo, sommario,
                                                   testo, data_pub, img_path,
                                                   cat_id, alt,  game_id, prima_pagina )
-                    VALUES (\"{$articolo_id}\", \"{$titolo}\",\"{$sommario}\",
+                    VALUES (NULL, \"{$titolo}\",\"{$sommario}\",
                     \"{$testo}\",\"{$data_pub_articolo}\",\"{$img_path}\",
                     \"{$cat_id}\",\"{$alt_immagine}\",\"{$game_id}\",\"{$prima_pagina}\")");
 if (!$result) {
