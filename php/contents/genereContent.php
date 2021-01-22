@@ -25,7 +25,4 @@
         <h4>Gestionale</h4></a><img class="immagine-box"
         src="../img/gestionale.jpg" alt=""/>
     </div>
-    <div class="torna-su" >
-        <a class="torna-su-link" href="#header">Torna su</a>
-    </div>
 </div>
