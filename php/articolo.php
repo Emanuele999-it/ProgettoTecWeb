@@ -2,6 +2,8 @@
 	require_once __DIR__ . "/setterTemplate.php";
 	require_once __DIR__ . "/query-articoli.php";
 
+	session_start();
+
 	$setterPagina = new setterTemplate("..");
 
 	//controllo se l'utente e' loggato
