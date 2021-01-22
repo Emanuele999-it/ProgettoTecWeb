@@ -17,8 +17,15 @@
     $utenteCon = file_get_contents(__DIR__ . "/contents/utenteContent.php");
     $utenteCon = str_replace("<NomeUtenetSegnaposto />", $_SESSION['user']->getNome(), $utenteCon);
 
-	$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
-	$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
+	//accesso
+	$utenteFull = file_get_contents(__DIR__ . "/contents/userLogin.php");
+	$utenteMobile = file_get_contents(__DIR__ . "/contents/userLoginMobile.php");
+	
+	$utenteFull = str_replace("<li class=\"elementomenu\"><a  href=\"<rootFolder />/php/utente.php\"><SegnapostoNome /></a></li>","<SegnapostoNome />",$utenteFull);
+	$utenteMobile = str_replace("<a href=\"<rootFolder />/php/utente.php\"><SegnapostoNomeMobile /></a>","<SegnapostoNomeMobile />",$utenteMobile);
+	
+	$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), $utenteMobile);
+	$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteFull);
     
 	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
 	
