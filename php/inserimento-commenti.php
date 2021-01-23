@@ -13,7 +13,7 @@ if (!key_exists("user", $_SESSION)) {
 $idUtente       = $_SESSION['user']->getUserid();
 $idarticolo     = $_GET['idarticolo'];
 $testo          = $_POST['contenuto-commento'];
-$testo          = htmlentities($testo, ENT_QUOTES | ENT_XHTML);
+//$testo          = htmlentities($testo, ENT_QUOTES | ENT_XHTML);
 $datacommento   = date("Y-m-d H:i:s");
 
 // INSERT INTO `commento`(`comment_id`, `articolo_id`, `userid`, `testo`, `data_com`)
