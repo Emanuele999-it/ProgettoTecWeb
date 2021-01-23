@@ -6,7 +6,8 @@
 
     $setterPagina->setTitle("Login | The Darksoulers");
     $setterPagina->setDescription("Pagina di login");  
-    
+    $setterPagina->setPercorso("Accedi");
+
     $setterPagina->setNavBar(
         preg_replace(
             "((?s)<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>)",
