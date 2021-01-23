@@ -2,6 +2,7 @@
 	require_once __DIR__ . "/setterTemplate.php";
 	require_once __DIR__ . "/query-articoli.php";
 	require_once __DIR__ . "/utente-class.php";
+	require_once __DIR__ . "/funzioni-utili.php";
 
 	session_start();
 
@@ -51,11 +52,27 @@
 	
 		$id = $_GET["id"];
 		$artPageCon = str_replace("<SegnapostoDeleteArticolo />",
-		 "<a class=\"torna-su-link\" id=\"delete-articolo\" href=\" ../php/elimina-articolo.php?deleteID=$id\"> Elimina articolo </a>",
+		 "<div id=\"elimina-articolo\"> <a class=\"torna-su-link\" id=\"delete-articolo\" 
+		 href=\" ../php/elimina-articolo.php?deleteID=$id\"> Elimina articolo </a></div>",
 		 $artPageCon);
 	} else {
 		$artPageCon = str_replace("<SegnapostoDeleteArticolo />", "", $artPageCon);
 	}		
+
+	if ($_SESSION['loggedin']) {
+		$boxinsertcommento = file_get_contents(__DIR__ . "./contents/box-insert-commento.php");
+		$artPageCon = str_replace("<SegnapostoVotoCommenti />",$boxinsertcommento,$artPageCon);
+		$inseriticommenti = commentiutenti($id);
+		$artPageCon = str_replace("<SegnapostoCommentiInseriti />", "<ul>". $inseriticommenti . "</ul>",$artPageCon);
+		}
+	else{
+		$artPageCon = str_replace("<SegnapostoVotoCommenti />",
+		"<div id=\"messagio-commenti-articolo\" >
+        <h2>Per accedere alla votazione e alla sezione commenti del gioco fai log in</h2>
+		<p>per visualizzare <a href=\"../php/accesso.php\">accedi</a> o <a href=\"../php/registrazione.php\">
+		registrati</a></p></div>",$artPageCon);
+	}
+
 
 
 
