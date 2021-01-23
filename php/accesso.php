@@ -8,19 +8,15 @@
     $setterPagina->setDescription("Pagina di login");  
     $setterPagina->setPercorso("Accedi");
 
-    $setterPagina->setNavBar(
-        preg_replace(
-            "((?s)<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>)",
-            "<a href=\"#header\" class=\"active\">Accedi</a>",
-            preg_replace(
-                "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/accesso.php\">Accedi</a></li>)",
-                "<li id=\"currentLink\" class=\"elementomenu\">Accedi</li>",
-                file_get_contents(__DIR__ . "/contents/home-nav.php")))
-	);
+    $setterPagina->setNavBar(file_get_contents(__DIR__ . "/contents/home-nav.php"));
 
     //accesso
-	$utenteMobile = file_get_contents(__DIR__ . "/contents/logRegMobileContent.php");
-	$utenteFull = file_get_contents(__DIR__ . "/contents/logRegContent.php");
+	$utenteMobile = preg_replace(
+        "((?s)<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>)",
+        "<a href=\"#header\" class=\"active\">Accedi</a>",file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
+	$utenteFull = preg_replace(
+        "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/accesso.php\">Accedi</a></li>)",
+        "<li id=\"currentLink\" class=\"elementomenu\">Accedi</li>",file_get_contents(__DIR__ . "/contents/logRegContent.php"));
 		
 	$utenteMobile = str_replace("<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>","Accedi", $utenteMobile);
 	$utenteFull = str_replace("<a href=\"<rootFolder />/php/accesso.php\">Accedi</a></li>","Accedi", $utenteFull);
