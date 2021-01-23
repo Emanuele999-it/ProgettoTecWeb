@@ -102,11 +102,6 @@ body{
 	margin:3px 0;
 }
 
-.topnav a:active {
-  background-color: #ddd;
-  color: black;
-}
-
 .active {
   background-color: #4CAF50;
   color: white;
