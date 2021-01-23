@@ -41,7 +41,7 @@
              "<form class=\"\" method=\"post\" action=\"../php/elimina-commento.php?idarticolo=$idarticolo&amp;
              idcommento=$idcommento\">
              <fieldset class=\"\" style=\"border:none;\">
-             <input class=\"tasto-elimina-commento\" type=\"submit\" value=\"Elimina\" >
+             <input class=\"tasto-elimina-commento\" type=\"submit\" value=\"Elimina\" />
              </fieldset>
              </form>",
               $boxcommento);
