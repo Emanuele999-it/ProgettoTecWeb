@@ -3,7 +3,7 @@
 function schedaArticolo($immagine, $alt, $titolo, $sommario, $idArticolo){
     $scheda = "<div class=\"articoloScheda\">"
         . "<img src=\"" . $immagine . "\" alt=\"" . $alt . "\" />"
-        . "<a href=\"<rootFolder />/php/articolo.php?id=".$idArticolo."\"><h3>" . $titolo . "</h3></a>"
+        . "<h3><a href=\"<rootFolder />/php/articolo.php?id=".$idArticolo."\">" . $titolo . "</a></h3>"
         . "<p>" . $sommario . "</p>"
         . "</div>";
     return $scheda;
@@ -13,7 +13,7 @@ function schedaPrincipale($immagine, $alt, $titolo, $sommario, $idArticolo){
     $scheda = "<h2 tabindex=\"0\">Articolo del Momento</h2>
     <div class=\"articoloPrincipale\">"
         . "<img src=\"" . $immagine . "\" alt=\"" . $alt . "\" />"
-        . "<a href=\"<rootFolder />/php/articolo.php?id=".$idArticolo."\"><h2>" . $titolo . "</h2></a>"
+        . "<h2><a href=\"<rootFolder />/php/articolo.php?id=".$idArticolo."\">" . $titolo . "</a></h2>"
         . "<p>" . $sommario . "</p>"
         . "</div>";
     return $scheda;
