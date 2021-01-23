@@ -37,7 +37,7 @@
         </form>
       </div>   
       <div id="breadcrumb">
-          <p tabindex="0"> Il tuo percorso: <percorsoPlaceholder /> </p>  
+          <p> Il tuo percorso: <percorsoPlaceholder /> </p>  
       </div>  
       <a class="aiuti-screenreader" href="#menu">Vai ai menu</a>
       <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>   
