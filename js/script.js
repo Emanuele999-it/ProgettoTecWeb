@@ -13,6 +13,9 @@ function openCloseBT() {
         } else {
             x.style.display = "block";
         }
+
+        icon.style.background = "black";
+        icon.style.color = "black";
     });    
 
     icon.addEventListener("mouseover", function () {
