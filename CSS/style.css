@@ -88,8 +88,8 @@ body{
 }
 
 .topnav div.icon {
-  background-color: black;
-  display: inline-block;
+  background: black;
+  display: block;
   position: absolute;
   right: 0;
   top: 0;
