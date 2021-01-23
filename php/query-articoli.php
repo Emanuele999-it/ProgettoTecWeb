@@ -244,7 +244,7 @@ function getVotoArticolo($idArticolo, $userId)
 {
     $mysql = new DBconnection;
 
-    $query = "SELECT voti FROM voto WHERE voto.user_id=$userId  AND voto.gioco_id=$idArticolo";
+    $query = "SELECT voti FROM voto WHERE voto.userid=$userId  AND voto.gioco_id=$idArticolo";
     $result = $mysql->query($query);
 
     $risultato = "";
