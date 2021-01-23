@@ -13,13 +13,7 @@ function openCloseBT() {
         } else {
             x.style.display = "block";
         }
-    }); 
-
-    icon.addEventListener("mouseover", function () {
-        x.style.background = "#ddd";
-        x.style.color = "black";
-    }); 
-    
+    });    
 }
 
 openCloseBT();
