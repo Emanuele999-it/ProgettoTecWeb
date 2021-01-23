@@ -3,7 +3,7 @@
 			<form id="inserisciCommento" method="post" 
 			action="../php/inserimento-commenti.php?idarticolo=<SegnapostoIDarticolo />">
 			<fieldset style="border: none;">
-				<label for="commenti">Scrivi tuo commento</label>
+				<label for="inserisciCommento">Scrivi tuo commento</label>
 				<textarea id="box-commento" name="contenuto-commento" rows="8" cols="100" ></textarea>
 				<input id="tasto-box-commento" class="invia-commento-submit" type="submit" value="Commenta" />
 			</fieldset>
