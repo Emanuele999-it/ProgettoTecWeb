@@ -46,16 +46,11 @@ function checkCommento(commento) {
 	return result;
 }
 
-function loginCheck(user, pass) {
-    var regex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$");
+function loginCheck(user) {    
     var username = document.getElementById(user).value;
-    var textEmail = document.getElementById(username).value.toLowerCase();
-	var password = document.getElementById(pass).value;
-    var result1 = username.toString().length !== 0 && regex.test(textEmail);
-    var result2 = password.toString().length !== 0;
-    notifyError(result1, username, "Inerito campo vuoto o email scritta non correttamente");
-    notifyError(result2, password, "Questo campo non pu&ograve; essere vuoto");    
-	return result1 && result2;
+    var result = username.toString().length !== 0;
+    notifyError(result, username, "Inserito campo vuoto");
+	return result;
 }
 
 function notifyError(condition, idElemento, message) {
@@ -122,7 +117,7 @@ if (regist) {
 var login = document.getElementById("form-accesso");
 if (login) {
 	login.addEventListener("submit", function (event) {
-		if (!(loginCheck("login-email","login-password"))) {
+		if (!(loginCheck("login-email"))) {
             event.stopImmediatePropagation();
             event.stopPropagation();
             event.preventDefault();
