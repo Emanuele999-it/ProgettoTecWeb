@@ -116,7 +116,7 @@ if (regist) {
 }
 
 //pagina login
-var login = document.getElementById("form-login");
+var login = document.getElementById("form-accesso");
 if (login) {
 	login.addEventListener("submit", function (event) {
 		if (!(loginCheck("login-email","login-password"))) {
