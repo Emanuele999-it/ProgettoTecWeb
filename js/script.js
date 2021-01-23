@@ -105,10 +105,15 @@ var regist = document.getElementById("form-registrazione");
 if (regist) {
 	regist.addEventListener("submit", function (event) {
         alert("inizio");
+        alert("inizio1");
         var name = checkName("registrazione-nome");
+        alert("nome");
         var surname = checkSurname("registrazione-cognome");
+        alert("surname");
         var email = checkEmail("registrazione-email");
+        alert("email");
         var passOK = checkPass("registrazione-password1");
+        alert("passok");
         var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
         alert("if b4");
 		if (name && surname && email && passOK && pass12Eq) {
