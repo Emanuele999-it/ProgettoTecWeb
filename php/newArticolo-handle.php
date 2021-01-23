@@ -158,10 +158,12 @@ if (!$controllotrovato){
 }
 }
 
-if ($prima_pagina = 1){
+if ($prima_pagina == 1){
     $result=$connection->query("UPDATE articolo SET prima_pagina=0");
     $result=$connection->query("UPDATE articolo SET prima_pagina=1 WHERE titolo=\"{$titolo}\" ");
 }
+
+
 
 if (!$result) {
         throw new Exception("QUERY GIOCO update file SBAGLIATA", 1);
