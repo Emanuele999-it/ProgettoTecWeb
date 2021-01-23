@@ -92,7 +92,7 @@ body{
   display: block;
   position: absolute;
   padding-top: 1em;
-  padding-right: 0.6em;
+  padding-right: 1em;
   right: 0;
   top: 0;
 }
@@ -102,11 +102,6 @@ body{
 	height: 3px;
 	background-color: white;
 	margin:3px 0;
-}
-
-.topnav a:active {
-  background-color: #ddd;
-  color: black;
 }
 
 .active {

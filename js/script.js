@@ -14,6 +14,11 @@ function openCloseBT() {
             x.style.display = "block";
         }
     });    
+
+    icon.addEventListener("mouseover", function () {
+        icon.style.background = "#ddd";
+        icon.style.color = "black";
+    });   
 }
 
 openCloseBT();
