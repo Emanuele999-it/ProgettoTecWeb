@@ -1,7 +1,7 @@
 <div class="contenutoAccesso">
     <h1>Accedi</h1>
     <h2><span class="errore-credenziali"><SegnapostoCredenziali /></span></h2>
-    <form action="../php/accesso-handle.php"  method="post"  id="form-accesso">
+    <form action="<rootFolder />/php/accesso-handle.php"  method="post"  id="form-accesso">
         <fieldset class="form-fieldset">
             <legend class="legend">Inserisci le tue credenziali</legend>
             <ul class="form-container form-centered">
