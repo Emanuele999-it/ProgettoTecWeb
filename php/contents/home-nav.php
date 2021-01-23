@@ -12,13 +12,11 @@
         <hr>
         <logincontentMobile />
     </div>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <div class="menu-bars">
+    <div id="OpenCloseBT" class="menu-bars" onclick="openCloseMenu()">
         <div></div>
         <div></div>
         <div></div>				
-    </div>
-</a>          
+    </div>        
 </div>
 <div id="menu" >
     <logincontent />

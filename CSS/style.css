@@ -87,7 +87,7 @@ body{
   display: block;
 }
 
-.topnav a.icon {
+#OpenCloseBT {
   background: black;
   display: block;
   position: absolute;
@@ -102,7 +102,7 @@ body{
 	margin:3px 0;
 }
 
-.topnav a:active {
+#OpenCloseBT:active {
   background-color: #ddd;
   color: black;
 }

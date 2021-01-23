@@ -13,16 +13,10 @@
       
       
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <script>
-      function myFunction() {
-        var x = document.getElementById("links");
-        if (x.style.display === "block") {
-        x.style.display = "none";
-        } else {
-        x.style.display = "block";
-        }
-      }
-      </script>
+      
+      <script defer="defer"
+				type="text/javascript"
+				src="<rootFolder />/js/script.js"></script>
 
       <title>
         <titlePlaceholder />
