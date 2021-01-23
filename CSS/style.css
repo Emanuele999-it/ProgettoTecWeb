@@ -87,15 +87,15 @@ body{
   display: block;
 }
 
-.topnav a.icon {
+.topnav div.icon {
   background: black;
-  display: block;
+  display: inline-block;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.menu-bars span{
+.menu-bars div{
 	width: 25px;
 	height: 3px;
 	background-color: white;

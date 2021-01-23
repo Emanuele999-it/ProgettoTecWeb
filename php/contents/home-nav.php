@@ -12,13 +12,13 @@
         <hr>
         <logincontentMobile />
     </div>
-    <a class="icon">
-        <span class="menu-bars">
-            <span></span>
-            <span></span>
-            <span></span>				
-        </span>
-    </a>          
+    <div class="icon">
+        <div class="menu-bars">
+            <div></div>
+            <div></div>
+            <div></div>				
+        </div>
+    </div>          
 </div>
 <div id="menu" >
     <logincontent />
