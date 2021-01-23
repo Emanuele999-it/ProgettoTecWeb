@@ -10,7 +10,7 @@ function schedaArticolo($immagine, $alt, $titolo, $sommario, $idArticolo){
 }
 
 function schedaPrincipale($immagine, $alt, $titolo, $sommario, $idArticolo){
-    $scheda = "<h2 tabindex=\"0\">Articolo del Momento</h2>
+    $scheda = "<h2>Articolo del Momento</h2>
     <div class=\"articoloPrincipale\">"
         . "<img src=\"" . $immagine . "\" alt=\"" . $alt . "\" />"
         . "<h2><a href=\"<rootFolder />/php/articolo.php?id=".$idArticolo."\">" . $titolo . "</a></h2>"
