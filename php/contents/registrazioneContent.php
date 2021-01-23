@@ -11,7 +11,7 @@
             <ul class="form-container">
                 <li class="form-element">
                     <label class="form-label"
-                        for="registrazione-nome">Nome</span>:</label>
+                        for="registrazione-nome">Nome:</label>
                     <input id="registrazione-nome" 
                         type="text"
                         name="nome"
@@ -20,7 +20,7 @@
                 </li>
                 <li class="form-element">
                     <label class="form-label"
-                        for="registrazione-cognome">Cognome</span>:</label>
+                        for="registrazione-cognome">Cognome:</label>
                     <input id="registrazione-cognome" 
                         type="text"
                         name="cognome"
