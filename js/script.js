@@ -8,8 +8,9 @@ function checkPasswordEqual(password, passwordConfirm) {
 }
 
 function checkPass(pass) {
-	var test = document.getElementById(pass).value;
-	notifyError(!(test === ""), pass, "La password non puo' essere vuota");
+    var test = document.getElementById(pass).value;
+    result = !(test === "") && test.length !== 0;
+	notifyError(result, pass, "La password non puo' essere vuota");
 	return result;
 }
 
@@ -45,16 +46,11 @@ function checkCommento(commento) {
 	return result;
 }
 
-function loginCheck(user, pass) {
-    var regex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$");
-    var username = document.getElementById(user).value;
-    var textEmail = document.getElementById(username).value.toLowerCase();
-	var password = document.getElementById(pass).value;
-    var result1 = username.toString().length !== 0 && regex.test(textEmail);
-    var result2 = password.toString().length !== 0;
-    notifyError(result1, username, "Inerito campo vuoto o email scritta non correttamente");
-    notifyError(result2, password, "Questo campo non pu&ograve; essere vuoto");    
-	return result1 && result2;
+function loginCheck(user) {    
+    var email = document.getElementById(user).value;
+    var result = !(email === "");
+    notifyError(result, user, "Inserito campo vuoto");
+	return result;
 }
 
 function notifyError(condition, idElemento, message) {
@@ -104,20 +100,16 @@ openCloseBT();
 var regist = document.getElementById("form-registrazione");
 if (regist) {
 	regist.addEventListener("submit", function (event) {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-        event.preventDefault();
         var name = checkName("registrazione-nome");
         var surname = checkSurname("registrazione-cognome");
         var email = checkEmail("registrazione-email");
         var passOK = checkPass("registrazione-password1");
         var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
-        return (name && surname && email && passOK && pass12Eq);
-		if (!(name && surname && email && passOK && pass12Eq)) {
+        if (!(name && surname && email && passOK && pass12Eq)) {
             event.stopImmediatePropagation();
             event.stopPropagation();
             event.preventDefault();
-		}
+        }
 	});
 }
 
@@ -125,10 +117,10 @@ if (regist) {
 var login = document.getElementById("form-accesso");
 if (login) {
 	login.addEventListener("submit", function (event) {
-		if (!(loginCheck("login-email","login-password"))) {
+		if (!(loginCheck("login-email"))) {
             event.stopImmediatePropagation();
             event.stopPropagation();
             event.preventDefault();
-		}
+        }
 	});
 }
