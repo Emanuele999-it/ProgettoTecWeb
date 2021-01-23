@@ -59,6 +59,7 @@
 		$artPageCon = str_replace("<SegnapostoDeleteArticolo />", "", $artPageCon);
 	}		
 
+	$id = $_GET["id"];
 	if ($_SESSION['loggedin']) {
 		$boxinsertcommento = file_get_contents(__DIR__ . "./contents/box-insert-commento.php");
 		$artPageCon = str_replace("<SegnapostoVotoCommenti />",$boxinsertcommento,$artPageCon);
