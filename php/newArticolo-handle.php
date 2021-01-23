@@ -10,7 +10,10 @@ $connection = new DBConnection();
 $_SESSION["titolo"]            = $_POST['titolo']; 
 $_SESSION["sommario"]          = $_POST['sommario']; 
 $_SESSION["testo"]             = $_POST['recensione'];
-$_SESSION["data_pub"]          = date('Y-m-d H:i:s');
+//$_SESSION["data_pub"]          = date('Y-m-d H:i:s');
+$_SESSION["anno-gioco"]        = $_POST["anno-pubblicazione-gioco"]; 
+$_SESSION["mese-gioco"]        = $_POST["mese-pubblicazione-gioco"]; 
+$_SESSION["giorno-gioco"]        = $_POST["giorno-pubblicazione-gioco"]; 
 $_SESSION["img_path"]          = '';   // FATTO
 $_SESSION["cat_id"]            = $_POST['genere-gioco'];
 $_SESSION["alt_immagine"]      = $_POST['alt-immagine']; 
@@ -23,7 +26,10 @@ $_SESSION["data_pub"]         = "";   // FATTO
 $titolo                       = $_SESSION["titolo"]; 
 $sommario                     = $_SESSION["sommario"] ; 
 $testo                        = $_SESSION["testo"];
-$data_pub_articolo            = $_SESSION["data_pub"];
+//$data_pub_articolo            = $_SESSION["data_pub"];
+$anno                         = $_SESSION["anno-gioco"];
+$mese                         = $_SESSION["mese-gioco"];
+$giorno                       = $_SESSION["giorno-gioco"];
 $img_path                     = $_SESSION["img_path"];
 $cat_id                       = $_SESSION["cat_id"];
 $alt_immagine                 = $_SESSION["alt_immagine"]; 
@@ -31,7 +37,7 @@ $game_id                      = $_SESSION["game_id"];       // FATTO
 $prima_pagina                 = $_SESSION["prima_pagina"]; 
 
 $nomedelgioco                 =  $_POST["gioco"]; // "";
-$data_pub_gioco               = $_POST["data-pubblicazione-gioco"];
+$data_pub_gioco               = $anno. "-" . $mese. "-" . $giorno ;
 $data_pub_articolo            = date("Y-m-d H:i:s");
 
 

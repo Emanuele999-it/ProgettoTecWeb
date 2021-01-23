@@ -6,16 +6,29 @@
 <form action="../php/newArticolo-handle.php" method="post" id="form-aggiungi-articolo" enctype="multipart/form-data" >
     <fieldset class="form-new-articolo">
         <legend class=""> 
-            Campi dati obbligatori per l'aggiunta o modifica di un articolo
+            <h2>Campi dati obbligatori per l'aggiunta o modifica di un articolo</h2> 
         </legend>
     <ul class="form-container-dati-articolo">
         <li>
             <label for="aggiungi-gioco">Titolo del Gioco</label>
             <input type="text" id="aggiungi-gioco" name="gioco" value="" />
         </li>
-        <li>
+<!--        <li>
             <label for="aggiungi-anno-publicazione">Data pubblicazione gioco</label>
             <input type="date" id="aggiungi-anno-publicazione" name="data-pubblicazione-gioco" value="" />
+        </li> -->
+        <li>
+            <label for="aggiungi-anno-publicazione">Anno pubblicazione gioco</label>
+            <input type="text" class="data-pubblicazione-gioco" id="aggiungi-anno-publicazione" name="anno-pubblicazione-gioco" value="" />
+        </li>
+
+        <li>
+            <label for="aggiungi-mese-publicazione">Mese pubblicazione gioco</label>
+            <input type="text" class="data-pubblicazione-gioco" id="aggiungi-mese-publicazione" name="mese-pubblicazione-gioco" value="" />
+        </li>
+        <li>
+            <label for="aggiungi-giorno-publicazione">Giorno pubblicazione gioco</label>
+            <input type="text" class="data-pubblicazione-gioco" id="aggiungi-giorno-publicazione" name="giorno-pubblicazione-gioco" value="" />
         </li>
         <li>
             <label for="aggiungi-titolo">Titolo Articolo</label>
@@ -27,7 +40,7 @@
         </li>
         <li>
             <label for="aggiungi-recensione">Inserisci il Testo Recensione</label>
-            <textarea class="form-inserisci-testo" name="recensione" id="aggiungi-recensione" rows="20" cols="100"></textarea>
+            <textarea class="form-inserisci-testo" name="recensione" id="aggiungi-recensione" ></textarea>
         </li>
         <li>
             <label for="aggiungi-immagine">Aggiungi una immagine riguardante il gioco</label>
