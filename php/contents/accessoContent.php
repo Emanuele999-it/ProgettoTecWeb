@@ -14,7 +14,7 @@
                     <input id="login-password" class="inputPW" type="password" name="password" />
                 </li>
                 <li class="form-element">
-                    <a href="utente.php"><input class="submit" type="submit" value="Accedi"/>  </a>
+                    <input class="submit" type="submit" value="Accedi"/>
                 </li>
             </ul>
         </fieldset>
