@@ -47,9 +47,9 @@ function checkCommento(commento) {
 }
 
 function loginCheck(user) {    
-    var username = document.getElementById(user).value;
-    var result = username.toString().length !== 0;
-    notifyError(result, username, "Inserito campo vuoto");
+    var email = document.getElementById(user).value;
+    var result = !(email === "");
+    notifyError(result, email, "Inserito campo vuoto");
 	return result;
 }
 

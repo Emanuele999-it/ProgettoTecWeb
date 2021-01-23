@@ -20,7 +20,7 @@
                 </li>
             </ul>
         </fieldset>
-        <p id="registrazione">Non sei ancora registrato? <a href="../php/registrazione.php">Registrati</a>
+        <p id="registrazione">Non sei ancora registrato? <a href="<rootFolder />/php/registrazione.php">Registrati</a>
     </p>
     </form>
     <div class="torna-su">
