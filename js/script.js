@@ -104,15 +104,11 @@ openCloseBT();
 var regist = document.getElementById("form-registrazione");
 if (regist) {
 	regist.addEventListener("submit", function (event) {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-        event.preventDefault();
         var name = checkName("registrazione-nome");
         var surname = checkSurname("registrazione-cognome");
         var email = checkEmail("registrazione-email");
         var passOK = checkPass("registrazione-password1");
         var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
-        return (name && surname && email && passOK && pass12Eq);
 		if (!(name && surname && email && passOK && pass12Eq)) {
             event.stopImmediatePropagation();
             event.stopPropagation();
