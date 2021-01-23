@@ -68,13 +68,14 @@
 		$artPageCon = str_replace("<SegnapostoIDarticolo />",$id,$artPageCon);
 		$inseriticommenti = commentiutenti($id);
 		$artPageCon = str_replace("<SegnapostoCommentiInseriti />", "<ul>". $inseriticommenti . "</ul>",$artPageCon);
-		}
+	
+	}
 	else{
 		$artPageCon = str_replace("<SegnapostoVotoCommenti />",
 		"<div id=\"messagio-commenti-articolo\" >
         <h2>Per accedere alla votazione e alla sezione commenti del gioco fai log in</h2>
-		<p>per visualizzare <a href=\"../php/accesso.php\">accedi</a> o <a href=\"../php/registrazione.php\">
-		registrati</a></p></div>",$artPageCon);
+		<a href=\"../php/accesso.php\">accedi</a> o <a href=\"../php/registrazione.php\">
+		registrati</a></div>",$artPageCon);
 	}
 
 
