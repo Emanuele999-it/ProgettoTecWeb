@@ -109,8 +109,9 @@ if (regist) {
         var email = checkEmail("registrazione-email");
         var passOK = checkPass("registrazione-password1");
         var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
-		if (!(name && surname && email && passOK && pass12Eq)) {
+		if (!(name && surname && email && passOK && pass12Eq) || true) {
 			event.preventDefault();
+            event.stopImmediatePropagation();
 		}
 	});
 }
@@ -121,6 +122,7 @@ if (login) {
 	login.addEventListener("submit", function (event) {
 		if (!(loginCheck("login-email","login-password"))) {
 			event.preventDefault();
+            event.stopImmediatePropagation();
 		}
 	});
 }
