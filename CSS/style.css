@@ -311,6 +311,35 @@ ul{
     background-color: brown;
 }
 
+#messagio-commenti-articolo{
+    margin: 5em;
+}
+
+#elimina-articolo{
+    margin:3em;
+}
+
+.commenti{
+    background-color: black;
+    margin: 1em;
+    color: white;
+    padding: 1em;
+    border-radius: 2em;
+}
+
+#box-commento{
+    width: 100%;
+    height: 6em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#tasto-box-commenta{
+    margin: auto;
+    display: block;
+}
+
+
 /*!!!!!!!!     FINE NUOVA SCHEDA ARTICOLO     !!!!!!!!!*/
 
 #navArticoli{
