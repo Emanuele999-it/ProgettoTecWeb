@@ -1,9 +1,9 @@
 <li class="commenti">
 
-    <h3> 
+    <h3 class="nome-propietrario-commento"> 
         <SegnaPostonomeutente />
     </h3>
-    <p>
+    <p class="testo-commento">
         <Segnapostotestocommento />
     </p>
     <p class="commento-dataora">

@@ -339,6 +339,18 @@ ul{
     display: block;
 }
 
+.nome-propietrario-commento{
+    text-align: left;
+}
+
+.testo-commento{
+    text-align: left;
+}
+
+.commento-dataora{
+    text-align: right;
+}
+
 
 /*!!!!!!!!     FINE NUOVA SCHEDA ARTICOLO     !!!!!!!!!*/
 

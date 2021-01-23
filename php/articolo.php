@@ -65,6 +65,7 @@
 	if ($_SESSION['loggedin']) {
 		$boxinsertcommento = file_get_contents(__DIR__ . "/contents/box-insert-commento.php");
 		$artPageCon = str_replace("<SegnapostoVotoCommenti />",$boxinsertcommento,$artPageCon);
+		$artPageCon = str_replace("<SegnapostoIDarticolo />",$id,$artPageCon);
 		$inseriticommenti = commentiutenti($id);
 		$artPageCon = str_replace("<SegnapostoCommentiInseriti />", "<ul>". $inseriticommenti . "</ul>",$artPageCon);
 		}
