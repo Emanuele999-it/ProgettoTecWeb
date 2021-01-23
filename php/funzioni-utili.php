@@ -29,7 +29,6 @@
         }
 
         $connection->disconnect();
-                       $boxcommento = $boxcommento . file_get_contents(__DIR__ . "./contents/box-commento.php");
 
         return $boxcommento;
     }
