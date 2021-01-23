@@ -20,7 +20,7 @@ $datacommento   = date("Y-m-d H:i:s");
 // VALUES (NULL,1,1,"prova","2020-12-12 12:45:06")
   
 $connection->query("INSERT INTO `commento`(`comment_id`, `articolo_id`, `userid`, `testo`, `data_com`)
-                         VALUE(NULL, \"$idarticolo\", \"$testo\", \"$datacommento\" )");
+                         VALUE(NULL, $idarticolo, \"$testo\", $datacommento )");
     $connection->disconnect();
 
     header("Location: articolo.php?id=$idarticolo#commenti");
