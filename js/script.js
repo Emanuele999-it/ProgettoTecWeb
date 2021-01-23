@@ -17,7 +17,7 @@ function openCloseBT() {
         setTimeout(function(){ 
             icon.style.background = "black";
             icon.style.color = "black";
-         }, 500);
+         }, 100);
         
     });    
 

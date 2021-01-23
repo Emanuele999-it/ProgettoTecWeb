@@ -32,7 +32,7 @@ if ($currPag == 0 && !key_exists("termine-ricerca", $_GET)) {
 }
 
 $termineCerca = $_GET['termine-ricerca'];
-$pagNav = $_GET['page'];
+$pagNav = array_key_exists('page', $_GET)  ? $_GET['page'] : 0;
 
 if ($currPag < 0 || $currPag >= 5) {
     header("Location: error/404.php");
@@ -49,7 +49,7 @@ switch ($currPag) {
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
         $numArticoli = contaArticoli("ricerca",$termineCerca);
         $pageContent .= cercaArticoli($termineCerca, $pagNav) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $replacingLink = "menu.php?termine-ricerca=" . $termineCerca . "&x=0&y=0";
+        $replacingLink = "menu.php?termine-ricerca=" . $termineCerca;
         $pageContent = str_replace("<navArtPlaceholder />", $replacingLink,$pageContent);
         break;
     case 1:
@@ -91,6 +91,16 @@ if ($currPag != 0) {
 
     $setterPagina->setPercorso($pag[$currPag]);
 } else {
+
+    if($currPag == 1){
+        $nav = preg_replace(
+            "((?s)<a href=\"<rootFolder />/php/menu\.php\?id=$currPag\">.*?</a>)",
+            "<a href=\"#header\" class=\"active\" xml:lang=\"en\">$pag[$currPag]</a>",
+            preg_replace(
+                "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/menu\.php\?id=$currPag\">.*?</a></li>)",
+                "<li xml:lang=\"en\" id=\"currentLink\" class=\"elementomenu\">$pag[$currPag]</li>",
+                $nav));
+    }
     $setterPagina->setPercorso("Ricerca");
 }
 
