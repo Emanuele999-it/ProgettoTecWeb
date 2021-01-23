@@ -117,11 +117,6 @@ if (regist) {
 
 //pagina login
 var login = document.getElementById("form-login");
-login.addEventListener("submit", function (event) {
-    if (!(loginCheck("login-email","login-password"))) {
-        event.preventDefault();
-    }
-});
 if (login) {
 	login.addEventListener("submit", function (event) {
 		if (!(loginCheck("login-email","login-password"))) {
