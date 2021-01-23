@@ -468,13 +468,13 @@ a.link-box-genere:visited{
 /*FINE NUOVO STYLE FORM*/
 
 
-#contenutoAccesso{
+.contenutoAccesso{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#contenutoAccesso ul{
+.contenutoAccesso ul{
     list-style-type:none;
 }
 

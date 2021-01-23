@@ -1,4 +1,4 @@
-<div id="contenutoAccesso">
+<div id="form-registrazione" class="contenutoAccesso">
     <h1>Registrati</h1>
     <div id="termini-di-servizio">
         <h2 >Termini di servizio</h2>
@@ -16,6 +16,7 @@
                 type="text"
                 name="nome"
                 value="" />
+            <span id="registrazione-nome-warning" class="warning"></span>
         </li>
         <li class="form-element">
             <label class="form-label"
@@ -24,6 +25,7 @@
                 type="text"
                 name="cognome"
                 value="" />
+            <span id="registrazione-cognome-warning" class="warning"></span>
         </li>
         <li class="form-element">
             <label class="form-label"
@@ -32,6 +34,7 @@
                     type="text"
                     name="email"
                     value="" />
+            <span id="registrazione-email-warning" class="warning"></span>
         </li>
         <li class="form-element">
             <label class="form-label"
@@ -40,6 +43,7 @@
                     type="password"
                     name="password1"
                     value="" />
+            <span id="registrazione-password1-warning" class="warning"></span>
         </li>
         <li class="form-element">
             <label class="form-label"
@@ -48,6 +52,7 @@
             <input id="registrazione-password2"
                     type="password"
                     name="password2" />
+            <span id="registrazione-password2-warning" class="warning"></span>
         </li>
         <li class="form-element">
             <input class="submit"

@@ -1,4 +1,4 @@
-<div id="contenutoAccesso">
+<div id="form-login" class="contenutoAccesso">
     <h1>Accedi</h1>
     <h2><span class="errore-credenziali"><SegnapostoCredenziali /></span></h2>
     <form action="../php/accesso-handle.php"  method="post"  id="form-accesso">
@@ -6,8 +6,8 @@
             <legend class="legend">Inserisci le tue credenziali</legend>
             <ul class="form-container form-centered">
                 <li class="form-element">
-                    <label class="form-label" for="login-nickname"><span xml:lang="en" lang="en">Email</span>:</label>
-                    <input id="login-nickname" class="inputNick" type="text" name="email" />
+                    <label class="form-label" for="login-email"><span xml:lang="en" lang="en">Email</span>:</label>
+                    <input id="login-email" class="inputNick" type="text" name="email" />
                 </li>
                 <li class="form-element">
                     <label class="form-label" for="login-password"><span xml:lang="en" lang="en">Password</span>:</label>
