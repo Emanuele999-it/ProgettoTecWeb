@@ -8,8 +8,9 @@ function checkPasswordEqual(password, passwordConfirm) {
 }
 
 function checkPass(pass) {
-	var test = document.getElementById(pass).value;
-	notifyError(!(test === ""), pass, "La password non puo' essere vuota");
+    var test = document.getElementById(pass).value;
+    result = !(test === "") && test.length !== 0;
+	notifyError(result, pass, "La password non puo' essere vuota");
 	return result;
 }
 
