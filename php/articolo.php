@@ -76,6 +76,7 @@
         <h2>Per accedere alla votazione e alla sezione commenti del gioco fai log in</h2>
 		<a href=\"../php/accesso.php\">accedi</a> o <a href=\"../php/registrazione.php\">
 		registrati</a></div>",$artPageCon);
+		$artPageCon = str_replace("<SegnapostoCommentiInseriti />", "",$artPageCon);
 	}
 
 

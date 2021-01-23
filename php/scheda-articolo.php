@@ -22,7 +22,7 @@ function schedaPrincipale($immagine, $alt, $titolo, $sommario, $idArticolo){
 function composeArticolo($immagine, $alt, $titolo, $sommario, $testo){
     $articolo = "<div id=\"recensione\" ><h1>".$titolo."</h1>
     <h3>".$sommario."</h3>
-    <img src=".$immagine." alt=\"".$alt."\" />
+    <img src=\"".$immagine."\" alt=\"".$alt."\" />
     <p>".$testo."</p></div>";
     return $articolo;
 }
