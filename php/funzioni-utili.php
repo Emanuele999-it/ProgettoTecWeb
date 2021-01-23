@@ -11,7 +11,7 @@
                                       FROM commento WHERE articolo_id = \"{$idarticolo}\"   ");
 
         while ($row = $commenti->fetch_assoc()) {
-        $boxcommento = $boxcommento . file_get_contents(__DIR__ . "./contents/box-commento.php");
+        $boxcommento = $boxcommento . file_get_contents(__DIR__ . "/contents/box-commento.php");
         $inseriticommenti =  $row["testo"];
         $datacommento = $row["data_com"];
         $boxcommento = str_replace("<Segnapostotestocommento />",$inseriticommenti,$boxcommento);
