@@ -19,7 +19,7 @@ $result1=$connection->query("SELECT game_id FROM articolo WHERE articolo_id=\"".
 $result3=$result1->fetch_assoc();
 $result4=$result3["game_id"];
 
-$result2=$connection->query("INSERT INTO `voto` (`user_id`, `gioco_id`, `voti`) VALUES( \"".$id."\", \"".$result4."\" ,\"".$voto."\")");
+$result2=$connection->query("INSERT INTO `voto` (`userid`, `gioco_id`, `voti`) VALUES( \"".$id."\", \"".$result4."\" ,\"".$voto."\")");
 if(!$result2)
 {
 	throw new Exception("voto non inserito",1);
