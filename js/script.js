@@ -18,7 +18,12 @@ function openCloseBT() {
     icon.addEventListener("mouseover", function () {
         icon.style.background = "#ddd";
         icon.style.color = "black";
-    });   
+    });  
+    
+    icon.addEventListener("mouseout", function () {
+        icon.style.background = "black";
+        icon.style.color = "black";
+    });    
 }
 
 openCloseBT();
