@@ -3,16 +3,16 @@
     <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>
     <div id="hamburger-menu" class="topnav">
         <div class="logo-mobile">
-            <img  id="logo-mobile-full" src="<correzioneLink />img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
-            <img  id="logo-mobile-short" src="<correzioneLink />img/logo-mobile.png" alt="Logo sito The Darksoulers">
-        </div>			
+            <img id="logo-mobile-full" src="<correzioneLink />img/logo-spaziogames.png" alt="Logo sito The Darksoulers"/>
+            <img id="logo-mobile-short" src="<correzioneLink />img/logo-mobile.png" alt="Logo sito The Darksoulers"/>
+        </div>		
         <div id="links">
             <a href="#header" class="active">Home</a>
             <a href="<correzioneMenu />articoli.php">Articoli</a>
             <a href="<correzioneMenu />genere.php">Genere</a>
             <a href="<correzioneMenu />top10.php">Top 10</a>
             <a href="<correzioneMenu />nuoveuscite.php">Nuove Uscite</a>
-            <hr>
+            <hr/>
             <logincontentMobile />
         </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -25,7 +25,7 @@
     </div>
     <div id="menu" >
         <logincontent />
-        <ul id=listaMenu>
+        <ul id="listaMenu">
             <li xml:lang="en" id="currentLink" class="elementomenu">Home</li>
             <li class="elementomenu"><a href="<correzioneMenu />articoli.php">Articoli</a></li>
             <li class="elementomenu"><a href="<correzioneMenu />genere.php">Genere</a></li>
@@ -38,8 +38,8 @@
         <form>
             <fieldset id="fieldSet">
                 <label for="risultati-ricerca">Cerca:</label>
-                <input type="text" id="risultati-ricerca" name="termine-ricerca">
-                <input type="image" id="immagine-lente" src="<correzioneLink />img/lente.png" alt="cerca">
+                <input type="text" id="risultati-ricerca" name="termine-ricerca"/>
+                <input type="image" id="immagine-lente" src="<correzioneLink />img/lente.png" alt="cerca"/>
             </fieldset>
         </form>
     </div>
