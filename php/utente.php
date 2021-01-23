@@ -21,10 +21,10 @@
     $utenteMobile = preg_replace(
         "((?s)<a href=\"<rootFolder />/php/utente.php\"><SegnapostoNomeMobile /></a>)",
         "<a href=\"#header\" class=\"active\"><SegnapostoNomeMobile /></a>",file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
-	$utenteFull = preg_replace(
-        "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/utente.php\"><SegnapostoNome /></a></li>)",
-        "<li id=\"currentLink\" class=\"elementomenu\"><SegnapostoNome /></li>",file_get_contents(__DIR__ . "/contents/userLogin.php"));
-		
+	$utenteFull = file_get_contents(__DIR__ . "/contents/userLogin.php");
+	
+	$utenteFull = str_replace("<a  href=\"<rootFolder />/php/utente.php\"><SegnapostoNome /></a>","<SegnapostoNome />",$utenteFull);
+	
 	$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), $utenteMobile);
 	$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteFull);
     
