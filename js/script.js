@@ -104,17 +104,26 @@ openCloseBT();
 var regist = document.getElementById("form-registrazione");
 if (regist) {
 	regist.addEventListener("submit", function (event) {
+        alert("inizio");
         var name = checkName("registrazione-nome");
         var surname = checkSurname("registrazione-cognome");
         var email = checkEmail("registrazione-email");
         var passOK = checkPass("registrazione-password1");
         var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
-		if ((name && surname && email && passOK && pass12Eq)) {
+        alert("if b4");
+		if (name && surname && email && passOK && pass12Eq) {
             event.stopImmediatePropagation();
             event.stopPropagation();
             event.preventDefault();
             alert("bloccato registrazione");
-		}
+        }
+        if (!(name && surname && email && passOK && pass12Eq)) {
+            event.stopImmediatePropagation();
+            event.stopPropagation();
+            event.preventDefault();
+            alert("bloccato registrazione not");
+        }
+        alert("if after");
 	});
 }
 
