@@ -31,8 +31,8 @@
         <form method="get" action="<rootFolder />/php/menu.php?id=0">
           <fieldset id="fieldSet">
               <label for="risultati-ricerca">Cerca:</label>
-              <input type="text" id="risultati-ricerca" name="termine-ricerca">
-              <input type="image" id="immagine-lente" src="<rootFolder />/img/lente.png" alt="cerca">
+              <input type="text" id="risultati-ricerca" name="termine-ricerca"/>
+              <input type="image" id="immagine-lente" src="<rootFolder />/img/lente.png" alt="cerca"/>
           </fieldset>
         </form>
       </div>   
