@@ -113,6 +113,7 @@ if (regist) {
             event.stopImmediatePropagation();
             event.stopPropagation();
             event.preventDefault();
+            alert("bloccato registrazione");
 		}
 	});
 }
