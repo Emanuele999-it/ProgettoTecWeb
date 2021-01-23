@@ -9,6 +9,8 @@
         $connection = new DBConnection();
         $commenti = $connection->query("SELECT userid,testo,data_com 
                                       FROM commento WHERE articolo_id = \"{$idarticolo}\"   ");
+                $boxcommento = $boxcommento . file_get_contents(__DIR__ . "./contents/box-commento.php");
+
         while ($row = $commenti->fetch_assoc()) {
         $boxcommento = $boxcommento . file_get_contents(__DIR__ . "./contents/box-commento.php");
         $inseriticommenti =  $row["testo"];
