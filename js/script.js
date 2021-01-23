@@ -48,8 +48,11 @@ function checkCommento(commento) {
 
 function loginCheck(user) {    
     var email = document.getElementById(user).value;
+    alert("email");
     var result = !(email === "");
+    alert("result");
     notifyError(result, email, "Inserito campo vuoto");
+    alert("notify error");
 	return result;
 }
 
@@ -117,10 +120,14 @@ if (regist) {
 var login = document.getElementById("form-accesso");
 if (login) {
 	login.addEventListener("submit", function (event) {
+        alert("login");
 		if (!(loginCheck("login-email"))) {
+            alert("if");
             event.stopImmediatePropagation();
             event.stopPropagation();
             event.preventDefault();
-		}
+        }
+        
+    alert("endoif");
 	});
 }
