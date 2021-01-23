@@ -2,7 +2,7 @@
 function checkPasswordEqual(password, passwordConfirm) {
 	var p1 = document.getElementById(password);
 	var p2 = document.getElementById(passwordConfirm);
-	var result = p1.value === p2.value;
+	var result = (p1.value === p2.value);
 	notifyError(result, passwordConfirm, "La password inserita non combacia");
 	return result;
 }
@@ -104,21 +104,15 @@ openCloseBT();
 var regist = document.getElementById("form-registrazione");
 if (regist) {
 	regist.addEventListener("submit", function (event) {
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-        event.preventDefault();
         var name = checkName("registrazione-nome");
         var surname = checkSurname("registrazione-cognome");
         var email = checkEmail("registrazione-email");
         var passOK = checkPass("registrazione-password1");
         var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
-        event.stopImmediatePropagation();
-        event.stopPropagation();
-        event.preventDefault();
 		if (!(name && surname && email && passOK && pass12Eq)) {
-			event.preventDefault();
             event.stopImmediatePropagation();
             event.stopPropagation();
+            event.preventDefault();
 		}
 	});
 }
@@ -127,12 +121,10 @@ if (regist) {
 var login = document.getElementById("form-accesso");
 if (login) {
 	login.addEventListener("submit", function (event) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        event.stopPropagation();
 		if (!(loginCheck("login-email","login-password"))) {
-			event.preventDefault();
             event.stopImmediatePropagation();
+            event.stopPropagation();
+            event.preventDefault();
 		}
 	});
 }
