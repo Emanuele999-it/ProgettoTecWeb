@@ -13,11 +13,11 @@
         <logincontentMobile />
     </div>
     <a class="icon">
-        <div class="menu-bars">
-            <div></div>
-            <div></div>
-            <div></div>				
-        </div>
+        <span class="menu-bars">
+            <span></span>
+            <span></span>
+            <span></span>				
+        </span>
     </a>          
 </div>
 <div id="menu" >

@@ -95,7 +95,7 @@ body{
   top: 0;
 }
 
-.menu-bars div{
+.menu-bars span{
 	width: 25px;
 	height: 3px;
 	background-color: white;
