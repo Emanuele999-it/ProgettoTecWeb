@@ -12,11 +12,13 @@
         <hr>
         <logincontentMobile />
     </div>
-    <div id="OpenCloseBT" class="menu-bars" onclick="openCloseMenu()">
-        <div></div>
-        <div></div>
-        <div></div>				
-    </div>        
+    <div id="OpenCloseBT" class="icon">
+        <div class="menu-bars">
+            <div></div>
+            <div></div>
+            <div></div>				
+        </div>
+    </div>          
 </div>
 <div id="menu" >
     <logincontent />

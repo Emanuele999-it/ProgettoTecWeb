@@ -87,7 +87,7 @@ body{
   display: block;
 }
 
-#OpenCloseBT {
+.topnav div.icon {
   background: black;
   display: block;
   position: absolute;
@@ -102,7 +102,7 @@ body{
 	margin:3px 0;
 }
 
-#OpenCloseBT:active {
+.topnav a:active {
   background-color: #ddd;
   color: black;
 }
@@ -587,10 +587,6 @@ a.link-box-genere:visited{
 	#logo-mobile-full{
 		display: inline;
 	}
-	
-    #barra-di-ricerca{
-        display: none;
-    }
     
     #hamburger-menu{
 		width: 100%;
