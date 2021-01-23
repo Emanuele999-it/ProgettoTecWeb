@@ -13,10 +13,16 @@
       
       
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      
-      <script defer="defer"
-				type="text/javascript"
-				src="<rootFolder />/js/script.js"></script>
+      <script>
+      function myFunction() {
+        var x = document.getElementById("links");
+        if (x.style.display === "block") {
+        x.style.display = "none";
+        } else {
+        x.style.display = "block";
+        }
+      }
+      </script>
 
       <title>
         <titlePlaceholder />
@@ -31,13 +37,13 @@
         <form method="get" action="<rootFolder />/php/menu.php?id=0">
           <fieldset id="fieldSet">
               <label for="risultati-ricerca">Cerca:</label>
-              <input type="text" id="risultati-ricerca" name="termine-ricerca"/>
-              <input type="image" id="immagine-lente" src="<rootFolder />/img/lente.png" alt="cerca"/>
+              <input type="text" id="risultati-ricerca" name="termine-ricerca">
+              <input type="image" id="immagine-lente" src="<rootFolder />/img/lente.png" alt="cerca">
           </fieldset>
         </form>
       </div>   
       <div id="breadcrumb">
-          <p> Il tuo percorso: <percorsoPlaceholder /> </p>  
+          <p tabindex="0"> Il tuo percorso: <percorsoPlaceholder /> </p>  
       </div>  
       <a class="aiuti-screenreader" href="#menu">Vai ai menu</a>
       <a class="aiuti-screenreader" href="#content">Vai a contenuto</a>   
@@ -45,10 +51,12 @@
 
     <div id="content">
         <contentSegnaposto />
+		
+		<segnapostoVoto />
     </div>
-      
 
-      <footerSegnaposto />
+
+    <footerSegnaposto />
 
   </body>
 </html>

@@ -2,7 +2,6 @@
 require_once __DIR__ . "/setterTemplate.php";
 require_once __DIR__ . "/query-articoli.php";
 require_once __DIR__ . "/utente-class.php";
-require_once __DIR__ . "/navArticoli.php";
 
 session_start();
 
@@ -32,8 +31,6 @@ if ($currCat <= 0 || $currCat >= 7) {
     exit;
 }
 
-$pagNav = $_GET['page'];
-
 $setterPagina->setTitle("$categoria[$currCat] | The Darksoulers");
 $nav = file_get_contents(__DIR__ . "/contents/home-nav.php");
 
@@ -45,39 +42,27 @@ switch ($currCat) {
         break;
     case 1:
         $setterPagina->setDescription("Elenco degli articoli di categoria Giochi di ruolo");
-        $numArticoli = contaArticoli("genere",1);
-        $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 1) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=1",$listaGenCon);
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 1) . "</div>";
         break;
     case 2:
         $setterPagina->setDescription("Elenco degli articoli di categoria Sportivi");
-        $numArticoli = contaArticoli("genere",2);
-        $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 2) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=2",$listaGenCon);
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 2) . "</div>";
         break;
     case 3:
         $setterPagina->setDescription("Elenco degli articoli di categoria Sparatutto");
-        $numArticoli = contaArticoli("genere",3);
-        $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 3) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=3",$listaGenCon);
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 3) . "</div>";
         break;    
     case 4:
         $setterPagina->setDescription("Elenco degli articoli di categoria Avventura");
-        $numArticoli = contaArticoli("genere",4);
-        $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 4) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=4",$listaGenCon);
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 4) . "</div>";
         break;
     case 5:
         $setterPagina->setDescription("Elenco degli articoli di categoria Azione");
-        $numArticoli = contaArticoli("genere",5);
-        $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 5) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=5",$listaGenCon);
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 5) . "</div>";
         break;
     case 6:
         $setterPagina->setDescription("Elenco degli articoli di categoria Gestionale");
-        $numArticoli = contaArticoli("genere",6);
-        $listaGenCon .= getArticoliDaGenere($pagNav, 10, false, 6) . navArticoli($numArticoli, $pagNav) . "</div>";
-        $listaGenCon = str_replace("<navArtPlaceholder />", "genere-result.php?id=6",$listaGenCon);
+        $listaGenCon .= getArticoliDaGenere(0, 10, false, 6) . "</div>";
         break;
 }
 

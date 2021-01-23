@@ -17,13 +17,12 @@
     $utenteCon = file_get_contents(__DIR__ . "/contents/utenteContent.php");
     $utenteCon = str_replace("<NomeUtenetSegnaposto />", $_SESSION['user']->getNome(), $utenteCon);
 
-    //accesso
-    $utenteMobile = preg_replace(
-        "((?s)<a href=\"<rootFolder />/php/utente.php\"><SegnapostoNomeMobile /></a>)",
-        "<a href=\"#header\" class=\"active\"><SegnapostoNomeMobile /></a>",file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
+	//accesso
 	$utenteFull = file_get_contents(__DIR__ . "/contents/userLogin.php");
+	$utenteMobile = file_get_contents(__DIR__ . "/contents/userLoginMobile.php");
 	
 	$utenteFull = str_replace("<a  href=\"<rootFolder />/php/utente.php\"><SegnapostoNome /></a>","<SegnapostoNome />",$utenteFull);
+	$utenteMobile = str_replace("<a href=\"<rootFolder />/php/utente.php\"><SegnapostoNomeMobile /></a>","<SegnapostoNomeMobile />",$utenteMobile);
 	
 	$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), $utenteMobile);
 	$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), $utenteFull);
