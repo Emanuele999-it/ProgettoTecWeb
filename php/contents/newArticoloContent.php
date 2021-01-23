@@ -6,7 +6,7 @@
 <form action="../php/newArticolo-handle.php" method="post" id="form-aggiungi-articolo" enctype="multipart/form-data" >
     <fieldset class="form-new-articolo">
         <legend class=""> 
-            <h2>Campi dati obbligatori per l'aggiunta o modifica di un articolo</h2> 
+            Campi dati obbligatori per l'aggiunta o modifica di un articolo
         </legend>
     <ul class="form-container-dati-articolo">
         <li>
@@ -27,7 +27,7 @@
         </li>
         <li>
             <label for="aggiungi-recensione">Inserisci il Testo Recensione</label>
-            <textarea class="form-inserisci-testo" name="recensione" id="aggiungi-recensione" ></textarea>
+            <textarea class="form-inserisci-testo" name="recensione" id="aggiungi-recensione" rows="100" cols="100></textarea>
         </li>
         <li>
             <label for="aggiungi-immagine">Aggiungi una immagine riguardante il gioco</label>
