@@ -1,4 +1,4 @@
-<div id="form-login" class="contenutoAccesso">
+<div class="contenutoAccesso">
     <h1>Accedi</h1>
     <h2><span class="errore-credenziali"><SegnapostoCredenziali /></span></h2>
     <form action="../php/accesso-handle.php"  method="post"  id="form-accesso">
