@@ -251,7 +251,7 @@ function getVotoArticolo($idArticolo, $userId)
 
     if ($result) {
         while ($row = $result->fetch_assoc()) {
-            $voto = $row['voti'];
+            $voto = $row['voto'];
             $risultato = $voto;
         }
     
