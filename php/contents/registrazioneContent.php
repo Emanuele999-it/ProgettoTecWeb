@@ -52,7 +52,7 @@
             <input id="registrazione-password2"
                     type="password"
                     name="password2" />
-            <span id="registrazione-password2-warning" class="warning"></span>
+            <span id="registrazione-password2-warning" class="warning">testerrore</span>
         </li>
         <li class="form-element">
             <input class="submit"

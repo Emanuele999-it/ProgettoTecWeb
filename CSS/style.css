@@ -63,6 +63,13 @@ body{
 	padding-bottom: 0.6em;
 }
 
+.warning{
+    color: red;
+    display: block;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
 .topnav {
   overflow: hidden;
   background-color: #333;
