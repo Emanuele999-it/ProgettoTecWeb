@@ -1,5 +1,8 @@
 <?php
     require_once __DIR__ . "/setterTemplate.php";
+    require_once __DIR__ . '/utente-class.php';
+
+    session_start();
 
     $setterPagina = new setterTemplate("..");
 
@@ -19,7 +22,7 @@
 	}
 	
     $setterPagina->setPercorso("Utente");
-    
+
     $newArtCon = file_get_contents(__DIR__ . "/contents/newArticoloContent.php");
     $setterPagina->setContent($newArtCon);
     $setterPagina->setFooter();
