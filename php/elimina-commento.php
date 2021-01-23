@@ -18,7 +18,7 @@ $connection->query("DELETE FROM commento WHERE comment_id=$idcommento");
 
 $connection->disconnect();
 
-header("Location: articolo.php?id=$idarticolo#commenti");
+header("Location: articolo.php?id=$idarticolo#inserisciCommento");
 
 
 ?>
