@@ -68,6 +68,13 @@ if (!$controllotrovato){
                                     VALUES (NULL,\"{$nomedelgioco}\",\"{$cat_id}\",
                                             \"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")");
         if (!$result) {
+            echo '<script language="javascript">';
+            echo 'alert("errore query")';
+            echo 'alert("INSERT INTO gioco (game_id, nome, cat_id,
+            data_pubb, img, alt)
+VALUES (NULL,\"{$nomedelgioco}\",\"{$cat_id}\",
+\"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")")';
+            echo '</script>';
             throw new Exception("INSERIMENTO GIOCO SBAGLIATO", 1);
             exit;
         }
