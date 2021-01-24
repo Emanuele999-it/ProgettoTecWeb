@@ -42,6 +42,15 @@
                 </ul>
             </fieldset>
         </form>
+        <form action="<rootFolder />/php/utente.php" id="form-annulla-modifica-utente" method="post">
+            <fieldset class="form-fieldset">
+                <ul class="form-fieldset">
+                <li class="form-element">
+                        <input class="submit" type="submit" value="Annulla" />
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
     </div>
 </div>
 <div class="torna-su">

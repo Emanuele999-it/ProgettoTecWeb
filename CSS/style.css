@@ -158,6 +158,11 @@ ul{
     color: #BBBBBB;
 }
 
+#listaMenu{ 
+	text-align: center;
+	margin-top: 0.8em;
+}
+
 #barra-di-ricerca{
     background-color: black;
     color: white;
@@ -227,6 +232,7 @@ ul{
 
 #recensione p{
     text-align: left;
+    margin-top: 1%;
 }
 
 #recensione img{
@@ -236,8 +242,8 @@ ul{
 }
 
 .home-articoli{
-    margin-left: 7em;
-    margin-right: 7em;
+    margin-left: 2em;
+    margin-right: 2em;
     margin-top: 2em;
 }
 
@@ -662,10 +668,6 @@ a.link-box-genere:visited{
         float: left;
         border-radius: 2em;
         margin: 5%;
-    }
-	
-    .articoloPrincipale a{
-        font-size:77%;
     }
 	
     .articoloScheda img{        
