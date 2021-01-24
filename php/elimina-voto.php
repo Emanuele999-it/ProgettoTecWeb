@@ -15,16 +15,9 @@ $id = $_SESSION['user']->getUserid();
 $GameId = $_GET['idgame'];
 $idarticolo = $_GET['idArticolo'];
 
-/*$result = $connection->query("SELECT voto FROM voto WHERE gioco_id=$GameId AND userid=$id");
-if (!$result) {
-    header("Location: ../error/402.php");
-	exit;
-}*/
-
 $result=$connection->query("DELETE FROM voto WHERE gioco_id=$GameId AND userid=$id");
 if (!$result) {
-	throw new Exception("prova stampa",1);
-    //header("Location: ../error/402.php");
+    header("Location: ../error/400.php");
 	exit;
 }
 $connection->disconnect();
