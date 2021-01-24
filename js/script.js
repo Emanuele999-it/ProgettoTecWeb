@@ -124,3 +124,15 @@ if (login) {
         }
 	});
 }
+
+//cancellazione account
+var login = document.getElementById("eliminazione-account");
+if (login) {
+	login.addEventListener("submit", function (event) {
+		if (!(checkPass("eliminazione-password"))) {
+            event.stopImmediatePropagation();
+            event.stopPropagation();
+            event.preventDefault();
+        }
+	});
+}
