@@ -15,7 +15,6 @@ $_SESSION["giorno-gioco"]      = $_POST["giorno-pubblicazione-gioco"];
 $_SESSION["img_path"]          = $_POST["immagine"];
 $_SESSION["alt_immagine"]      = $_POST['alt-immagine'];
 echo $_SESSION["img_path"];
-throw new Exception("INSERIMENTO GIOCO SBAGLIATO", 1);
 exit;
 
 //TRAVASO PERCHE' LA QUERY NON VA CON LE VARIABILI SESSION
