@@ -13,9 +13,22 @@
             <label for="aggiungi-gioco">Titolo del Gioco</label>
             <input type="text" id="aggiungi-gioco" name="gioco" value="" />
         </li>
-        <li>
+<!--        <li>
             <label for="aggiungi-anno-publicazione">Data pubblicazione gioco</label>
             <input type="date" id="aggiungi-anno-publicazione" name="data-pubblicazione-gioco" value="" />
+        </li> -->
+        <li>
+            <label for="aggiungi-anno-publicazione">Anno pubblicazione gioco</label>
+            <input type="text" class="data-pubblicazione-gioco" id="aggiungi-anno-publicazione" name="anno-pubblicazione-gioco" value="" />
+        </li>
+
+        <li>
+            <label for="aggiungi-mese-publicazione">Mese pubblicazione gioco</label>
+            <input type="text" class="data-pubblicazione-gioco" id="aggiungi-mese-publicazione" name="mese-pubblicazione-gioco" value="" />
+        </li>
+        <li>
+            <label for="aggiungi-giorno-publicazione">Giorno pubblicazione gioco</label>
+            <input type="text" class="data-pubblicazione-gioco" id="aggiungi-giorno-publicazione" name="giorno-pubblicazione-gioco" value="" />
         </li>
         <li>
             <label for="aggiungi-titolo">Titolo Articolo</label>

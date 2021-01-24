@@ -2,6 +2,7 @@
 require_once __DIR__ . "/setterTemplate.php";
 require_once __DIR__ . "/query-articoli.php";
 require_once __DIR__ . "/utente-class.php";
+require_once __DIR__ . "/navArticoli.php";
 
 session_start();
 
@@ -31,6 +32,7 @@ if ($currPag == 0 && !key_exists("termine-ricerca", $_GET)) {
 }
 
 $termineCerca = $_GET['termine-ricerca'];
+$pagNav = array_key_exists('page', $_GET)  ? $_GET['page'] : 0;
 
 if ($currPag < 0 || $currPag >= 5) {
     header("Location: error/404.php");
@@ -45,12 +47,17 @@ switch ($currPag) {
     case 0:
         $setterPagina->setDescription("Elenco degli articoli il cui nome contiene il termine ricercato");
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
-        $pageContent .= cercaArticoli($termineCerca, 0) . "</div>";
+        $numArticoli = contaArticoli("ricerca",$termineCerca);
+        $pageContent .= cercaArticoli($termineCerca, $pagNav) . navArticoli($numArticoli, $pagNav) . "</div>";
+        $replacingLink = "menu.php?termine-ricerca=" . $termineCerca;
+        $pageContent = str_replace("<navArtPlaceholder />", $replacingLink,$pageContent);
         break;
     case 1:
         $setterPagina->setDescription("Elenco di tutti gli articoli");
         $pageContent = "<div  id=\"contenutoArticoli\" class=\"contenutoGenerale\" >";
-        $pageContent .= getArticoli(0, 10) . "</div>";
+        $numArticoli = contaArticoli("articoli","");
+        $pageContent .= getArticoli($pagNav, 10) . navArticoli($numArticoli, $pagNav) . "</div>";
+        $pageContent = str_replace("<navArtPlaceholder />", "menu.php?id=1",$pageContent);
         break;
     case 2:
         $setterPagina->setDescription("Elenco dei generi dei videogames");
@@ -64,7 +71,9 @@ switch ($currPag) {
     case 4:
         $setterPagina->setDescription("Nuove uscite");
         $pageContent = "<div  class=\"contenutoGenerale\" id=\"contenutoArticoli\" >";
-        $pageContent .= getNuoveUscite() . "</div>";
+        $numArticoli = contaArticoli("nuove uscite","");
+        $pageContent .= getNuoveUscite($pagNav) . navArticoli($numArticoli, $pagNav) . "</div>";
+        $pageContent = str_replace("<navArtPlaceholder />", "menu.php?id=4",$pageContent);
         break;
 }
 $pageContent .= "<div class=\"torna-su\" ><a class=\"torna-su-link\" href=\"#header\">Torna su</a></div>";
@@ -82,6 +91,16 @@ if ($currPag != 0) {
 
     $setterPagina->setPercorso($pag[$currPag]);
 } else {
+
+    if($currPag == 1){
+        $nav = preg_replace(
+            "((?s)<a href=\"<rootFolder />/php/menu\.php\?id=$currPag\">.*?</a>)",
+            "<a href=\"#header\" class=\"active\" xml:lang=\"en\">$pag[$currPag]</a>",
+            preg_replace(
+                "((?s)<li class=\"elementomenu\"><a href=\"<rootFolder />/php/menu\.php\?id=$currPag\">.*?</a></li>)",
+                "<li xml:lang=\"en\" id=\"currentLink\" class=\"elementomenu\">$pag[$currPag]</li>",
+                $nav));
+    }
     $setterPagina->setPercorso("Ricerca");
 }
 
