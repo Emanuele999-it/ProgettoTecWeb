@@ -9,7 +9,7 @@ function checkPasswordEqual(password, passwordConfirm) {
 
 function checkNotEmpty(e, length){
 	var test = document.getElementById(e).value;
-	var regex = new RegExp("^[.]{1," + length +"}$");
+	var regex = new RegExp("^[.*]{1," + length +"}$");
     result = !(test === "") && (regex.test(test));
 	notifyError(result, e, "Il campo non puo' essere vuoto");
 	return result;
@@ -17,7 +17,7 @@ function checkNotEmpty(e, length){
 
 function checkImageExt(img){
 	var test = document.getElementById(img).value.toLowerCase();
-	var regex = new RegExp("^[.\.jpg]{0,}$");
+	var regex = new RegExp("^[.*\.jpg]{0,}$");
     result = (regex.test(test));
 	notifyError(result, img, "Viene accettato solo il formato .jpg");
 	return result;
