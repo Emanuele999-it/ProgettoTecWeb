@@ -79,7 +79,7 @@ INSERT INTO `commento` (`comment_id`, `articolo_id`, `user_id`, `testo`, `data_c
 DROP TABLE IF EXISTS gioco;
 CREATE TABLE `gioco` (
   `game_id` int(11) AUTO_INCREMENT NOT NULL,
-  `nome` char(64) NOT NULL,
+  `nome` char(64) NOT NULL UNIQUE,
   `cat_id` int(11) NOT NULL,
   `data_pubb` date DEFAULT NULL,
   `img` VARCHAR(256) DEFAULT NULL,
