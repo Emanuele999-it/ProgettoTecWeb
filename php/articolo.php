@@ -81,7 +81,8 @@
 		$artPageCon = str_replace("<SegnapostoVotoCommenti />",$boxinsertcommento,$artPageCon);
 		$artPageCon = str_replace("<SegnapostoIDarticolo />",$id,$artPageCon);
 		//$inseriticommenti = commentiutenti($id);
-		//$artPageCon = str_replace("<SegnapostoCommentiInseriti />", "<ul>". $inseriticommenti . "</ul>",$artPageCon);
+		$inseriticommenti = "";
+		$artPageCon = str_replace("<SegnapostoCommentiInseriti />", "<ul>". $inseriticommenti . "</ul>",$artPageCon);
 	
 	}
 	else{
