@@ -6,7 +6,8 @@ body{
 
 
 #logo-mobile-short, #links, #icon, #menu, #barra-di-ricerca, .aiuti-screenreader, .torna-su, #footer,
-.articoloPrincipale img, .articoloScheda img,#logo-mobile-full, .boxgenere img, #benvenuto-utente img, #contenutoArticoli img{
+.articoloPrincipale img, .articoloScheda img,#logo-mobile-full, .boxgenere img, #benvenuto-utente img, 
+#contenutoArticoli img, .elNavArticoli{
 
     display: none;
 }
