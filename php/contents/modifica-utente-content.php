@@ -20,6 +20,7 @@
                 <ul class="form-fieldset">
                     <li>
                         <p>Inserisci nuova <span xml:lang="en" lang="en">Email</span></p>
+                        <SegnapostoModificaEmail />
                         <input id="registrazione-email" value="<SegnapostoEmail />" type="text" name="email" />
                         <span id="registrazione-email-warning" class="warning"></span>
                     </li>
