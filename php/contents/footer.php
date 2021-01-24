@@ -1,5 +1,5 @@
 <div id="footer">
-    <img id="imgValidCode" src="img/valid-xhtml10.png" alt="" />
+    <img id="imgValidCode" src="img/valid-xhtml10.png" alt="Certificato xhtml valido" />
     <p>The Darksoulers</p>
     <p>Creators:</p>
     <ul>
@@ -8,5 +8,5 @@
         <li>Bertoldo Damiano</li>
         <li>Emanuele Pase</li>
     </ul>
-    <img id="imgValidCss" src="img/vcss-blue.gif" alt="" />
+    <img id="imgValidCss" src="img/vcss-blue.gif" alt="Certificato css valido" />
 </div>
