@@ -1,7 +1,7 @@
 <div id="modifca-utente">
     <h1>Modifica dati personali </h1>
     <div id="dati-personali">
-        <form action="<rootFolder />/php/modifica-utente-handle.php" method="post">
+        <form action="<rootFolder />/php/modifica-utente-handle.php" id="form-modifica-utente" method="post">
             <fieldset class="form-fieldset">
                 <ul class="form-fieldset">
                     <li>
