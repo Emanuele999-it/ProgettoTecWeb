@@ -576,6 +576,10 @@ a.link-box-genere:visited{
 	width:30%;
 }
 
+#content-aggiungi-articolo #aggiungi-titolo{
+	width:30%;
+}
+
 #content-aggiungi-articolo #aggiungi-sommario{
 	width:30%;
 }
@@ -701,6 +705,10 @@ a.link-box-genere:visited{
 
     .articoloScheda h4{
         font-size: 17px;
+    }
+    
+    #content-aggiungi-articolo{
+	margin: 1em;
     }
 }
 /*fine mobile*/
