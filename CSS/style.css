@@ -444,6 +444,15 @@ a.link-box-genere:visited{
     padding: 0.1em;
 }
 
+#footer p{
+	padding-top:0.1em;
+	padding-bottom:0.1em:
+}
+
+#footer img{
+	padding-top:0.2em;
+	padding-bottom:0.1em:
+}
 
 /*pagina accedi/registrati*/
 .form-fieldset{
