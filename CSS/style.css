@@ -568,6 +568,22 @@ a.link-box-genere:visited{
     padding: 2em;
 }
 
+#content-aggiungi-articolo .form-inserisci-testo{
+	width:95%;
+}
+
+#content-aggiungi-articolo #aggiungi-gioco{
+	width:30%;
+}
+
+#content-aggiungi-articolo #aggiungi-sommario{
+	width:30%;
+}
+
+#content-aggiungi-articolo #aggiungi-descrizione-immagine{
+	width:30%;
+}
+
 .form-new-articolo{
     margin-top: 2em;
     margin-bottom: 2em;
