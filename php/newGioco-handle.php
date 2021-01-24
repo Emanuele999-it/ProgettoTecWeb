@@ -14,9 +14,6 @@ $_SESSION["mese-gioco"]        = $_POST["mese-pubblicazione-gioco"];
 $_SESSION["giorno-gioco"]      = $_POST["giorno-pubblicazione-gioco"];
 $_SESSION["img_path"]          = $_POST["immagine"];
 $_SESSION["alt_immagine"]      = $_POST['alt-immagine'];
-echo "stringa prova";
-echo $_SESSION["img_path"];
-exit;
 
 //TRAVASO PERCHE' LA QUERY NON VA CON LE VARIABILI SESSION
 $nomedelgioco                 = $_SESSION["nomedelgioco"];
@@ -26,6 +23,11 @@ $mese                         = $_SESSION["mese-gioco"];
 $giorno                       = $_SESSION["giorno-gioco"];
 $img_path                     = $_SESSION["img_path"];
 $alt_immagine                 = $_SESSION["alt_immagine"];
+
+echo "stringa prova" + $img_path;
+echo $img_path;
+echo $_FILES["immagine"]["tmp_name"];
+exit;
 
 $data_pub_gioco               = $anno . "-" . $mese . "-" . $giorno;
 
