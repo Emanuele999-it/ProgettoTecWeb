@@ -24,6 +24,18 @@
     $setterPagina->setPercorso("Aggiungi articolo");
 
     $newArtCon = file_get_contents(__DIR__ . "/contents/newArticoloContent.php");
+
+    if ( $_SESSION["giono-non-trovato"] == true ){
+        $_SESSION["giono-non-trovato"] = false;
+        $newArtCon = str_replace("<SegnapostoGioconontrovato />",
+        "<h2><span class=\"errore-credenziali\"> Il gioco che hai insertio non esiste nel database, 
+        devi inserirlo prima dal pannello utente</span></h2>",$newArtCon);
+    }else{
+        $newArtCon = str_replace("<SegnapostoGioconontrovato />","",$newArtCon);
+    }
+
+
+
     $setterPagina->setContent($newArtCon);
     $setterPagina->setFooter();
 
