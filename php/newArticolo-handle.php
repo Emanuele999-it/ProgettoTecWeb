@@ -24,17 +24,19 @@ $alt_immagine                 = $_SESSION["alt_immagine"];
 $prima_pagina                 = $_SESSION["prima_pagina"];
 $nomedelgioco                 = $_SESSION["nomedelgioco"];
 $game_id                      = "";
+$cat_id                       = "";
 $data_pub_articolo            = date("Y-m-d H:i:s");
 
 //controllo se il gioco esiste
 $exist = false;
 $defaultImg = "";
 $defaultAlt = "";
-$controllogioco = $connection->query("SELECT nome FROM `gioco`");
+$controllogioco = $connection->query("SELECT nome, cat_id, game_id FROM `gioco`");
 while ($row = $controllogioco->fetch_assoc()) {
     $controllogiocotitolo =  $row["nome"];
     if ($controllogiocotitolo == $nomedelgioco) {
         $game_id = intval($row['game_id']);
+        $cat_id  = intval($row['cat_id']);
         $defaultImg = $row['img'];
         $defaultAlt = $row['alt'];
         $exist = true;
