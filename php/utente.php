@@ -33,10 +33,10 @@
 	
     if ($_SESSION["user"]->getAdmin()) {
         $utenteCon = str_replace("<SegnapostoAggiungiNuovoArticolo />",
-         "<a id=\"aggiungi-articolo\" href=\" <rootFolder />/php/newArticolo.php\"> Aggiungi nuovo Articolo </a>",
+         "<a id=\"aggiungi-articolo\" class=\"addGameArti\" href=\" <rootFolder />/php/newArticolo.php\"> Aggiungi nuovo Articolo </a>",
          $utenteCon);
         $utenteCon = str_replace("<SegnapostoAggiungiNuovoGioco />",
-        "<a id=\"aggiungi-gioco\" href=\" <rootFolder />/php/newGame.php\"> Aggiungi nuovo Articolo </a>",
+        "<a id=\"aggiungi-gioco\" class=\"addGameArti\" href=\" <rootFolder />/php/newGame.php\"> Aggiungi nuovo Gioco </a>",
         $utenteCon);
     } else {
         $utenteCon = str_replace("<SegnapostoAggiungiNuovoArticolo />", "", $utenteCon);

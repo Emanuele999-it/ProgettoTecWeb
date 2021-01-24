@@ -1,4 +1,3 @@
-
 * {
 	padding: 0em;
 	margin: 0em;
@@ -221,13 +220,13 @@ ul{
 
 
 #contenutoArticoli{
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 3em;
+  margin-right:1em;
   margin-top: 2em;
 }
 
 #recensione{
-    margin-right:5em;
+    margin-right:1em;
 }
 
 #recensione p{
@@ -537,7 +536,10 @@ a.link-box-genere:visited{
     margin: 3em;
 }
 
-#aggiungi-articolo{
+#aggiungi-articolo{    
+}
+
+.addGameArti {
     text-align: center;
     margin: auto;
     padding: 1em;
@@ -648,7 +650,7 @@ a.link-box-genere:visited{
 	
     #contenutoArticoli{
         margin-left: 2em;
-        margin-right: 2em;
+        margin-right: 0.5em;
         margin-top: 2em;
     }
 
