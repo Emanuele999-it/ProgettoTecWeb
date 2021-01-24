@@ -192,11 +192,17 @@ if (modify) {
 var artic = document.getElementById("form-aggiungi-articolo");
 if (artic) {
 	artic.addEventListener("submit", function (event) {
+		alert("inizio");
 		titoloGioco = checkNotEmpty("aggiungi-gioco", 64);
+		alert("gioco");
 		titoloArt = checkNotEmpty("aggiungi-titolo", 128);
+		alert("titolo");
 		sommario = checkNotEmpty("aggiungi-sommario", 512);
+		alert("sommario");
 		testo = checkNotEmpty("aggiungi-recensione", 65535);
+		alert("testo");
 		immagine = checkImageExt("aggiungi-immagine");
+		alert("immagine");
 		if (!(titoloGioco && titoloArt && sommario && testo && immagine)) {
 			event.stopImmediatePropagation();
 			event.stopPropagation();
@@ -209,11 +215,17 @@ if (artic) {
 var game = document.getElementById("form-aggiungi-gioco");
 if (game) {
 	game.addEventListener("submit", function (event) {
+		alert("inizio");
 		titoloGioco = checkNotEmpty("aggiungi-gioco", 64);
+		alert("titolo");
 		immagine = checkImageExt("aggiungi-immagine");
+		alert("immagine");
 		day = checkDay("aggiungi-giorno-publicazione");
+		alert("d");
 		month = checkMonth("aggiungi-mese-publicazione");
+		alert("m");
 		year = checkYear("aggiungi-anno-publicazione");
+		alert("y");
 		if (!(titoloGioco && immagine && day && month && year)) {
 			event.stopImmediatePropagation();
 			event.stopPropagation();
