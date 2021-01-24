@@ -25,9 +25,8 @@ $img_path                     = $_SESSION["img_path"];
 $alt_immagine                 = $_SESSION["alt_immagine"];
 
 
-echo "stringa prova" . $img_path;
-echo "asd";
-echo $_FILES["immagine"]["tmp_name"];
+echo 'stringa prova '. $img_path . ' ';
+echo 'file name: '.$_FILES['immagine']['tmp_name'];
 exit;
 
 $data_pub_gioco               = $anno . "-" . $mese . "-" . $giorno;
