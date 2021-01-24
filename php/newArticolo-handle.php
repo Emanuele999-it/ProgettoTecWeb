@@ -45,7 +45,7 @@ if (!$exist) {
 }
 
 $useDefaultImage = false;
-if ($img_path == "") {
+if ($img_path == 0) {
     //prendo l'immagine dal gioco
     $controllogioco = $connection->query("SELECT nome FROM `gioco`");
     $img_path = $defaultImg;

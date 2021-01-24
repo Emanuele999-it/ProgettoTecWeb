@@ -24,15 +24,10 @@ $giorno                       = $_SESSION["giorno-gioco"];
 $img_path                     = $_SESSION["img_path"];
 $alt_immagine                 = $_SESSION["alt_immagine"];
 
-echo "stringa prova" + $img_path;
-echo $img_path;
-echo $_FILES["immagine"]["tmp_name"];
-exit;
-
 $data_pub_gioco               = $anno . "-" . $mese . "-" . $giorno;
 
 $isDefaultImage = false;
-if ($img_path == "") {
+if ($img_path == 0) {
     $img_path = "<rootFolder />/img/noimage.jpg";
     $alt_immagine = "Immagine non presente";
     $isDefaultImage = true;
