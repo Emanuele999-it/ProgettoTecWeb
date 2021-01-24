@@ -12,7 +12,7 @@
                 <li>
                     <label for="aggiungi-gioco">Titolo del Gioco</label>
                     <input type="text" id="aggiungi-gioco" name="gioco" value="" />
-                    <span id="registrazione-nome-warning" class="warning"></span>
+                    <span id="aggiungi-gioco-warning" class="warning"></span>
                 </li>
                 <li>
                     <label for="aggiungi-anno-publicazione">Anno pubblicazione gioco</label>
