@@ -27,7 +27,9 @@ else {
     $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/../contents/logRegContent.php"),file_get_contents(__DIR__ . "/../contents/logRegMobileContent.php") );
 }
 
-$setterPagina->setContent("<h1>Ops.. sembra che non puoi accedere a questa risorsa</h1>");
+$contenuto = str_replace("<segnapostoErrore />", "Ops.. sembra che non puoi accedere a questa risorsa", file_get_contents(__DIR__ . "/../contents/erroreContent.php"));
+
+$setterPagina->setContent($contenuto);
 $setterPagina->setFooter();
 
 $setterPagina->validate();
