@@ -41,10 +41,14 @@ $data_pub_gioco               = $anno. "-" . $mese. "-" . $giorno ;
 $data_pub_articolo            = date("Y-m-d H:i:s");
 
 
-if($img_path != ""){
+if($img_path == ""){
     $img_path = "<rootFolder />/img/noimage.jpg";
     $alt_immagine = "Immagine non presente";
 }
+$anno = ($anno == "") ? 1970 : $anno;
+$mese = ($mese == "") ? 12 : $mese;
+$giorno = ($giorno == "") ? 01 : $giorno;
+
 
 //CONTROLLO SE IL GIOCO ESISTE GIA' NEL DATABASE
 $controllotrovato=false;
@@ -68,20 +72,10 @@ if (!$controllotrovato){
                                     VALUES (NULL,\"{$nomedelgioco}\",\"{$cat_id}\",
                                             \"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")");
         if (!$result) {
-            echo '<script language="javascript">';
-            echo 'alert("errore query");';
-            echo 'alert("INSERT INTO gioco (game_id, nome, cat_id,
-            data_pubb, img, alt)
-VALUES (NULL,\"{$nomedelgioco}\",\"{$cat_id}\",
-\"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")");';
-            echo '</script>';
             throw new Exception("INSERIMENTO GIOCO SBAGLIATO", 1);
             exit;
         }
 } 
-else {
-
-}
 
 // OTTENGO IL GAME_ID DEL   GIOCO 
 $result=$connection->query("SELECT game_id FROM `gioco` WHERE nome=\"{$nomedelgioco}\" ");
