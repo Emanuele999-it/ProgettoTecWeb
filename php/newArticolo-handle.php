@@ -54,12 +54,13 @@ if (!$controllogioco) {
     exit;
 } 
 
+//controllo imgpath
+if($img_path == ""){
+    $img_path = "<rootFolder />/img/noimage.jpg";
+    $alt_immagine = "immagine rappresentante nessuna immagine";
+}
 
  
-/* QUERY FUNZIONANTE 
-INSERT INTO `gioco`(`game_id`, `nome`, `cat_id`, `data_pubb`, `img`, `alt`) 
-VALUES (NULL,"",1,"2021-10-30","","")
-*/
 //QUERY FUNZIONANTE PER INSERIMENTO DEL GIOCO NUOVO ALTRIMENTI NON POSSO INSERIRE L'ARTICOLO
 //INSERIMENTO GIOCO OPPURE NO  
 if (!$controllotrovato){

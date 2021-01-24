@@ -7,6 +7,22 @@ function checkPasswordEqual(password, passwordConfirm) {
 	return result;
 }
 
+function checkNotEmpty(e, length){
+	var test = document.getElementById(e).value;
+	var regex = new RegExp("^[.]{1," + length +"}$");
+    result = !(test === "") && (regex.test(test));
+	notifyError(result, e, "Il campo non puo' essere vuoto");
+	return result;
+}
+
+function checkImageExt(img){
+	var test = document.getElementById(img).value.toLowerCase();
+	var regex = new RegExp("^[.\.jpg]{0,}$");
+    result = (regex.test(test));
+	notifyError(result, img, "Viene accettato solo il formato .jpg");
+	return result;
+}
+
 function checkPass(pass) {
     var test = document.getElementById(pass).value;
     result = !(test === "") && test.length !== 0;
@@ -46,11 +62,29 @@ function checkCommento(commento) {
 	return result;
 }
 
-function loginCheck(user) {    
-    var email = document.getElementById(user).value;
-    var result = !(email === "");
-    notifyError(result, user, "Inserito campo vuoto");
+function checkDay(day){
+	var num = parseInt(document.getElementById(day).value);
+    result = (num < 32 && num > 0);
+	notifyError(result, day, "Valori accettati tra 1 e 31");
 	return result;
+}
+
+function checkMonth(Month){
+	var num = parseInt(document.getElementById(Month).value);
+    result = (num < 13 && num > 0);
+	notifyError(result, Month, "Valori accettati tra 1 e 12");
+	return result;
+}
+
+function checkYear(year){
+	var num = parseInt(document.getElementById(year).value);
+    result = (num > 1970);
+	notifyError(result, year, "Metti un anno maggiore di 1970");
+	return result;
+}
+
+function loginCheck(user) { 
+	return checkNotEmpty(user, 30);
 }
 
 function notifyError(condition, idElemento, message) {
@@ -95,6 +129,26 @@ function openCloseBT() {
 
 //da qui i metodi che vengono attivati con il caricamento della pagina
 openCloseBT();
+
+//aggiungi articolo
+var artic = document.getElementById("form-new-articolo");
+if (artic) {
+	artic.addEventListener("submit", function (event) {
+		titoloGioco = checkNotEmpty("aggiungi-gioco", 64);
+		titoloArt = checkNotEmpty("aggiungi-titolo", 128);
+		sommario = checkNotEmpty("aggiungi-sommario", 512);
+		testo = checkNotEmpty("aggiungi-recensione", 65535);
+		immagine = checkImageExt("aggiungi-immagine");
+		day = checkDay("aggiungi-giorno-publicazione");
+		month = checkMonth("aggiungi-mese-publicazione");
+		year = checkYear("aggiungi-anno-publicazione");
+		if (!(titoloGioco && titoloArt && sommario && testo && immagine && day && month && year)) {
+            event.stopImmediatePropagation();
+            event.stopPropagation();
+            event.preventDefault();
+        }
+	});
+}
 
 //pagina registrazione
 var regist = document.getElementById("form-registrazione");
