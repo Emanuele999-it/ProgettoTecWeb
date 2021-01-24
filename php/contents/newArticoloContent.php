@@ -40,7 +40,7 @@
         </li>
         <li>
             <label for="aggiungi-recensione">Inserisci il Testo Recensione</label>
-            <textarea class="form-inserisci-testo" name="recensione" id="aggiungi-recensione" ></textarea>
+            <textarea class="form-inserisci-testo" name="recensione" id="aggiungi-recensione" rows="20" cols="100" ></textarea>
         </li>
         <li>
             <label for="aggiungi-immagine">Aggiungi una immagine riguardante il gioco</label>
