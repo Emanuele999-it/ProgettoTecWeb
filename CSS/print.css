@@ -42,6 +42,10 @@ a{
     text-decoration: none;
 }
 
+.commenti ul{
+    list-style-type: none;
+}
+
 .form-container{
     list-style-type:none;
 }
