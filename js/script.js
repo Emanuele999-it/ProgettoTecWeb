@@ -126,10 +126,27 @@ if (login) {
 }
 
 //cancellazione account
-var login = document.getElementById("eliminazione-account");
-if (login) {
-	login.addEventListener("submit", function (event) {
+var canc = document.getElementById("eliminazione-account");
+if (canc) {
+	canc.addEventListener("submit", function (event) {
 		if (!(checkPass("eliminazione-password"))) {
+            event.stopImmediatePropagation();
+            event.stopPropagation();
+            event.preventDefault();
+        }
+	});
+}
+
+//modifica account
+var modify = document.getElementById("form-modifica-utente");
+if (modify) {
+	modify.addEventListener("submit", function (event) {
+        var name = checkName("registrazione-nome");
+        var surname = checkSurname("registrazione-cognome");
+        var email = checkEmail("registrazione-email");
+        var passOK = checkPass("registrazione-password1");
+        var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
+        if (!(name && surname && email && passOK && pass12Eq)) {
             event.stopImmediatePropagation();
             event.stopPropagation();
             event.preventDefault();
