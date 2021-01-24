@@ -90,7 +90,10 @@ function loginCheck(user) {
 function checkAlt(image, alt){
 	var imagetext = document.getElementById(image).value;
 	var altText = document.getElementById(alt).value;
-	result = imagetext.length !== 0 && altText.length === 0;
+	var regex = new RegExp("^.{1,}$");	
+	alert("imageText: " +regex.test(imagetext));
+	alert("altText: " +regex.test(altText));
+	result = (regex.test(imagetext)) && !(regex.test(altText));
 	notifyError(result, alt, "Inserisci una descrizione dell'immagine");
 	return result;
 }
