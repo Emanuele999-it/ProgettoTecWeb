@@ -31,7 +31,7 @@ $data_pub_articolo            = date("Y-m-d H:i:s");
 $exist = false;
 $defaultImg = "";
 $defaultAlt = "";
-$controllogioco = $connection->query("SELECT nome, cat_id, game_id FROM `gioco`");
+$controllogioco = $connection->query("SELECT nome, cat_id, game_id, img, alt FROM `gioco`");
 while ($row = $controllogioco->fetch_assoc()) {
     $controllogiocotitolo =  $row["nome"];
     if ($controllogiocotitolo == $nomedelgioco) {
