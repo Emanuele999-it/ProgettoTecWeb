@@ -24,8 +24,6 @@ $giorno                       = $_SESSION["giorno-gioco"];
 $img_path                     = $_SESSION["img_path"];
 $alt_immagine                 = $_SESSION["alt_immagine"];
 
-echo "nomefile: ".$img_path;
-
 $data_pub_gioco               = $anno . "-" . $mese . "-" . $giorno;
 
 $isDefaultImage = false;
