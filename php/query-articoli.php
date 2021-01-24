@@ -10,7 +10,7 @@ function getSingoloArticolo($idArticolo){
     $result = $mysql->query($query);
 
     $risultato = "";
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img_path'];
             $alt = $row['alt'];
@@ -39,7 +39,7 @@ function getArticoloPrincipale(){
 
     $risultato = "";
 
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img_path'];
             $alt = $row['alt'];
@@ -66,7 +66,7 @@ function getTitolo($idArticolo){
     $result = $mysql->query($query);
 
     $risultato = "";
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             $risultato = $row["titolo"];      
         }
@@ -93,7 +93,7 @@ function getArticoli($page, $numArticoli, $woPrincipale = false)
 
     $risultato = "";
 
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img_path'];
             $alt = $row['alt'];
@@ -140,7 +140,7 @@ function contaArticoli($paginaRichiesta, $ut){
     $num = 0;
 
 
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         $row=$result->fetch_assoc();
         $num=$row['num'];
     }
@@ -165,7 +165,7 @@ function cercaArticoli($value, $page)
 
     $risultato = "";
 
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img_path'];
             $alt = $row['alt'];
@@ -195,7 +195,7 @@ function getTop10()
 
     $risultato = "<h1>TOP 10 giochi piu votati</h1>";
 
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         $iter = 1;
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img'];
@@ -229,7 +229,7 @@ function getNuoveUscite($page)
 
     $risultato = "<h1> PROSSIME USCITE</h1>";
 
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img'];
             $alt = $row['alt'];
@@ -261,7 +261,7 @@ function getArticoliDaGenere($page, $numArticoli, $woPrincipale = false, $catego
 
     $risultato = "";
 
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img_path'];
             $alt = $row['alt'];
@@ -289,7 +289,7 @@ function getVotoArticolo($idArticolo, $userId)
 
     $risultato = "";
 
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             $voto = $row['voto'];
             $risultato = $voto;
@@ -301,4 +301,3 @@ function getVotoArticolo($idArticolo, $userId)
 
     return $risultato;
 }
-?>
