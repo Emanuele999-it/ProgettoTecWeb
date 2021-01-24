@@ -299,5 +299,5 @@ function getArticoliDaGenere($page, $numArticoli, $woPrincipale = false, $catego
     return $risultato;
 }
 
-
+}
 ?>
