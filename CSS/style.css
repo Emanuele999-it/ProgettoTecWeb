@@ -706,5 +706,9 @@ a.link-box-genere:visited{
     .articoloScheda h4{
         font-size: 17px;
     }
+    
+    #content-aggiungi-articolo{
+	margin: 1em;
+    }
 }
 /*fine mobile*/
