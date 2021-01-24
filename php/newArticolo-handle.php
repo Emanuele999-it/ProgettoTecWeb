@@ -45,10 +45,11 @@ $giorno = ($giorno == "") ? 01 : $giorno;
 $data_pub_gioco               = $anno. "-" . $mese. "-" . $giorno ;
 $data_pub_articolo            = date("Y-m-d H:i:s");
 
-
+$isDefaultImage = false;
 if($img_path == ""){
     $img_path = "<rootFolder />/img/noimage.jpg";
     $alt_immagine = "Immagine non presente";
+    $isDefaultImage = true;
 }
 
 
@@ -123,7 +124,7 @@ if(!isset($_FILES['immagine']['error']) ){
 }
 //controllo imgpath
 $target_file = "<rootFolder />/img/noimage.jpg";
-if($img_path != ""){
+if($isDefaultImage){
     $target_file = "<rootFolder />/img/" . basename($_FILES["immagine"]["name"]);
     $imageFileType = strtolower(pathinfo($_FILES["immagine"]["name"], PATHINFO_EXTENSION));
     move_uploaded_file($_FILES['immagine']['tmp_name'], $target_file);
