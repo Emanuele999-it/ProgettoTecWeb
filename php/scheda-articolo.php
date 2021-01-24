@@ -41,11 +41,14 @@ function schedaTop10($immagine, $alt, $gioco, $votoM, $iter){
     return $scheda;
 }
 
-function schedaNuovaUscita($immagine, $alt, $gioco, $data_pubb){
+function schedaNuovaUscita($immagine, $alt, $gioco, $data_pubb, $gioco_id){
     $scheda = "<div class=\"articoloScheda\">"
         . "<img src=\"" . $immagine . "\" alt=\"" . $alt . "\" />"
         . "<h3>" . $gioco . "</h3>"
-        . "<h4>" . $data_pubb . "</h4>"
+        . "<h4>" . $data_pubb . "</h4>" ."<div <SegnapostoEliminaGioco /> 
+         class=\"elimina-gioco-div\"> <a class=\"elimina-gioco\"
+         id=\"delete-gioco\"  href=\" ../php/elimina-gioco.php?deleteID=$gioco_id\">
+          Elimina articolo </a></div> " 
         . "</div>";
     return $scheda;
 }

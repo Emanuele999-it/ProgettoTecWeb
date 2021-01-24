@@ -74,6 +74,13 @@ switch ($currPag) {
         $numArticoli = contaArticoli("nuove uscite","");
         $pageContent .= getNuoveUscite($pagNav) . navArticoli($numArticoli, $pagNav) . "</div>";
         $pageContent = str_replace("<navArtPlaceholder />", "menu.php?id=4",$pageContent);
+        if (key_exists("user", $_SESSION) &&  $_SESSION["user"]->getAdmin()){	
+            $pageContent = str_replace("<SegnapostoEliminaGioco />","",$pageContent);
+        } else {
+            $pageContent = str_replace("<SegnapostoEliminaGioco />", "class=\"nascondi-classe-gioco\" ",
+             $pageContent);
+        }		
+    
         break;
 }
 $pageContent .= "<div class=\"torna-su\" ><a class=\"torna-su-link\" href=\"#header\">Torna su</a></div>";

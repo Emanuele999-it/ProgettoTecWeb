@@ -235,8 +235,11 @@ function getNuoveUscite($page)
             $alt = $row['alt'];
             $gioco = $row['nome'];
             $data_pubb = $row['data_pubb'];
+            $gioco_id = $row['game_id'];
             
-            $risultato .= schedaNuovaUscita($immagine, $alt, $gioco, $data_pubb);
+            $risultato .= schedaNuovaUscita($immagine, $alt, $gioco, $data_pubb, $gioco_id);
+
+
         }
     }
     else{
