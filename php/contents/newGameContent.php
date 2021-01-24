@@ -37,6 +37,11 @@
                     <span id="aggiungi-immagine-warning" class="warning"></span>
                 </li>
                 <li>
+                    <label for="aggiungi-descrizione-immagine">Aggiungi una breve descrizione dell'immagine</label>
+                    <input type="text" id="aggiungi-descrizione-immagine" name="alt-immagine" />
+                    <span id="aggiungi-descrizione-immagine-warning" class="warning"></span>
+                </li>
+                <li>
                     <label for="genere">Seleziona il genere del gioco</label>
                     <select name="genere-gioco" id="scelta-genere-gioco">
                         <option value="1">Gioco di ruolo</option>
