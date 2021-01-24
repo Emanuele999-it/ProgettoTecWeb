@@ -124,7 +124,7 @@ if(!isset($_FILES['immagine']['error']) ){
 }
 //controllo imgpath
 $target_file = "<rootFolder />/img/noimage.jpg";
-if($isDefaultImage){
+if(!$isDefaultImage){
     $target_file = "<rootFolder />/img/" . basename($_FILES["immagine"]["name"]);
     $imageFileType = strtolower(pathinfo($_FILES["immagine"]["name"], PATHINFO_EXTENSION));
     move_uploaded_file($_FILES['immagine']['tmp_name'], $target_file);
