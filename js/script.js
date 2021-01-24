@@ -213,7 +213,7 @@ var insertComm = document.getElementById("inserisciCommento");
 if (insertComm) {
 	insertComm.addEventListener("submit", function (event) {
 		commBox = checkNotEmpty("box-commento", 256);
-		if (!(titoloGioco && titoloArt && sommario && testo && immagine && day && month && year)) {
+		if (!(commBox)) {
 			event.stopImmediatePropagation();
 			event.stopPropagation();
 			event.preventDefault();
