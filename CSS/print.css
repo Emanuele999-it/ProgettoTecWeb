@@ -7,12 +7,13 @@ body{
 
 #logo-mobile-short, #links, #icon, #menu, #barra-di-ricerca, .aiuti-screenreader, .torna-su, #footer,
 .articoloPrincipale img, .articoloScheda img,#logo-mobile-full, .boxgenere img, #benvenuto-utente img, 
-#contenutoArticoli img, .elNavArticoli, #eliminazione-account{
+#contenutoArticoli img, .elNavArticoli, #eliminazione-account, .torna-su-link, .fieldClassVoto, 
+#inserisciCommento, .tasti-commento, #voto{
 
     display: none;
 }
 
-.articoloScheda, .articoloPrincipale{
+.articoloScheda, .articoloPrincipale, .commenti{
     border: rgb(160, 160, 160) ridge;
     border-radius: 0.25em;
     border-width: 1px;
