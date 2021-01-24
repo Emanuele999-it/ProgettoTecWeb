@@ -10,7 +10,10 @@ $connection = new DBConnection();
 $_SESSION["titolo"]            = $_POST['titolo']; 
 $_SESSION["sommario"]          = $_POST['sommario']; 
 $_SESSION["testo"]             = $_POST['recensione'];
-$_SESSION["data_pub"]          = date('Y-m-d H:i:s');
+//$_SESSION["data_pub"]          = date('Y-m-d H:i:s');
+$_SESSION["anno-gioco"]        = $_POST["anno-pubblicazione-gioco"]; 
+$_SESSION["mese-gioco"]        = $_POST["mese-pubblicazione-gioco"]; 
+$_SESSION["giorno-gioco"]        = $_POST["giorno-pubblicazione-gioco"]; 
 $_SESSION["img_path"]          = '';   // FATTO
 $_SESSION["cat_id"]            = $_POST['genere-gioco'];
 $_SESSION["alt_immagine"]      = $_POST['alt-immagine']; 
@@ -23,7 +26,10 @@ $_SESSION["data_pub"]         = "";   // FATTO
 $titolo                       = $_SESSION["titolo"]; 
 $sommario                     = $_SESSION["sommario"] ; 
 $testo                        = $_SESSION["testo"];
-$data_pub_articolo            = $_SESSION["data_pub"];
+//$data_pub_articolo            = $_SESSION["data_pub"];
+$anno                         = $_SESSION["anno-gioco"];
+$mese                         = $_SESSION["mese-gioco"];
+$giorno                       = $_SESSION["giorno-gioco"];
 $img_path                     = $_SESSION["img_path"];
 $cat_id                       = $_SESSION["cat_id"];
 $alt_immagine                 = $_SESSION["alt_immagine"]; 
@@ -31,7 +37,7 @@ $game_id                      = $_SESSION["game_id"];       // FATTO
 $prima_pagina                 = $_SESSION["prima_pagina"]; 
 
 $nomedelgioco                 =  $_POST["gioco"]; // "";
-$data_pub_gioco               = $_POST["data-pubblicazione-gioco"];
+$data_pub_gioco               = $anno. "-" . $mese. "-" . $giorno ;
 $data_pub_articolo            = date("Y-m-d H:i:s");
 
 
@@ -55,28 +61,11 @@ INSERT INTO `gioco`(`game_id`, `nome`, `cat_id`, `data_pubb`, `img`, `alt`)
 VALUES (NULL,"",1,"2021-10-30","","")
 */
 //QUERY FUNZIONANTE PER INSERIMENTO DEL GIOCO NUOVO ALTRIMENTI NON POSSO INSERIRE L'ARTICOLO
-if (!$controllotrovato){
-    $ultimogame_id=$connection->query("SELECT COUNT(game_id) FROM `gioco`");
-    while ($row = $ultimogame_id->fetch_assoc()) {
-        $game_id =  intval($row['COUNT(game_id)']);
-        $game_id = $game_id + 1;                        //INCREMENTO PER OTTENTE IL NUOVO GAME_ID
-    }
-    if (!$ultimogame_id) {
-        throw new Exception("GET GAME_ID SBAGLIATO", 1);
-        exit;
-    }
-}
-else{
-    $ultimogame_id=$connection->query("SELECT game_id FROM `gioco` WHERE nome=\"{$nomedelgioco}\" ");
-    $row = $ultimogame_id->fetch_assoc();
-    $game_id  = intval($row["game_id"]);
-}
-
 //INSERIMENTO GIOCO OPPURE NO  
 if (!$controllotrovato){
         $result=$connection->query("INSERT INTO gioco (game_id, nome, cat_id,
                                                         data_pubb, img, alt)
-                                    VALUES (\"{$game_id}\",\"{$nomedelgioco}\",\"{$cat_id}\",
+                                    VALUES (NULL,\"{$nomedelgioco}\",\"{$cat_id}\",
                                             \"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")");
         if (!$result) {
             throw new Exception("INSERIMENTO GIOCO SBAGLIATO", 1);
@@ -87,17 +76,17 @@ else {
 
 }
 
-// OTTENGO IL GAME_ID DEL DEL NUOVO GIOCO CHE CORRISPONDE AL NUMERO DI RIGHE
-$result=$connection->query("SELECT COUNT(game_id) FROM `gioco`");
-while ($row = $result->fetch_assoc()) {
-    $game_id =  intval($row['COUNT(game_id)']);
-}
-
-// INTVAL LO USO PER CASTARE IL DATO RICEVUTO INDIETRO DA fetch_assoc()
+// OTTENGO IL GAME_ID DEL   GIOCO 
+$result=$connection->query("SELECT game_id FROM `gioco` WHERE nome=\"{$nomedelgioco}\" ");
 if (!$result) {
     throw new Exception("GET GAME_ID SBAGLIATO", 1);
     exit;
 }
+while ($row = $result->fetch_assoc()) {
+    $game_id =  intval($row['game_id']);
+}
+// INTVAL LO USO PER CASTARE IL DATO RICEVUTO INDIETRO DA fetch_assoc()
+
 
 
 /*      QUERY FUNZIONANTE
@@ -109,9 +98,12 @@ VALUES (NULL,'a','a','a','2020-12-07 18:00:21','',1,'',20, 0)");
 */
 // OTTENGO  ARTICOLO_ID DEL DEL NUOVO GIOCO CHE CORRISPONDE AL NUMERO DI RIGHE + 1
 
-$ultimoarticolo_id=$connection->query("SELECT COUNT(articolo_id) FROM `articolo`");
+//SELECT MAX(articolo_id) FROM articolo
+
+
+$ultimoarticolo_id=$connection->query("SELECT MAX(articolo_id) FROM articolo");
 while ($row = $ultimoarticolo_id->fetch_assoc()) {
-    $articolo_id =  intval($row['COUNT(articolo_id)']);
+    $articolo_id =  intval($row['MAX(articolo_id)']);
     $articolo_id = $articolo_id + 1;                        //INCREMENTO PER OTTENTE IL NUOVO ARTICOLO_ID
 }
 if (!$ultimoarticolo_id) {
@@ -164,6 +156,18 @@ if (!$controllotrovato){
         throw new Exception("QUERY GIOCO update file SBAGLIATA", 1);
         exit;
 }
+}
+
+if ($prima_pagina == 1){
+    $result=$connection->query("UPDATE articolo SET prima_pagina=0");
+    $result=$connection->query("UPDATE articolo SET prima_pagina=1 WHERE titolo=\"{$titolo}\" ");
+}
+
+
+
+if (!$result) {
+        throw new Exception("QUERY GIOCO update file SBAGLIATA", 1);
+        exit;
 }
 
 $connection->disconnect();
