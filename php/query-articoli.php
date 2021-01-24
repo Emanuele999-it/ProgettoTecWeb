@@ -10,7 +10,7 @@ function getSingoloArticolo($idArticolo){
     $result = $mysql->query($query);
 
     $risultato = "";
-    if ($result) {
+    if (mysqli_num_rows($result)) {
         while ($row = $result->fetch_assoc()) {
             $immagine = $row['img_path'];
             $alt = $row['alt'];
