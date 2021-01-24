@@ -95,7 +95,7 @@
 
 
 
-
+	$artPageCon = str_replace("<segnapostoVoto />", $votare, $artPageCon);
 	$setterPagina->setContent($artPageCon);
 	$setterPagina->setFooter();
 
