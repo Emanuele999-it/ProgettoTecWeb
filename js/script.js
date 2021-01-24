@@ -93,7 +93,7 @@ function checkAlt(image, alt){
 	var regex = new RegExp("^.{1,}$");	
 	alert("imageText: " +regex.test(imagetext));
 	alert("altText: " +regex.test(altText));
-	result = !(regex.test(imagetext)) || (regex.test(imagetext) && !(regex.test(altText)));
+	result = !(regex.test(imagetext)) || (regex.test(imagetext) && (regex.test(altText)));
 	notifyError(result, alt, "Inserisci una descrizione dell'immagine");
 	return result;
 }
