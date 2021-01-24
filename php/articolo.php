@@ -9,7 +9,7 @@
 	$setterPagina = new setterTemplate("..");
 
 	//controllo se l'utente e' loggato
-	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/php/contents/logRegContent.php"), file_get_contents(__DIR__ . "/php/contents/logRegMobileContent.php"));
+	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"), file_get_contents(__DIR__ . "/contents/logRegMobileContent.php"));
 
 	$setterPagina->setTitle("Articolo | The Darksoulers");
 	$setterPagina->setDescription("Articolo riguardante un gioco");  
