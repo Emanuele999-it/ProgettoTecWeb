@@ -9,6 +9,8 @@
         $connection = new DBConnection();
         $commenti = $connection->query("SELECT comment_id,userid,testo,data_com 
                                       FROM commento WHERE articolo_id = $idarticolo}  ");
+	    echo $idarticolo;
+	    throw new Exception("PROVA query", 1);  //ATTENZIONE CHE CI POSSONO ESSERE ARTICOLI SENZA COMMENTI
 
         while ($row = $commenti->fetch_assoc()) {
         $boxcommento = $boxcommento . file_get_contents(__DIR__ . "/contents/box-commento.php");
