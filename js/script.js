@@ -10,9 +10,7 @@ function checkPasswordEqual(password, passwordConfirm) {
 function checkNotEmpty(e, length){
 	var test = document.getElementById(e).value;
 	var regex = new RegExp("^.{1," + length +"}$");
-	alert("^.{1," + length +"}$");
     result = (regex.test(test));
-	alert("after regex, result =" + result);
 	notifyError(result, e, "Il campo non puo' essere vuoto");
 	return result;
 }
@@ -194,23 +192,14 @@ if (modify) {
 var artic = document.getElementById("form-aggiungi-articolo");
 if (artic) {
 	artic.addEventListener("submit", function (event) {
-		alert("inizio");
 		titoloGioco = checkNotEmpty("aggiungi-gioco", 64);
-		alert("gioco");
 		titoloArt = checkNotEmpty("aggiungi-titolo", 128);
-		alert("titolo");
 		sommario = checkNotEmpty("aggiungi-sommario", 512);
-		alert("sommario");
 		testo = checkNotEmpty("aggiungi-recensione", 65535);
-		alert("testo");
 		immagine = checkImageExt("aggiungi-immagine");
-		alert("immagine");
 		day = checkDay("aggiungi-giorno-publicazione");
-		alert("d");
 		month = checkMonth("aggiungi-mese-publicazione");
-		alert("m");
 		year = checkYear("aggiungi-anno-publicazione");
-		alert("yy");
 		if (!(titoloGioco && titoloArt && sommario && testo && immagine && day && month && year)) {
             event.stopImmediatePropagation();
             event.stopPropagation();
