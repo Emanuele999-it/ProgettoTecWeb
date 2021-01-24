@@ -32,7 +32,7 @@ if ($currCat <= 0 || $currCat >= 7) {
     exit;
 }
 
-$pagNav = $_GET['page'];
+$pagNav = array_key_exists('page', $_GET) ? $_GET['page'] : 0;
 
 $setterPagina->setTitle("$categoria[$currCat] | The Darksoulers");
 $nav = file_get_contents(__DIR__ . "/contents/home-nav.php");
