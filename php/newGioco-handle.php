@@ -14,6 +14,7 @@ $_SESSION["mese-gioco"]        = $_POST["mese-pubblicazione-gioco"];
 $_SESSION["giorno-gioco"]      = $_POST["giorno-pubblicazione-gioco"];
 $_SESSION["img_path"]          = $_POST["immagine"];
 $_SESSION["alt_immagine"]      = $_POST['alt-immagine'];
+echo "stringa prova";
 echo $_SESSION["img_path"];
 exit;
 
