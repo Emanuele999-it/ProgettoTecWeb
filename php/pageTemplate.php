@@ -8,7 +8,7 @@
       <meta name="keywords" content="videogiochi, videogames, recensioni" />
       <meta name="author" content="Emanuele Pase, Davide, Damiano Bertoldo, Filippo" />
       <meta name="language" content="it-IT" />
-      <link rel="icon" href="<rootFolder />/img/logo-short.png" type="image/gif"/>
+      <link rel="icon" href="<rootFolder />/img/imgTab.jpg" type="image/gif"/>
       <link rel="stylesheet" type="text/css" href="<rootFolder />/CSS/style.css" media="screen"/>
       <link rel="stylesheet" type="text/css" href="<rootFolder />/CSS/print.css" media="print"/>
       
