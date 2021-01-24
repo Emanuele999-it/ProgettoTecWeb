@@ -32,7 +32,7 @@
                     </li>
                     <li>
                         <p>Ripeti <span xml:lang="en" lang="en">Password</span></p>
-                        <input id="registrazione-password2" value="<SegnapostoPassw />" type="password" name="password" />
+                        <input id="registrazione-password2" value="<SegnapostoPassw />" type="password" name="password2" />
                         <span id="registrazione-password2-warning" class="warning"></span>
                     </li>
                     <li class="form-element">
