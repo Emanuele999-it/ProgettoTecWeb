@@ -197,10 +197,24 @@ if (artic) {
 		sommario = checkNotEmpty("aggiungi-sommario", 512);
 		testo = checkNotEmpty("aggiungi-recensione", 65535);
 		immagine = checkImageExt("aggiungi-immagine");
+		if (!(titoloGioco && titoloArt && sommario && testo && immagine)) {
+			event.stopImmediatePropagation();
+			event.stopPropagation();
+			event.preventDefault();
+		}
+	});
+}
+
+//aggiungi gioco
+var game = document.getElementById("form-aggiungi-gioco");
+if (game) {
+	game.addEventListener("submit", function (event) {
+		titoloGioco = checkNotEmpty("aggiungi-gioco", 64);
+		immagine = checkImageExt("aggiungi-immagine");
 		day = checkDay("aggiungi-giorno-publicazione");
 		month = checkMonth("aggiungi-mese-publicazione");
 		year = checkYear("aggiungi-anno-publicazione");
-		if (!(titoloGioco && titoloArt && sommario && testo && immagine && day && month && year)) {
+		if (!(titoloGioco && immagine && day && month && year)) {
 			event.stopImmediatePropagation();
 			event.stopPropagation();
 			event.preventDefault();

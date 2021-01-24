@@ -10,7 +10,7 @@ $connection = new DBConnection();
 $_SESSION["titolo"]            = $_POST['titolo'];
 $_SESSION["sommario"]          = $_POST['sommario'];
 $_SESSION["testo"]             = $_POST['recensione'];
-$_SESSION["img_path"]          = $_POST["immagine"];
+$_SESSION["img_path"]          = $_FILES['immagine']['name'];
 $_SESSION["alt_immagine"]      = $_POST['alt-immagine'];
 $_SESSION["prima_pagina"]      = $_POST['prima-pagina'];
 $_SESSION["nomedelgioco"]      = $_POST["gioco"];
@@ -70,7 +70,8 @@ $result = $connection->query("INSERT INTO articolo (articolo_id,titolo, sommario
                     VALUES (\"{$articolo_id}\", \"{$titolo}\",\"{$sommario}\",
                     \"{$testo}\",\"{$data_pub_articolo}\",\"{$img_path}\",
                     \"{$cat_id}\",\"{$alt_immagine}\",\"{$game_id}\",\"{$prima_pagina}\")");
-if ($result) {
+
+if (!$result) {
     throw new Exception("INSERIMENTO DATI ARTICOLO query SBAGLIATO", 1);
     exit;
 }
@@ -80,11 +81,11 @@ if (!$useDefaultImage) {
         throw new Exception("upload IMMAGINE SBAGLIATO", 1);
     }
 
-    if (!$isDefaultImage) {
-        $target_file = "<rootFolder />/img/" . basename($_FILES["immagine"]["name"]);
-        $imageFileType = strtolower(pathinfo($_FILES["immagine"]["name"], PATHINFO_EXTENSION));
-        move_uploaded_file($_FILES['immagine']['tmp_name'], $target_file);
-    }
+    $img_path = "<rootFolder />/img/" . basename($_FILES["immagine"]["name"]);
+    $target_file = "../img/" . basename($_FILES["immagine"]["name"]);
+    $imageFileType = strtolower(pathinfo($_FILES["immagine"]["name"], PATHINFO_EXTENSION));
+    move_uploaded_file($_FILES['immagine']['tmp_name'], $target_file);
+
 
     $result = $connection->query("UPDATE articolo SET img_path=\"{$target_file}\" WHERE articolo_id=\"{$articolo_id}\" ");
     if (!$result) {

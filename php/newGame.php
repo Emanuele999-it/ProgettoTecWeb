@@ -33,7 +33,6 @@ if ( $_SESSION["giono-trovato"] == true ){
 }
 
 
-
 $setterPagina->setContent($newArtCon);
 $setterPagina->setFooter();
 

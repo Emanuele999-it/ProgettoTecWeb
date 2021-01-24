@@ -1,4 +1,3 @@
-
 * {
 	padding: 0em;
 	margin: 0em;
@@ -178,7 +177,7 @@ ul{
 #risultati-ricerca{
     height: 1.5em;
     overflow: hidden;
-    width: 17em;
+    width: 12em;
 }
 
 #immagine-lente{
@@ -221,13 +220,13 @@ ul{
 
 
 #contenutoArticoli{
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 2em;
+  margin-right:2em;
   margin-top: 2em;
 }
 
 #recensione{
-    margin-right:5em;
+    margin-right:1em;
 }
 
 #recensione p{
@@ -537,7 +536,10 @@ a.link-box-genere:visited{
     margin: 3em;
 }
 
-#aggiungi-articolo{
+#aggiungi-articolo{    
+}
+
+.addGameArti {
     text-align: center;
     margin: auto;
     padding: 1em;
@@ -564,6 +566,26 @@ a.link-box-genere:visited{
     background-color: #dbdbdb;
     border-radius: 3em;
     padding: 2em;
+}
+
+#content-aggiungi-articolo .form-inserisci-testo{
+	width:95%;
+}
+
+#content-aggiungi-articolo #aggiungi-gioco{
+	width:30%;
+}
+
+#content-aggiungi-articolo #aggiungi-titolo{
+	width:30%;
+}
+
+#content-aggiungi-articolo #aggiungi-sommario{
+	width:30%;
+}
+
+#content-aggiungi-articolo #aggiungi-descrizione-immagine{
+	width:30%;
 }
 
 .form-new-articolo{
@@ -648,7 +670,7 @@ a.link-box-genere:visited{
 	
     #contenutoArticoli{
         margin-left: 2em;
-        margin-right: 2em;
+        margin-right: 0.5em;
         margin-top: 2em;
     }
 
@@ -683,6 +705,10 @@ a.link-box-genere:visited{
 
     .articoloScheda h4{
         font-size: 17px;
+    }
+    
+    #content-aggiungi-articolo{
+	margin: 1em;
     }
 }
 /*fine mobile*/

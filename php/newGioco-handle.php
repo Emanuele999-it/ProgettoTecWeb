@@ -12,7 +12,7 @@ $_SESSION["cat_id"]            = $_POST['genere-gioco'];
 $_SESSION["anno-gioco"]        = $_POST["anno-pubblicazione-gioco"];
 $_SESSION["mese-gioco"]        = $_POST["mese-pubblicazione-gioco"];
 $_SESSION["giorno-gioco"]      = $_POST["giorno-pubblicazione-gioco"];
-$_SESSION["img_path"]          = $_POST["immagine"];
+$_SESSION["img_path"]          = $_FILES['immagine']['name'];
 $_SESSION["alt_immagine"]      = $_POST['alt-immagine'];
 
 //TRAVASO PERCHE' LA QUERY NON VA CON LE VARIABILI SESSION
@@ -31,6 +31,15 @@ if ($img_path == "") {
     $img_path = "<rootFolder />/img/noimage.jpg";
     $alt_immagine = "Immagine non presente";
     $isDefaultImage = true;
+} else {
+    if (!isset($_FILES['immagine']['error'])) {
+        throw new Exception("upload IMMAGINE SBAGLIATO", 1);
+    }
+
+    $img_path = "<rootFolder />/img/" . basename($_FILES["immagine"]["name"]);
+    $target_file = "../img/" . basename($_FILES["immagine"]["name"]);
+    $imageFileType = strtolower(pathinfo($_FILES["immagine"]["name"], PATHINFO_EXTENSION));
+    move_uploaded_file($_FILES['immagine']['tmp_name'], $target_file);
 }
 
 
@@ -49,7 +58,7 @@ if (!$controllotrovato) {
                                                     data_pubb, img, alt)
                                 VALUES (NULL,\"{$nomedelgioco}\",\"{$cat_id}\",
                                         \"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")");
-    if (!mysqli_num_rows($result)) {
+    if (!$result) {
         throw new Exception("INSERIMENTO GIOCO SBAGLIATO", 1);
         exit;
     }

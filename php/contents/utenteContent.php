@@ -9,6 +9,7 @@
     <a id="modifica-link" href="<rootFolder />/php/modifica-utente.php">Modifica dati</a>
 </p>
 <SegnapostoAggiungiNuovoArticolo />
+<br/>
 <SegnapostoAggiungiNuovoGioco />
 <form id="eliminazione-account" method="post" action="elimina-account.php">
     <fieldset class="form-fieldset">
