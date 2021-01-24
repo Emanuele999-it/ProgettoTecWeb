@@ -12,6 +12,7 @@
 <form id="eliminazione-account" method="post" action="elimina-account.php">
     <fieldset class="form-fieldset">
         <legend class="legend"> Eliminazione <span xml:lang="en" lang="en">Account</span>, inserisci la password</legend>
+        <SegnapostoEliminaAccount />
         <input type="password" id="eliminazione-password" name="utente-password" />
         <input type="submit" value="Elimina Account" />
         <span id="eliminazione-password-warning" class="warning"></span>

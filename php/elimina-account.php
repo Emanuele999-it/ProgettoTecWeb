@@ -20,7 +20,8 @@ if ($_POST["utente-password"] == $_SESSION['user']->getPassword()) {
     header("Location: ../index.php");
     exit;
 } else {
-    $_SESSION["wrong"] = "";
+
+    $_SESSION["eliminazione-account-sbagliata"] = true;
 
     header("Location: ./utente.php");
     exit;

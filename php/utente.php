@@ -39,6 +39,13 @@
         $utenteCon = str_replace("<SegnapostoAggiungiNuovoArticolo />", "", $utenteCon);
     }
 
+    if ($_SESSION["eliminazione-account-sbagliata"] == true){
+        $_SESSION["eliminazione-account-sbagliata"] = false;
+        $utenteCon = str_replace("<SegnapostoEliminaAccount />",
+        "<h2><span class=\"errore-credenziali\"> Hai inserito la Password Sbagliata</span></h2>",
+         $utenteCon);
+    }
+
   
     $setterPagina->setContent($utenteCon);
     $setterPagina->setFooter();
