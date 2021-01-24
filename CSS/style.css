@@ -275,6 +275,9 @@ ul{
     margin-bottom:2%;
 }
 
+.nascondi-classe-gioco{
+    display: none;
+}
 
 /*!!!!!!!!    NUOVA SCHEDA ARTICOLO    !!!!!!!!!!*/
 
