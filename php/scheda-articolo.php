@@ -48,7 +48,7 @@ function schedaNuovaUscita($immagine, $alt, $gioco, $data_pubb, $gioco_id){
         . "<h4>" . $data_pubb . "</h4>" ."<div <SegnapostoEliminaGioco /> 
          class=\"elimina-gioco-div\"> <a class=\"elimina-gioco\"
          id=\"delete-gioco\"  href=\" ../php/elimina-gioco.php?deleteID=$gioco_id\">
-          Elimina articolo </a></div> " 
+          Elimina gioco </a></div> " 
         . "</div>";
     return $scheda;
 }
