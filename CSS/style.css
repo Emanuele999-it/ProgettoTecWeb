@@ -250,6 +250,7 @@ ul{
     display: flow-root;
     background-color: #dbdbdb;
     border-radius: 1em;
+    padding-right:0.4em;
 }
 
 .articoloPrincipale img{
