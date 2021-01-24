@@ -1,5 +1,8 @@
 <?php
+    require_once __DIR__ . '/db-handler.php';
     require_once __DIR__ . "/setterTemplate.php";
+
+    session_start();
 
     $setterPagina = new setterTemplate("..");
 
@@ -33,11 +36,18 @@
 	$utenteFull = str_replace("<a href=\"<rootFolder />/php/registrazione.php\">Registrati</a>","Registrati", $utenteFull);
 	
 	$setterPagina->setLoginContent($utenteFull, $utenteMobile);
-	
-	
+    
 	
     //da sistemare una volta implementato il db
     $regCon = file_get_contents(__DIR__ . "/contents/registrazioneContent.php");
+
+    if ($_SESSION["erroreEmailtrovato"] == true ) {
+        $regCon = str_replace("<SegnapostoCredenziali />",
+         " Hai inserito una Email già inserita da un altro utente ",$regCon);
+        $_SESSION["erroreEmailtrovato"]=false;
+    }
+
+
     $setterPagina->setContent($regCon);
     $setterPagina->setFooter();
 

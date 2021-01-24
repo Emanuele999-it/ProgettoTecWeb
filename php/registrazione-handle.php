@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/db-handler.php';
 require_once __DIR__ . '/utente-class.php';
+require_once __DIR__ . '/funzioni-utili.php';
 
 
 session_start();
@@ -13,7 +14,14 @@ $_SESSION["password"]   =   $_POST['password1'];
 
 $connection = new DBConnection();
 
+$_SESSION["erroreEmail"] = controlloEmail($_SESSION["email"]);
 
+if ( $_SESSION["erroreEmail"] == "2"){
+     $_SESSION["erroreEmailtrovato"] = true;
+     $_SESSION["erroreEmail"] = "";
+     header("Location: ./registrazione.php");
+     exit;
+}
 
 
 $query      = "INSERT INTO utente (nome,cognome,email,img_path,passw) 
