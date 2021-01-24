@@ -8,9 +8,9 @@
 <p id="modifica-dati">Per modificare i tuoi dati personali schiaccia qui:
     <a id="modifica-link" href="<rootFolder />/php/modifica-utente.php">Modifica dati</a>
 </p>
-<SegnapostoAggiungiNuovoArticolo />
-<br/>
 <SegnapostoAggiungiNuovoGioco />
+<br/>
+<SegnapostoAggiungiNuovoArticolo />
 <form id="eliminazione-account" method="post" action="elimina-account.php">
     <fieldset class="form-fieldset">
         <legend class="legend"> Eliminazione <span xml:lang="en" lang="en">Account</span>, inserisci la password</legend>
