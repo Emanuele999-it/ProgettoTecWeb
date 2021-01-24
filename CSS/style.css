@@ -537,7 +537,10 @@ a.link-box-genere:visited{
     margin: 3em;
 }
 
-#aggiungi-articolo{
+#aggiungi-articolo{    
+}
+
+.addGameArti {
     text-align: center;
     margin: auto;
     padding: 1em;
