@@ -2,12 +2,13 @@
 require_once __DIR__ . '/db-handler.php';
 require_once __DIR__ . "/setterTemplate.php";
 
+session_start();
+
 //controllo se ha gia' il login (aka inserimento manuale del link)
 if ($_SESSION['loggedin']) {
     header("Location: error/400.php");
     exit;
 }
-session_start();
 
 $setterPagina = new setterTemplate("..");
 
