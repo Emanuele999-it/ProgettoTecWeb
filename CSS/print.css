@@ -13,7 +13,7 @@ body{
     display: none;
 }
 
-.articoloScheda, .articoloPrincipale{
+.articoloScheda, .articoloPrincipale, .commenti{
     border: rgb(160, 160, 160) ridge;
     border-radius: 0.25em;
     border-width: 1px;
