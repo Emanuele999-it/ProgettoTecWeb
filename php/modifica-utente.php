@@ -18,6 +18,7 @@ $modificautenteCon = file_get_contents(__DIR__ . "/contents/modifica-utente-cont
 $modificautenteCon = str_replace("<SegnapostoNome />",$_SESSION['user']->getNome(),$modificautenteCon);
 $modificautenteCon = str_replace("<SegnapostoCognome />",$_SESSION['user']->getCognome(),$modificautenteCon);
 $modificautenteCon = str_replace("<SegnapostoEmail />",$_SESSION['user']->getEmail(),$modificautenteCon);
+$modificautenteCon = str_replace("<SegnapostoPassw />",$_SESSION['user']->getPassword(),$modificautenteCon);
 
 if ($_SESSION['loggedin']) {
 	$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
