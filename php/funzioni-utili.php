@@ -8,7 +8,7 @@
         //$userid="user_id";
         $connection = new DBConnection();
         $commenti = $connection->query("SELECT comment_id,userid,testo,data_com 
-                                      FROM commento WHERE articolo_id = \"{$idarticolo}\"   ");
+                                      FROM commento WHERE articolo_id = $idarticolo}  ");
 
         while ($row = $commenti->fetch_assoc()) {
         $boxcommento = $boxcommento . file_get_contents(__DIR__ . "/contents/box-commento.php");
