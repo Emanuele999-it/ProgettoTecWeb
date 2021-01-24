@@ -9,6 +9,7 @@
     <a id="modifica-link" href="<rootFolder />/php/modifica-utente.php">Modifica dati</a>
 </p>
 <SegnapostoAggiungiNuovoArticolo />
+<SegnapostoAggiungiNuovoGioco />
 <form id="eliminazione-account" method="post" action="elimina-account.php">
     <fieldset class="form-fieldset">
         <legend class="legend"> Eliminazione <span xml:lang="en" lang="en">Account</span>, inserisci la password</legend>

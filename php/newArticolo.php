@@ -21,7 +21,7 @@
         $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
         }
 	
-    $setterPagina->setPercorso("Utente");
+    $setterPagina->setPercorso("Aggiungi articolo");
 
     $newArtCon = file_get_contents(__DIR__ . "/contents/newArticoloContent.php");
     $setterPagina->setContent($newArtCon);
