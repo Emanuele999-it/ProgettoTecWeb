@@ -12,7 +12,9 @@ function checkNotEmpty(e, length){
 	var regex = new RegExp("^.{1," + length +"}$");
 	alert("^.{1," + length +"}$");
     result = (regex.test(test));
+	alert("after regex, result =" + result);
 	notifyError(result, e, "Il campo non puo' essere vuoto");
+	alert("after notify");
 	return result;
 }
 
