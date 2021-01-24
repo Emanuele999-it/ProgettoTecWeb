@@ -75,7 +75,7 @@
                     </select>
                 </li>
                 <li>
-                    <input type="submit" value="Aggiungi" />
+                    <input class="submit" type="submit" value="Aggiungi" />
                 </li>
             </ul>
         </fieldset>
