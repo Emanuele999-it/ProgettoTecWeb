@@ -10,6 +10,7 @@ function checkPasswordEqual(password, passwordConfirm) {
 function checkNotEmpty(e, length){
 	var test = document.getElementById(e).value;
 	var regex = new RegExp("^[.*]{1," + length +"}$");
+	alert("^[.*]{1," + length +"}$");
     result = !(test === "") && (regex.test(test));
 	notifyError(result, e, "Il campo non puo' essere vuoto");
 	return result;
