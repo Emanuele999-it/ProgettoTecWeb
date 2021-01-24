@@ -275,8 +275,12 @@ function getArticoliDaGenere($page, $numArticoli, $woPrincipale = false, $catego
     else{
         $risultato .= "<p>Nessun articolo presente</p>";
     }
+    $mysql->disconnect();
+
+    return $risultato;
 }	
-	function getVotoArticolo($idArticolo, $userId)
+
+function getVotoArticolo($idArticolo, $userId)
 {
     $mysql = new DBconnection;
 
