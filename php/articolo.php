@@ -30,17 +30,31 @@
 	$titoloArticolo = getTitolo($idArticolo);
 	$setterPagina->setPercorso("Articoli -> $titoloArticolo");
 
+	$connection= new DBConnection();
 	//controllo accesso
 	if ($_SESSION['loggedin']) {
+
+		$QVoto=getVotoArticolo($idArticolo, $_SESSION['user']->getUserid());
+
+        if ($QVoto!="") {
+			
+            $votare = "<p>Hai valutato questo gioco con un punteggio di: " . strval($QVoto) . "/5</p>";
+        } 
+		else{
+			
+			$votare = file_get_contents(__DIR__ . "/contents/form-voto.php");
+			$votare= str_replace("<segnapostoIdArticolo />",$idArticolo,$votare);
+		}
+
 		$utenteMobile = str_replace("<SegnapostoNomeMobile />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLoginMobile.php"));
 		$utenteFull = str_replace("<SegnapostoNome />", $_SESSION['user']->getNome(), file_get_contents(__DIR__ . "/contents/userLogin.php"));
 		$setterPagina->setLoginContent($utenteFull, $utenteMobile);
-		}
-	else{
+    } 
+	else {
 		$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
-		}
-
-
+		$votare = file_get_contents(__DIR__ . "/contents/accediORegistratiVoto.php");
+	}
+	
 
 
 	//modifico il contenuto in base alla query ricevuta

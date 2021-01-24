@@ -36,6 +36,11 @@ class setterTemplate{
         $this->page = str_replace("<contentSegnaposto />", $content, $this->page);
     }
 
+	public function replaceVoto(string $voto)
+    {
+        $this->page = str_replace("<segnapostoVoto />", $voto, $this->page);
+    }
+
     public function setFooter(){
         $this->page = str_replace("<footerSegnaposto />", file_get_contents(__DIR__ . "/contents/footer.php"), $this->page);
     }
