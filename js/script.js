@@ -87,6 +87,14 @@ function loginCheck(user) {
 	return checkNotEmpty(user, 30);
 }
 
+function checkAlt(image, alt){
+	var imagetext = document.getElementById(image).value;
+	var altText = document.getElementById(alt).value;
+	result = imagetext.length !== 0 && altText.length === 0;
+	notifyError(result, alt, "Inserisci una descrizione dell'immagine");
+	return result;
+}
+
 function notifyError(condition, idElemento, message) {
 	idElemento = idElemento.toString() + "-warning";
 	if (condition) {
@@ -197,7 +205,8 @@ if (artic) {
 		sommario = checkNotEmpty("aggiungi-sommario", 512);
 		testo = checkNotEmpty("aggiungi-recensione", 65535);
 		immagine = checkImageExt("aggiungi-immagine");
-		if (!(titoloGioco && titoloArt && sommario && testo && immagine)) {
+		alt = checkAlt("aggiungi-immagine", "aggiungi-descrizione-immagine");
+		if (!(titoloGioco && titoloArt && sommario && testo && immagine && alt)) {
 			event.stopImmediatePropagation();
 			event.stopPropagation();
 			event.preventDefault();
@@ -214,7 +223,8 @@ if (game) {
 		day = checkDay("aggiungi-giorno-publicazione");
 		month = checkMonth("aggiungi-mese-publicazione");
 		year = checkYear("aggiungi-anno-publicazione");
-		if (!(titoloGioco && immagine && day && month && year)) {
+		alt = checkAlt("aggiungi-immagine", "aggiungi-descrizione-immagine");
+		if (!(titoloGioco && immagine && day && month && year && alt)) {
 			event.stopImmediatePropagation();
 			event.stopPropagation();
 			event.preventDefault();
