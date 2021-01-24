@@ -41,6 +41,11 @@ $data_pub_gioco               = $anno. "-" . $mese. "-" . $giorno ;
 $data_pub_articolo            = date("Y-m-d H:i:s");
 
 
+if($img_path != ""){
+    $img_path = "<rootFolder />/img/noimage.jpg";
+    $alt_immagine = "Immagine non presente";
+}
+
 //CONTROLLO SE IL GIOCO ESISTE GIA' NEL DATABASE
 $controllotrovato=false;
 $controllogioco=$connection->query("SELECT nome FROM `gioco`");
