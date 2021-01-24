@@ -126,8 +126,7 @@ function contaArticoli($paginaRichiesta, $ut){
             $query = "SELECT count(*) AS num FROM (SELECT * FROM `gioco` WHERE data_pubb > \"" . $todayDate . "\" ) AS Q1";
             break;
         case "genere":
-            $query = "SELECT count(*) AS num FROM (SELECT articolo_id FROM articolo WHERE cat_id=" . $ut;
-            if($woPrincipale) $query .= " AND prima_pagina = 0) AS Q1 ";
+            $query = "SELECT count(*) AS num FROM (SELECT articolo_id FROM articolo WHERE cat_id=" . $ut . ") AS Q1 ";
             break;
         case "ricerca":
             $query = "SELECT count(*) AS num FROM (select a.img_path, a.alt, a.titolo, a.sommario, a.articolo_id from articolo a join categoria c on (a.cat_id =c.cat_id)
