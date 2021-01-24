@@ -27,7 +27,7 @@ else {
     $setterPagina->setLoginContent(file_get_contents(__DIR__ . "/../contents/logRegContent.php"),file_get_contents(__DIR__ . "/../contents/logRegMobileContent.php") );
 }
 
-$contenuto = str_replace("<segnapostoErrore />", "Ops.. sembra che non puoi accedere a questa risorsa", file_get_contents(__DIR__ . "/../contents/erroreContent.php"));
+$contenuto = str_replace("<segnapostoErrore />", "Ops.. sembra che non possa accedere a questa risorsa", file_get_contents(__DIR__ . "/../contents/erroreContent.php"));
 
 $setterPagina->setContent($contenuto);
 $setterPagina->setFooter();
