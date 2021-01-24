@@ -190,7 +190,7 @@ if (modify) {
 }
 
 //aggiungi articolo
-var artic = document.getElementById("form-new-articolo");
+var artic = document.getElementById("form-aggiungi-articolo");
 if (artic) {
 	artic.addEventListener("submit", function (event) {
 		alert("inizio");
