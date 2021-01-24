@@ -48,7 +48,7 @@ if (!$controllotrovato) {
                                                     data_pubb, img, alt)
                                 VALUES (NULL,\"{$nomedelgioco}\",\"{$cat_id}\",
                                         \"{$data_pub_gioco}\",\"{$img_path}\",\"{$alt_immagine}\")");
-    if (!mysqli_num_rows($result)) {
+    if (!$result) {
         throw new Exception("INSERIMENTO GIOCO SBAGLIATO", 1);
         exit;
     }

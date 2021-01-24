@@ -69,7 +69,7 @@ $result = $connection->query("INSERT INTO articolo (articolo_id,titolo, sommario
                     VALUES (\"{$articolo_id}\", \"{$titolo}\",\"{$sommario}\",
                     \"{$testo}\",\"{$data_pub_articolo}\",\"{$img_path}\",
                     \"{$cat_id}\",\"{$alt_immagine}\",\"{$game_id}\",\"{$prima_pagina}\")");
-if (!mysqli_num_rows($result)) {
+if (!$result) {
     throw new Exception("INSERIMENTO DATI ARTICOLO query SBAGLIATO", 1);
     exit;
 }
