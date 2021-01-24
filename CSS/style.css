@@ -38,6 +38,10 @@ body{
     margin-right: auto;
 }
 
+.errorDiv h1{
+    text-align:center;
+}
+
 #header {
     background-color: black;
 }
