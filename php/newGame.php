@@ -22,7 +22,7 @@ if ($_SESSION['loggedin']) {
 
 $setterPagina->setPercorso("Aggiungi gioco");
 
-$newArtCon = file_get_contents(__DIR__ . "/contents/newArticoloContent.php");
+$newArtCon = file_get_contents(__DIR__ . "/contents/newGameContent.php");
 $setterPagina->setContent($newArtCon);
 $setterPagina->setFooter();
 
