@@ -54,12 +54,6 @@ if (!$controllogioco) {
     exit;
 } 
 
-//controllo imgpath
-if($img_path == ""){
-    $img_path = "<rootFolder />/img/noimage.jpg";
-    $alt_immagine = "immagine rappresentante nessuna immagine";
-}
-
  
 //QUERY FUNZIONANTE PER INSERIMENTO DEL GIOCO NUOVO ALTRIMENTI NON POSSO INSERIRE L'ARTICOLO
 //INSERIMENTO GIOCO OPPURE NO  
@@ -88,18 +82,6 @@ while ($row = $result->fetch_assoc()) {
 }
 // INTVAL LO USO PER CASTARE IL DATO RICEVUTO INDIETRO DA fetch_assoc()
 
-
-
-/*      QUERY FUNZIONANTE
-INSERT INTO articolo (articolo_id,titolo,sommario,testo,data_pub,img_path,cat_id,alt,game_id, prima_pagina ) 
-VALUES (NULL,"a","a","a","2020-12-07 18:00:21","",1,"",20, 0)
-$result= $connection->query("INSERT INTO articolo (articolo_id,titolo,sommario,
-                                                    testo,data_pub,img_path,cat_id,alt,game_id, prima_pagina ) 
-VALUES (NULL,'a','a','a','2020-12-07 18:00:21','',1,'',20, 0)");
-*/
-// OTTENGO  ARTICOLO_ID DEL DEL NUOVO GIOCO CHE CORRISPONDE AL NUMERO DI RIGHE + 1
-
-//SELECT MAX(articolo_id) FROM articolo
 
 
 $ultimoarticolo_id=$connection->query("SELECT MAX(articolo_id) FROM articolo");
@@ -131,14 +113,14 @@ if (!$result) {
 if(!isset($_FILES['immagine']['error']) ){
     throw new Exception("upload IMMAGINE SBAGLIATO", 1);
 }
-$target_file = "../img/" . basename($_FILES["immagine"]["name"]);
-$imageFileType = strtolower(pathinfo($_FILES["immagine"]["name"], PATHINFO_EXTENSION));
-$target_dir ="../img/";
-move_uploaded_file($_FILES['immagine']['tmp_name'], $target_file);
+//controllo imgpath
+$target_file = "<rootFolder />/img/noimage.jpg";
+if($img_path != ""){
+    $target_file = "<rootFolder />/img/" . basename($_FILES["immagine"]["name"]);
+    $imageFileType = strtolower(pathinfo($_FILES["immagine"]["name"], PATHINFO_EXTENSION));
+    move_uploaded_file($_FILES['immagine']['tmp_name'], $target_file);
+}
 
-/* QUERY CORRETTA 
-UPDATE articolo SET img_path="prova" WHERE titolo="metal"
- */
 // UPDATE SET per il path immagine di articolo
 
     $result=$connection->query("UPDATE articolo SET img_path=\"{$target_file}\" WHERE titolo=\"{$titolo}\" ");
