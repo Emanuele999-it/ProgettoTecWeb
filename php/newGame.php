@@ -22,7 +22,18 @@ if ($_SESSION['loggedin']) {
 
 $setterPagina->setPercorso("Aggiungi gioco");
 
-$newArtCon = file_get_contents(__DIR__ . "/contents/newArticoloContent.php");
+$newArtCon = file_get_contents(__DIR__ . "/contents/newGameContent.php");
+
+if ( $_SESSION["giono-trovato"] == true ){
+    $_SESSION["giono-trovato"] = false;
+    $newArtCon = str_replace("<SegnapostoGiocotrovato />",
+    "<h2><span class=\"errore-credenziali\"> Il gioco che hai insertio esiste già nel database</span></h2>",$newArtCon);
+}else{
+    $newArtCon = str_replace("<SegnapostoGiocotrovato />","",$newArtCon);
+}
+
+
+
 $setterPagina->setContent($newArtCon);
 $setterPagina->setFooter();
 

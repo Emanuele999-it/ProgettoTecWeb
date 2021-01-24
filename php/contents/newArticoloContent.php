@@ -10,6 +10,7 @@
             </legend>
             <ul class="form-container-dati-articolo">
                 <li>
+                    <SegnapostoGioconontrovato />
                     <label for="aggiungi-gioco">Titolo del Gioco</label>
                     <input type="text" id="aggiungi-gioco" name="gioco" value="" />
                     <span id="aggiungi-gioco-warning" class="warning"></span>

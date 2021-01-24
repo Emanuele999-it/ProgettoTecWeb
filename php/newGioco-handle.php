@@ -34,14 +34,15 @@ if ($img_path == "") {
 }
 
 
-$controllogioco = $connection->query("SELECT nome FROM `gioco`");
+$controllogioco = $connection->query("SELECT nome FROM `gioco` WHERE nome=\"{$nomedelgioco}\"");
 while ($row = $controllogioco->fetch_assoc()) {
     $controllogiocotitolo =  $row["nome"];
     if ($controllogiocotitolo == $nomedelgioco) {
-        //controllo da fare se gioco gia' presente e nel caso lanciare l'errore
+            $_SESSION["giono-trovato"] = true;
+            header("Location: ./newGame.php");
+            exit;
     }
 }
-
 
 if (!$controllotrovato) {
     $result = $connection->query("INSERT INTO gioco (game_id, nome, cat_id,
