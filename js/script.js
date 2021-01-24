@@ -7,30 +7,30 @@ function checkPasswordEqual(password, passwordConfirm) {
 	return result;
 }
 
-function checkNotEmpty(e, length){
+function checkNotEmpty(e, length) {
 	var test = document.getElementById(e).value;
-	var regex = new RegExp("^.{1," + length +"}$");
-    result = (regex.test(test));
-	notifyError(result, e, "Il campo non puo' essere vuoto");
+	var regex = new RegExp("^.{1," + length + "}$");
+	result = (regex.test(test));
+	notifyError(result, e, "Il campo non puo' essere vuoto e puo' avere una lunghezza massima di " + length + " caratteri");
 	return result;
 }
 
-function checkImageExt(img){
+function checkImageExt(img) {
 	var test = document.getElementById(img).value.toLowerCase();
 	var regex = new RegExp("^(.*\.((jpg|jpeg)$))?[^.]*$");
-    result = (regex.test(test));
+	result = (regex.test(test));
 	notifyError(result, img, "Viene accettato solo il formato .jpg o .jpeg");
 	return result;
 }
 
 function checkPass(pass) {
-    var test = document.getElementById(pass).value;
-    result = !(test === "") && test.length !== 0;
+	var test = document.getElementById(pass).value;
+	result = !(test === "") && test.length !== 0;
 	notifyError(result, pass, "La password non puo' essere vuota");
 	return result;
 }
 
-function checkEmail(email) { 
+function checkEmail(email) {
 	var regex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$");
 	var textEmail = document.getElementById(email).value.toLowerCase();
 	var result = (regex.test(textEmail)) && !(textEmail === "");
@@ -62,28 +62,28 @@ function checkCommento(commento) {
 	return result;
 }
 
-function checkDay(day){
+function checkDay(day) {
 	var num = parseInt(document.getElementById(day).value);
-    result = (num < 32 && num > 0);
+	result = (num < 32 && num > 0);
 	notifyError(result, day, "Valori accettati tra 1 e 31");
 	return result;
 }
 
-function checkMonth(Month){
+function checkMonth(Month) {
 	var num = parseInt(document.getElementById(Month).value);
-    result = (num < 13 && num > 0);
+	result = (num < 13 && num > 0);
 	notifyError(result, Month, "Valori accettati tra 1 e 12");
 	return result;
 }
 
-function checkYear(year){
+function checkYear(year) {
 	var num = parseInt(document.getElementById(year).value);
-    result = (num > 1970);
+	result = (num > 1970);
 	notifyError(result, year, "Metti un anno maggiore di 1970");
 	return result;
 }
 
-function loginCheck(user) { 
+function loginCheck(user) {
 	return checkNotEmpty(user, 30);
 }
 
@@ -99,32 +99,32 @@ function notifyError(condition, idElemento, message) {
 //menu mobile
 function openCloseBT() {
 
-    var icon = document.querySelector(".icon");
-    var x = document.getElementById("links");
+	var icon = document.querySelector(".icon");
+	var x = document.getElementById("links");
 
-    icon.addEventListener("click", function () {
+	icon.addEventListener("click", function () {
 		if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
+			x.style.display = "none";
+		} else {
+			x.style.display = "block";
+		}
 
-        setTimeout(function(){ 
-            icon.style.background = "black";
-            icon.style.color = "black";
-         }, 100);
-        
-    });    
+		setTimeout(function () {
+			icon.style.background = "black";
+			icon.style.color = "black";
+		}, 100);
 
-    icon.addEventListener("mouseover", function () {
-        icon.style.background = "#ddd";
-        icon.style.color = "black";
-    });  
-    
-    icon.addEventListener("mouseout", function () {
-        icon.style.background = "black";
-        icon.style.color = "black";
-    });    
+	});
+
+	icon.addEventListener("mouseover", function () {
+		icon.style.background = "#ddd";
+		icon.style.color = "black";
+	});
+
+	icon.addEventListener("mouseout", function () {
+		icon.style.background = "black";
+		icon.style.color = "black";
+	});
 }
 
 //da qui i metodi che vengono attivati con il caricamento della pagina
@@ -134,16 +134,16 @@ openCloseBT();
 var regist = document.getElementById("form-registrazione");
 if (regist) {
 	regist.addEventListener("submit", function (event) {
-        var name = checkName("registrazione-nome");
-        var surname = checkSurname("registrazione-cognome");
-        var email = checkEmail("registrazione-email");
-        var passOK = checkPass("registrazione-password1");
-        var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
-        if (!(name && surname && email && passOK && pass12Eq)) {
-            event.stopImmediatePropagation();
-            event.stopPropagation();
-            event.preventDefault();
-        }
+		var name = checkName("registrazione-nome");
+		var surname = checkSurname("registrazione-cognome");
+		var email = checkEmail("registrazione-email");
+		var passOK = checkPass("registrazione-password1");
+		var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
+		if (!(name && surname && email && passOK && pass12Eq)) {
+			event.stopImmediatePropagation();
+			event.stopPropagation();
+			event.preventDefault();
+		}
 	});
 }
 
@@ -152,10 +152,10 @@ var login = document.getElementById("form-accesso");
 if (login) {
 	login.addEventListener("submit", function (event) {
 		if (!(loginCheck("login-email"))) {
-            event.stopImmediatePropagation();
-            event.stopPropagation();
-            event.preventDefault();
-        }
+			event.stopImmediatePropagation();
+			event.stopPropagation();
+			event.preventDefault();
+		}
 	});
 }
 
@@ -164,10 +164,10 @@ var canc = document.getElementById("eliminazione-account");
 if (canc) {
 	canc.addEventListener("submit", function (event) {
 		if (!(checkPass("eliminazione-password"))) {
-            event.stopImmediatePropagation();
-            event.stopPropagation();
-            event.preventDefault();
-        }
+			event.stopImmediatePropagation();
+			event.stopPropagation();
+			event.preventDefault();
+		}
 	});
 }
 
@@ -175,16 +175,16 @@ if (canc) {
 var modify = document.getElementById("form-modifica-utente");
 if (modify) {
 	modify.addEventListener("submit", function (event) {
-        var name = checkName("registrazione-nome");
-        var surname = checkSurname("registrazione-cognome");
-        var email = checkEmail("registrazione-email");
-        var passOK = checkPass("registrazione-password1");
-        var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
-        if (!(name && surname && email && passOK && pass12Eq)) {
-            event.stopImmediatePropagation();
-            event.stopPropagation();
-            event.preventDefault();
-        }
+		var name = checkName("registrazione-nome");
+		var surname = checkSurname("registrazione-cognome");
+		var email = checkEmail("registrazione-email");
+		var passOK = checkPass("registrazione-password1");
+		var pass12Eq = checkPasswordEqual("registrazione-password1", "registrazione-password2");
+		if (!(name && surname && email && passOK && pass12Eq)) {
+			event.stopImmediatePropagation();
+			event.stopPropagation();
+			event.preventDefault();
+		}
 	});
 }
 
@@ -201,9 +201,22 @@ if (artic) {
 		month = checkMonth("aggiungi-mese-publicazione");
 		year = checkYear("aggiungi-anno-publicazione");
 		if (!(titoloGioco && titoloArt && sommario && testo && immagine && day && month && year)) {
-            event.stopImmediatePropagation();
-            event.stopPropagation();
-            event.preventDefault();
-        }
+			event.stopImmediatePropagation();
+			event.stopPropagation();
+			event.preventDefault();
+		}
+	});
+}
+
+//commento
+var insertComm = document.getElementById("inserisciCommento");
+if (insertComm) {
+	insertComm.addEventListener("submit", function (event) {
+		commBox = checkNotEmpty("box-commento", 256);
+		if (!(titoloGioco && titoloArt && sommario && testo && immagine && day && month && year)) {
+			event.stopImmediatePropagation();
+			event.stopPropagation();
+			event.preventDefault();
+		}
 	});
 }

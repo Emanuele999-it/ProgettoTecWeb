@@ -166,5 +166,3 @@ $connection->disconnect();
 
 header("Location: ../index.php");
 exit;
-
-?>

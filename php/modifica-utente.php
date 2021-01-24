@@ -36,9 +36,3 @@ $setterPagina->setFooter();
 
 
 $setterPagina->validate();
-?>
-
-
-
-
-

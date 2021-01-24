@@ -24,7 +24,3 @@ $connection->query("INSERT INTO `commento`(`comment_id`, `articolo_id`, `userid`
     $connection->disconnect();
 
     header("Location: articolo.php?id=$idarticolo#inserisciCommento");
-
-?>    
-
-

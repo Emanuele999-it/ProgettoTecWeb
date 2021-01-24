@@ -28,4 +28,3 @@
     $setterPagina->setFooter();
 
     $setterPagina->validate();
-?>
