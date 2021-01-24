@@ -37,6 +37,11 @@ $game_id                      = $_SESSION["game_id"];       // FATTO
 $prima_pagina                 = $_SESSION["prima_pagina"]; 
 
 $nomedelgioco                 =  $_POST["gioco"]; // "";
+
+$anno = ($anno == "") ? 1970 : $anno;
+$mese = ($mese == "") ? 12 : $mese;
+$giorno = ($giorno == "") ? 01 : $giorno;
+
 $data_pub_gioco               = $anno. "-" . $mese. "-" . $giorno ;
 $data_pub_articolo            = date("Y-m-d H:i:s");
 
@@ -45,9 +50,6 @@ if($img_path == ""){
     $img_path = "<rootFolder />/img/noimage.jpg";
     $alt_immagine = "Immagine non presente";
 }
-$anno = ($anno == "") ? 1970 : $anno;
-$mese = ($mese == "") ? 12 : $mese;
-$giorno = ($giorno == "") ? 01 : $giorno;
 
 
 //CONTROLLO SE IL GIOCO ESISTE GIA' NEL DATABASE
