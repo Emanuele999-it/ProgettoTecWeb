@@ -12,7 +12,7 @@ class DBConnection
         $this->username = "siteuser";
         $this->password = "IloveDS";
 
-        $this->connectTo("TecWeb");
+        $this->connectTo("test2");
     }
 
     public function connectTo(string $database)
