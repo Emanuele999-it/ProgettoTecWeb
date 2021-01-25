@@ -9,10 +9,10 @@ class DBConnection
 
     public function __construct()
     {
-        $this->username = file_get_contents(__DIR__ . "/username.txt");
-        $this->password = file_get_contents(__DIR__ . "/password.txt");
+        $this->username = str_replace("\n", "",file_get_contents(__DIR__ . "/username.txt"));
+        $this->password = str_replace("\n", "",file_get_contents(__DIR__ . "/password.txt"));
 
-        $this->connectTo(file_get_contents(__DIR__ . "/dbname.txt"));
+        $this->connectTo(str_replace("\n", "",file_get_contents(__DIR__ . "/dbname.txt")));
     }
 
     public function connectTo(string $database)
