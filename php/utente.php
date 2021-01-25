@@ -48,6 +48,9 @@
         "<h2><span class=\"errore-credenziali\"> Hai inserito la Password Sbagliata</span></h2>",
          $utenteCon);
     }
+    else{
+        $utenteCon = str_replace("<SegnapostoEliminaAccount />", "", $utenteCon);
+    }
 
   
     $setterPagina->setContent($utenteCon);
