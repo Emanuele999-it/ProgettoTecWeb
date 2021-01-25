@@ -10,7 +10,7 @@ if ($_POST["utente-password"] == $_SESSION['user']->getPassword()) {
     $connection = new DBConnection();
     $userEmail = $_SESSION["user"]->getEmail();
     $email = $_SESSION['user']->getPassword();
-    $connection->query("DELETE FROM utente WHERE  email=\"{$email}\"");
+    $connection->query("DELETE FROM utente WHERE  email=\"{$userEmail}\"");
     $connection->disconnect();
 
     session_unset();
