@@ -116,7 +116,7 @@ INSERT INTO articolo (articolo_id, titolo, sommario, testo, data_pub, img_path, 
 
 DROP TABLE IF EXISTS utente;
 CREATE TABLE utente (
-  user_id int(11) AUTO_INCREMENT NOT NULL,
+  userid int(11) AUTO_INCREMENT NOT NULL,
   nome varchar(30) NOT NULL,
   cognome varchar(30) NOT NULL,
   email varchar(50) NOT NULL,
@@ -127,7 +127,7 @@ CREATE TABLE utente (
   UNIQUE (email)
 );
 
-INSERT INTO utente (user_id, nome, cognome, email, img_path, passw, is_admin) VALUES
+INSERT INTO utente (userid, nome, cognome, email, img_path, passw, is_admin) VALUES
 (1, 'Mario', 'Rossi', 'mario.rossi@gmail.com', '../img/avatar.jpg', 'password', 1);
 INSERT INTO utente (user_id, nome, cognome, email, img_path, passw, is_admin) VALUES
 (2, 'Giovanni', 'Gallo', 'giovanni.gallo@gmail.com', '../img/avatar.jpg', 'chicchirichì', 0);
@@ -177,7 +177,7 @@ INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
 
 DROP TABLE IF EXISTS voto;
 CREATE TABLE voto (
-  user_id int(11) NOT NULL,
+  userid int(11) NOT NULL,
   gioco_id int(11) NOT NULL,
   voto INT DEFAULT 0,
   CHECK (voto>=0 AND voto<= 5),
@@ -186,52 +186,29 @@ CREATE TABLE voto (
   FOREIGN KEY (gioco_id) REFERENCES gioco (game_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(1, 2, 3);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(1, 7, 3);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(1, 9, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(2, 1, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(2, 2, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(2, 3, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(2, 6, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(2, 7, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(2, 9, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(2, 10, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(2, 11, 2);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(2, 12, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(3, 1, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(3, 2, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(3, 4, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(3, 7, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(3, 8, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(3, 13, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(3, 14, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(4, 1, 1);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(4, 5, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(4, 9, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
-(4, 13, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
+(1, 2, 3),
+(1, 7, 3),
+(1, 9, 4),
+(2, 1, 5),
+(2, 2, 4),
+(2, 3, 5),
+(2, 6, 5),
+(2, 7, 5),
+(2, 9, 5),
+(2, 10, 4),
+(2, 11, 2),
+(2, 12, 4),
+(3, 1, 4),
+(3, 2, 4),
+(3, 4, 4),
+(3, 7, 4),
+(3, 8, 4),
+(3, 13, 4),
+(3, 14, 4),
+(4, 1, 1),
+(4, 5, 4),
+(4, 9, 5),
+(4, 13, 5),
 (4, 14, 5);
 
