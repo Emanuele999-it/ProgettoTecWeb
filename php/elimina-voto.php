@@ -12,10 +12,9 @@ if (!key_exists("user", $_SESSION)) {
 }
 
 $id = $_SESSION['user']->getUserid();
-$GameId = $_GET['idgame'];
 $idarticolo = $_GET['idArticolo'];
 
-$result=$connection->query("DELETE FROM voto WHERE gioco_id=$GameId AND userid=$id");
+$result=$connection->query("DELETE FROM voto WHERE userid=$id AND gioco_id=(SELECT game_id FROM articolo WHERE articolo_id=$idarticolo)");
 if (!$result) {
     header("Location: ../error/400.php");
 	exit;
