@@ -27,5 +27,5 @@ if(!$result2)
 }
 
 $connection->disconnect();
-header("Location: ../php/articolo.php?id=$idarticolo.");
+header("Location: ../php/articolo.php?id=$idarticolo");
 exit;
