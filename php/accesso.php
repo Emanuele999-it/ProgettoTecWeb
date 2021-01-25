@@ -36,6 +36,9 @@ if ($_SESSION["err-credenziali"] == true) {
     $accCon = str_replace("<SegnapostoCredenziali />", " Hai inserito Email o Password sbagliata ", $accCon);
     $_SESSION["err-credenziali"] = false;
 }
+else{
+    $accCon = str_replace("<SegnapostoCredenziali />", "", $accCon);
+}
 
 $setterPagina->setContent($accCon);
 $setterPagina->setFooter();
