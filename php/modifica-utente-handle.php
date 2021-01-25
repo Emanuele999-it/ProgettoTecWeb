@@ -7,13 +7,7 @@ session_start();
 
 $connection = new DBConnection();
 
-if ( $_SESSION['user']->getNome() == $_POST["nome"] && 
-     $_SESSION['user']->getCognome() == $_POST["cognome"]  ){
-    if ($_SESSION['user']->getEmail() == $_POST["email"] && $_SESSION['user']->getPassword() == $_POST["password"]){
-        $_SESSION["erroreEmailIdenticatrovato"] = true;
-        header("Location: ./modifica-utente.php");
-        exit;
-    }
+if($_SESSION['user']->getEmail() != $_POST["email"]){
     // CONTROLLO EMAIL GIA' INSERITO
     $_SESSION["erroreEmail"] = controlloEmail($_SESSION["email"]);
     if ( $_SESSION["erroreEmail"] == "2"){
