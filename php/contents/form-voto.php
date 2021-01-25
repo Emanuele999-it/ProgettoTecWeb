@@ -20,8 +20,8 @@
             <label>5 Stelle</label><input type="radio"  class="torna-su-link" name="pulsante-voto" value="5" />
         </li>
         </ul>
-		<br>
+		<br/>
             <input class="submit" type="submit" value= "Vota"/>
-		<br>
+		<br/>
 	</fieldset>
 </form>
