@@ -33,6 +33,9 @@ if ($_SESSION["erroreEmailtrovato"] == true ) {
 	 "<h2><span class=\"errore-credenziali\"> Hai inserito una Email già inserita da un altro utente</span></h2>",$modificautenteCon);
 	$_SESSION["erroreEmailtrovato"]=false;
 }
+else{
+	$modificautenteCon = str_replace("<SegnapostoModificaEmail />","",$modificautenteCon);
+}
 
 
 
@@ -43,7 +46,7 @@ if ($_SESSION['loggedin']) {
 	}
 else{
 	$setterPagina->setLoginContent(file_get_contents(__DIR__ . "/contents/logRegContent.php"),file_get_contents(__DIR__ . "/contents/logRegMobileContent.php") );
-	}
+}
 
 
 
