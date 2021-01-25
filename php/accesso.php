@@ -24,9 +24,6 @@ $utenteFull = preg_replace(
 );
 
 //accesso
-$utenteMobile = file_get_contents(__DIR__ . "/contents/logRegMobileContent.php");
-$utenteFull = file_get_contents(__DIR__ . "/contents/logRegContent.php");
-
 $utenteMobile = str_replace("<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>", "Accedi", $utenteMobile);
 $utenteFull = str_replace("<a href=\"<rootFolder />/php/accesso.php\">Accedi</a>", "Accedi", $utenteFull);
 
