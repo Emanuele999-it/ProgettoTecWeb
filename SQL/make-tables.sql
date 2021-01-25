@@ -151,7 +151,7 @@ CREATE TABLE commento (
   FOREIGN KEY (articolo_id) REFERENCES articolo (articolo_id) ON DELETE CASCADE ON UPDATE CASCADE
 ); 
 
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (1, 7, 3, 'Fantastico! Grazie per la recensione', '2020-12-12 12:45:06');
 INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
 (2, 1, 2, 'Bellissimo gioco', '2020-12-09 12:04:44');
