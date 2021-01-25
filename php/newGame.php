@@ -6,7 +6,7 @@ session_start();
 
 $setterPagina = new setterTemplate("..");
 
-$setterPagina->setTitle("Aggiungi Articolo | The Darksoulers");
+$setterPagina->setTitle("Aggiungi Gioco | The Darksoulers");
 $setterPagina->setDescription("Pagina iniziale del sito The Darksoulers");
 
 $setterPagina->setNavBar(file_get_contents(__DIR__ . "/contents/home-nav.php"));
