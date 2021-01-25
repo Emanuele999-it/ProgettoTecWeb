@@ -129,13 +129,13 @@ CREATE TABLE utente (
 
 INSERT INTO utente (userid, nome, cognome, email, img_path, passw, is_admin) VALUES
 (1, 'Mario', 'Rossi', 'mario.rossi@gmail.com', '../img/avatar.jpg', 'password', 1);
-INSERT INTO utente (user_id, nome, cognome, email, img_path, passw, is_admin) VALUES
+INSERT INTO utente (userid, nome, cognome, email, img_path, passw, is_admin) VALUES
 (2, 'Giovanni', 'Gallo', 'giovanni.gallo@gmail.com', '../img/avatar.jpg', 'chicchirichì', 0);
-INSERT INTO utente (user_id, nome, cognome, email, img_path, passw, is_admin) VALUES
+INSERT INTO utente (userid, nome, cognome, email, img_path, passw, is_admin) VALUES
 (3, 'Diana', 'Zetticci', 'diana.zetti@libero.it', '../img/avatar.jpg', 'Quu5viiTh', 0);
-INSERT INTO utente (user_id, nome, cognome, email, img_path, passw, is_admin) VALUES
+INSERT INTO utente (userid, nome, cognome, email, img_path, passw, is_admin) VALUES
 (4, 'Lidia', 'Toscano', 'LidiaToscano@rhyta.com', '../img/avatar.jpg', 'gee0VaaT', 1);
-INSERT INTO utente (user_id, nome, cognome, email, img_path, passw, is_admin) VALUES
+INSERT INTO utente (userid, nome, cognome, email, img_path, passw, is_admin) VALUES
 (5, 'admin', 'admin', 'admin', '../img/avatar.jpg', 'admin', 1);
 
 
@@ -153,25 +153,25 @@ CREATE TABLE commento (
 
 INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (1, 7, 3, 'Fantastico! Grazie per la recensione', '2020-12-12 12:45:06');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (2, 1, 2, 'Bellissimo gioco', '2020-12-09 12:04:44');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (3, 3, 2, 'Graziee!!', '2020-12-07 19:22:33');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (4, 9, 3, 'Adoro questo gioco', '2020-12-05 18:32:02');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (5, 2, 4, 'Top', '2020-11-24 14:41:51');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (6, 11, 4, 'Il gioco non mi piace molto.', '2020-11-30 09:01:44');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (7, 2, 4, 'Top', '2020-11-24 14:41:51');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (8, 2, 2, 'Il gioco mi piace molto.', '2020-11-30 09:01:44');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (9, 4, 4, 'Il gioco mi piace molto.', '2020-11-30 09:01:44');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (10, 1, 2, 'Il gioco non mi piace molto.', '2020-11-30 09:01:44');
-INSERT INTO commento (comment_id, articolo_id, user_id, testo, data_com) VALUES
+INSERT INTO commento (comment_id, articolo_id, userid, testo, data_com) VALUES
 (11, 5, 3, 'Graziee!!', '2020-11-30 09:01:44');
 
 
@@ -186,52 +186,52 @@ CREATE TABLE voto (
   FOREIGN KEY (gioco_id) REFERENCES gioco (game_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (1, 2, 3);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (1, 7, 3);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (1, 9, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (2, 1, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (2, 2, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (2, 3, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (2, 6, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (2, 7, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (2, 9, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (2, 10, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (2, 11, 2);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (2, 12, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (3, 1, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (3, 2, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (3, 4, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (3, 7, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (3, 8, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (3, 13, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (3, 14, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (4, 1, 1);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (4, 5, 4);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (4, 9, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (4, 13, 5);
-INSERT INTO voto (user_id, gioco_id, voto) VALUES
+INSERT INTO voto (userid, gioco_id, voto) VALUES
 (4, 14, 5);
 
