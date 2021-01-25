@@ -62,6 +62,16 @@ INSERT INTO gioco (game_id, nome, cat_id, data_pubb, img, alt) VALUES
 (15, 'Rocket League', 2, '2015-07-07','../img/rocketLeague.jpg', 'Immagine di un\'auto  del gioco che sta colpendo la palla');
 INSERT INTO gioco (game_id, nome, cat_id, data_pubb, img, alt) VALUES
 (16, 'Shadow of the Colossus', 4, '2018-02-06','../img/shadowOfTheColossus.jpg', 'Immagine del protagonista che osserva l\'ambiente che lo circonda');
+INSERT INTO gioco (game_id, nome, cat_id, data_pubb, img, alt) VALUES
+(17, 'Little Nightmares 2', 5, '2021-02-10', '../img/littleNightmares2.jpg', 'Immagine del protagonista al centro di una città cupa');
+INSERT INTO gioco (game_id, nome, cat_id, data_pubb, img, alt) VALUES
+(18, 'Star Wars Jedi: Fallen Order 2', 5, '2022-12-01', '../img/JediFallenOrder2.jpg', 'Immagine di un duello con delle spade laser ');
+INSERT INTO gioco (game_id, nome, cat_id, data_pubb, img, alt) VALUES
+(19, 'Pay Day 3', 3, '2023-01-01', '../img/payDay3.jpg', 'Immagine di quattro banditi che escono da una cassaforte con la refurtiva');
+INSERT INTO gioco (game_id, nome, cat_id, data_pubb, img, alt) VALUES
+(20, 'Devil May Cry 6', 1, '2022-10-01', '../img/devilMayCry6.jpg', 'Immagine dei protagonisti in posa');
+INSERT INTO gioco (game_id, nome, cat_id, data_pubb, img, alt) VALUES
+(21, 'Elden Ring', 4, '2021-10-30', '../img/eldenRing.jpg', 'Immagine di un fabbro dai capelli biondi di spalle');
 
 DROP TABLE IF EXISTS articolo;
 CREATE TABLE articolo (
