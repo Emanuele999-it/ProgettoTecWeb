@@ -25,4 +25,5 @@
     </form>
     <div class="torna-su">
         <a class="torna-su-link" href="#header">Torna su</a>
+    </div>
 </div>
