@@ -25,7 +25,7 @@ if ( $_SESSION["erroreEmail"] == "2"){
 
 
 $query      = "INSERT INTO utente (nome,cognome,email,img_path,passw) 
-                VALUES (\"{$_POST['nome']}\",\"{$_POST['cognome']}\",\"{$_POST['email']}\",'../img/avatar.jpg',\"{$_POST['password1']}\")";
+                VALUES (\"{$_POST['nome']}\",\"{$_POST['cognome']}\",\"{$_POST['email']}\",'<rootFolder />/img/avatar.jpg',\"{$_POST['password1']}\")";
 
 $connection->query($query);
 

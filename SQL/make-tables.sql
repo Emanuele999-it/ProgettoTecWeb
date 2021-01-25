@@ -147,6 +147,8 @@ INSERT INTO utente (userid, nome, cognome, email, img_path, passw, is_admin) VAL
 (4, 'Lidia', 'Toscano', 'LidiaToscano@rhyta.com', '<rootFolder />/img/avatar.jpg', 'gee0VaaT', 1);
 INSERT INTO utente (userid, nome, cognome, email, img_path, passw, is_admin) VALUES
 (5, 'admin', 'admin', 'admin', '<rootFolder />/img/avatar.jpg', 'admin', 1);
+INSERT INTO utente (userid, nome, cognome, email, img_path, passw, is_admin) VALUES
+(6, 'lab', 'utente', 'laboratorio@gmail.com', '<rootFolder />/img/avatar.jpg', 'password', 0);
 
 
 DROP TABLE IF EXISTS commento;
