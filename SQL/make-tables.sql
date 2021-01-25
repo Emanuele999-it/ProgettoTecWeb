@@ -123,7 +123,7 @@ CREATE TABLE utente (
   img_path varchar(256) NOT NULL,
   passw varchar(256) NOT NULL,
   is_admin tinyint(1) DEFAULT 0,
-  PRIMARY KEY (user_id),
+  PRIMARY KEY (userid),
   UNIQUE (email)
 );
 
