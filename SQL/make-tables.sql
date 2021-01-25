@@ -186,29 +186,52 @@ CREATE TABLE voto (
   FOREIGN KEY (gioco_id) REFERENCES gioco (game_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO voto (userid, gioco_id, voto) VALUES
-(1, 2, 3),
-(1, 7, 3),
-(1, 9, 4),
-(2, 1, 5),
-(2, 2, 4),
-(2, 3, 5),
-(2, 6, 5),
-(2, 7, 5),
-(2, 9, 5),
-(2, 10, 4),
-(2, 11, 2),
-(2, 12, 4),
-(3, 1, 4),
-(3, 2, 4),
-(3, 4, 4),
-(3, 7, 4),
-(3, 8, 4),
-(3, 13, 4),
-(3, 14, 4),
-(4, 1, 1),
-(4, 5, 4),
-(4, 9, 5),
-(4, 13, 5),
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(1, 2, 3);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(1, 7, 3);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(1, 9, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(2, 1, 5);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(2, 2, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(2, 3, 5);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(2, 6, 5);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(2, 7, 5);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(2, 9, 5);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(2, 10, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(2, 11, 2);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(2, 12, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(3, 1, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(3, 2, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(3, 4, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(3, 7, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(3, 8, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(3, 13, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(3, 14, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(4, 1, 1);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(4, 5, 4);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(4, 9, 5);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
+(4, 13, 5);
+INSERT INTO voto (user_id, gioco_id, voto) VALUES
 (4, 14, 5);
 
