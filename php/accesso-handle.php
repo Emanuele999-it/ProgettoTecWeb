@@ -19,6 +19,7 @@ $user_row = $result->fetch_assoc();
 if ($user_row['email'] == "" || $user_row['passw']=="" ){
    // throw new Exception("Credenziali Sbagliate", 1);
     $_SESSION["err-credenziali"]=true;
+    $_SESSION['loggedin']    = false;
     header("Location: ./accesso.php");
     exit;
 }   
