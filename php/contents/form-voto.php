@@ -2,7 +2,7 @@
 <form action="<rootFolder />/php/voti.php?idarticolo=<segnapostoIdArticolo />" method="post" class="commenti">
 <fieldset class="fieldClassVoto">
         <legend><strong>Valuta questo gioco</strong></legend>
-		<br>
+		<br/>
         <ul class="SelezioneVoto">
         <li>
             <label for="pulsante-voto-1" class="label-voto">1 Stella</label><input type="radio" id="pulsante-voto-1" class="torna-su-link" checked="checked" name="pulsante-voto" value="1" />
