@@ -286,8 +286,7 @@ function getArticoliDaGenere($page, $numArticoli, $woPrincipale = false, $catego
 function getVotoArticolo($idArticolo, $userId)
 {
     $mysql = new DBconnection;
-
-    $query = "SELECT voto FROM voto WHERE voto.userid=$userId  AND voto.gioco_id=$idArticolo";
+    $query = "SELECT voto FROM voto v join articolo a on v.gioco_id = a.game_id WHERE v.userid=$userId  AND a.articolo_id=$idArticolo";
     $result = $mysql->query($query);
 
     $risultato = "";
