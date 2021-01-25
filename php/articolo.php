@@ -39,7 +39,7 @@
         if ($QVoto!="") {
 			$idGame = array_key_exists('id', $_GET) ? $_GET['id'] : 0;
 			
-            $votare = "<p>Hai valutato questo gioco con un punteggio di: " . strval($QVoto) . "/5</p><br>
+            $votare = "<p>Hai valutato questo gioco con un punteggio di: " . strval($QVoto) . "/5</p><br/>
 			<form action=\"<rootFolder />/php/elimina-voto.php?idgame=$idGame&amp;idArticolo=$idArticolo\" method=\"post\">
 			<input class=\"torna-su-link\" type=\"submit\" value= \"Ripensamenti? Elimina il tuo voto\"/></form>";
         } 
