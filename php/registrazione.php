@@ -52,7 +52,7 @@ if ($_SESSION["erroreEmailtrovato"] == true) {
     $_SESSION["erroreEmailtrovato"] = false;
 }
 else{
-    $regCon = str_replace("<SegnapostoCredenziali />", "", $accCon);
+    $regCon = str_replace("<SegnapostoCredenziali />", "", $regCon);
 }
 
 
