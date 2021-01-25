@@ -143,11 +143,11 @@ DROP TABLE IF EXISTS commento;
 CREATE TABLE commento (
   comment_id int(11) AUTO_INCREMENT NOT NULL,
   articolo_id int(11) NOT NULL,
-  user_id int(11) NOT NULL,
+  userid int(11) NOT NULL,
   testo varchar(256) NOT NULL,
   data_com datetime NOT NULL,
   PRIMARY KEY (comment_id),
-  FOREIGN KEY (user_id) REFERENCES utente (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (userid) REFERENCES utente (userid) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (articolo_id) REFERENCES articolo (articolo_id) ON DELETE CASCADE ON UPDATE CASCADE
 ); 
 
@@ -181,8 +181,8 @@ CREATE TABLE voto (
   gioco_id int(11) NOT NULL,
   voto INT DEFAULT 0,
   CHECK (voto>=0 AND voto<= 5),
-  PRIMARY KEY (user_id, gioco_id),
-  FOREIGN KEY (user_id) REFERENCES utente (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  PRIMARY KEY (userid, gioco_id),
+  FOREIGN KEY (userid) REFERENCES utente (userid) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (gioco_id) REFERENCES gioco (game_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
