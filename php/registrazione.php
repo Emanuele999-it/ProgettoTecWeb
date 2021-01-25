@@ -4,12 +4,6 @@ require_once __DIR__ . "/setterTemplate.php";
 
 session_start();
 
-//controllo se ha gia' il login (aka inserimento manuale del link)
-if ($_SESSION['loggedin']) {
-    header("Location: error/400.php");
-    exit;
-}
-
 $setterPagina = new setterTemplate("..");
 
 
