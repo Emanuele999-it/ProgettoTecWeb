@@ -6,7 +6,7 @@
     <form action="<rootFolder />/php/newGioco-handle.php" method="post" id="form-aggiungi-gioco" enctype="multipart/form-data">
         <fieldset class="form-new-articolo">
             <legend class="">
-                <h2>Campi dati obbligatori per l'aggiunta di un gioco</h2>
+                Campi dati obbligatori per l'aggiunta di un gioco
             </legend>
             <ul class="form-container-dati-articolo">
                 <li>
@@ -42,7 +42,7 @@
                     <span id="aggiungi-descrizione-immagine-warning" class="warning"></span>
                 </li>
                 <li>
-                    <label for="genere">Seleziona il genere del gioco</label>
+                    <label for="genere-gioco">Seleziona il genere del gioco</label>
                     <select name="genere-gioco" id="scelta-genere-gioco">
                         <option value="1">Gioco di ruolo</option>
                         <option value="2">Sportivo</option>
