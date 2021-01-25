@@ -6,7 +6,7 @@
     <form action="<rootFolder />/php/newArticolo-handle.php" method="post" id="form-aggiungi-articolo" enctype="multipart/form-data">
         <fieldset class="form-new-articolo">
             <legend class="">
-                <h2>Campi dati obbligatori per l'aggiunta di un articolo</h2>
+                Campi dati obbligatori per l'aggiunta di un articolo
             </legend>
             <ul class="form-container-dati-articolo">
                 <li>
